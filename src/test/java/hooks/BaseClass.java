@@ -48,23 +48,30 @@ public class BaseClass {
 
 	@Before("not @login")
 	public void setUp() {
-		
+
 		Log.logInfo("Initializing WebDriver");
-		
+
 		String browserName = null;
-		if(readConfig.getBrowserFromTestNG() != null ) {
+		if (readConfig.getBrowserFromTestNG() != null) {
 			browserName = readConfig.getBrowserFromTestNG();
-		}
-		else {
+		} else {
 			browserName = readConfig.getbrowser();
 		}
-			
+
 		WebDriver driver = context.getDriverFactory().initialiseBrowser(browserName);
 		context.setDriver(driver);
-		Log.logInfo("Navigating to: " + readConfig.getApplicationURL());
-		context.getDriver().get(readConfig.getApplicationURL());
 
+		Log.logInfo("Navigating to: " + readConfig.getApplicationURL());
+
+		try {
+			context.getDriver().get(readConfig.getApplicationURL());
+		} catch (Exception e) {
+			Log.logInfo("URL is NOT reachable, marking test as FAILED.");
+			// Convert exception into Failed test instead of Broken
+			org.testng.Assert.fail("Application URL is not reachable. Reason: " + e.getMessage());
+		}
 	}
+
 
 	@After
 	public void tearDown(Scenario scenario) {
