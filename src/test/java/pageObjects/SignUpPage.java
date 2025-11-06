@@ -1,0 +1,19 @@
+package pageObjects;
+
+import org.openqa.selenium.WebDriver;
+
+
+public class SignUpPage {
+
+	
+	private WebDriver driver;
+	
+	public SignUpPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	public String getPageTitle() {
+
+		return driver.getTitle();
+	}
+
+}
