@@ -1,0 +1,4 @@
+2025-11-06 07:14:29.964 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 07:14:48.163 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 07:15:22.847 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 07:15:24.253 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
