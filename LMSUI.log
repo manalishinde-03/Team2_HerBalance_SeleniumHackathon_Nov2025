@@ -1,33 +1,4 @@
-2025-11-05 18:37:45.900 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
-2025-11-05 18:38:08.561 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://feb-ui-hackathon-bbfd38d67ea9.herokuapp.com/
-2025-11-05 18:38:30.359 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 18:38:30.363 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
-2025-11-05 18:38:37.761 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - The LMS page title is LMS
-2025-11-05 18:38:37.762 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 18:38:37.762 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
-2025-11-05 18:49:51.592 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
-2025-11-05 18:54:16.877 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://feb-ui-hackathon-bbfd38d67ea9.herokuapp.com/
-2025-11-05 18:54:44.330 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 18:54:44.341 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
-2025-11-05 18:54:57.081 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - The LMS page title is LMS
-2025-11-05 18:54:57.083 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 18:54:57.083 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
-2025-11-05 20:19:27.651 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
-2025-11-05 20:19:38.093 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://feb-ui-hackathon-bbfd38d67ea9.herokuapp.com/
-2025-11-05 20:19:58.666 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 20:19:58.670 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
-2025-11-05 20:20:05.934 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - The LMS page title is LMS
-2025-11-05 20:20:05.935 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 20:20:05.935 INFO [TestNG-PoolService-1] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
-2025-11-05 20:31:02.035 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
-2025-11-05 20:31:12.592 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://herbalance-weightlossherbalance.replit.app/home
-2025-11-05 20:31:20.878 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 20:31:21.927 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
-2025-11-05 20:32:12.065 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
-2025-11-05 20:32:22.586 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://herbalance-weightlossherbalance.replit.app/home
-2025-11-05 20:32:31.228 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 20:32:31.229 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
-2025-11-05 20:34:53.369 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
-2025-11-05 20:35:03.589 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
-2025-11-05 20:35:37.710 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
-2025-11-05 20:35:39.255 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 07:14:29.964 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 07:14:48.163 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 07:15:22.847 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 07:15:24.253 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
