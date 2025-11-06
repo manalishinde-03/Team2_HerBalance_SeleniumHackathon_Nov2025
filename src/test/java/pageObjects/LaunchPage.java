@@ -11,6 +11,9 @@ public class LaunchPage {
 	private ElementUtil util;
 	private ReadConfig readConfig;
 	private By menstrualPhase = By.xpath("//dummy");
+	
+	private By signUpButton = By.xpath(".//nav/div[2]/button[2]");
+	
 	public LaunchPage(WebDriver driver) {
 		this.driver = driver;
 		util = new ElementUtil(this.driver);
@@ -25,4 +28,10 @@ public class LaunchPage {
 		 return util.isElementDisplayed(menstrualPhase);
 	       
 	    }
+	 
+	 public void clickOnSignUpButton() {
+			driver.findElement(signUpButton).isDisplayed();
+			driver.findElement(signUpButton).click();
+			
+		}
 }
