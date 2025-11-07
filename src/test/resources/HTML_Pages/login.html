@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her Balance - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+    }
+    .login-section, .promo-section {
+      flex: 1;
+      padding: 40px;
+    }
+    .login-section {
+      background-color: #f9f9f9;
+    }
+    .promo-section {
+      background-color: #fff0f6;
+    }
+    h2 {
+      color: #6a1b9a;
+    }
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .checkbox-group input {
+      margin-right: 5px;
+    }
+    .login-button {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .login-button:hover {
+      background-color: #4a148c;
+    }
+    .link {
+      display: block;
+      margin-top: 10px;
+      color: #6a1b9a;
+      text-decoration: none;
+    }
+    .promo-section ul {
+      padding-left: 20px;
+    }
+    .testimonial {
+      margin-top: 20px;
+      font-style: italic;
+    }
+    .top-link {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .top-link a {
+      color: #6a1b9a;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-section">
+      <h2>Welcome Back</h2>
+      <form>
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" /><br />
+        <label for="password">Password</label><br />
+        <input type="password" id="password" name="password" /><br />
+        <div class="checkbox-group">
+          <input type="checkbox" id="remember" name="remember" />
+          <label for="remember">Remember me</label>
+        </div>
+        <a href="#" class="link">Forgot password?</a>
+        <button type="submit" class="login-button">Login</button>
+        <a href="#" class="link">Don't have an account? Sign up</a>
+      </form>
+    </div>
+    <div class="promo-section">
+      <div class="top-link">
+        <a href="#">Back to Home</a>
+      </div>
+      <h2>Transform Your Weight Loss Journey</h2>
+      <ul>
+        <li>Cycle-Synced Plans: Nutrition and fitness plans that align with your hormonal cycle.</li>
+        <li>Blood Work Analysis: In-depth analysis of your hormone levels to map how your health markers impact weight loss.</li>
+        <li>Personalized Dashboard: Based on your hormone levels and health markers, tailored recommendations are provided.</li>
+      </ul>
+      <div class="testimonial">
+        “After 3 months with HerBalance, I’ve lost 10 pounds and finally understand the root causes of my weight gain.” – Sarah, 31
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Conditions - Onboarding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f8f8fa;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            width: 900px;
+            margin-top: 50px;
+            background-color: #ffffff; /* This is an estimation, the background color of the main content area might be different */
+            border-radius: 8px; /* Assuming the main content has a slight border radius */
+            padding: 0; /* No padding on the main container itself, content elements have their own */
+        }
+        .onboarding-header {
+            background-color: #7b68ee; /* Purple header background */
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .onboarding-progress-bar {
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            width: 70%; /* Adjust as needed */
+            position: relative;
+        }
+        .onboarding-progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(3 / 10 * 100%); /* 3 out of 10 steps */
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 4px;
+        }
+        .onboarding-step-count {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .content-area {
+            background-color: #ffffff;
+            padding: 40px 80px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Added subtle shadow for depth */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+        h2 {
+            font-size: 28px;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #555555;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .conditions-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 35px 50px;
+            width: 100%;
+            max-width: 650px; /* Adjust max-width to control the card size */
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px; /* Adjust gap between columns and rows */
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #333333;
+            cursor: pointer;
+        }
+        .radio-option input[type="radio"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            margin-right: 12px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0; /* Prevent radio button from shrinking */
+        }
+        .radio-option input[type="radio"]:checked {
+            border-color: #7b68ee;
+        }
+        .radio-option input[type="radio"]:checked::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #7b68ee;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .info-message {
+            background-color: #f7f3ff;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 14px;
+            color: #5d4aa3;
+            line-height: 1.4;
+            width: 100%;
+            max-width: 650px;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+        .info-message i {
+            color: #7b68ee;
+            font-size: 20px;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 650px;
+        }
+        .button {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+        .back-button {
+            background-color: #f0f0f0;
+            color: #6a6e81;
+            border: 1px solid #dcdcdc;
+        }
+        .back-button:hover {
+            background-color: #e5e5e5;
+        }
+        .continue-button {
+            background-color: #7b68ee;
+            color: #ffffff;
+            border: none;
+        }
+        .continue-button:hover {
+            background-color: #6a5ac0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="onboarding-header">
+            <div class="onboarding-progress-bar"></div>
+            <div class="onboarding-step-count">3 of 10</div>
+        </div>
+
+        <div class="content-area">
+            <h2>Health Conditions</h2>
+            <p class="subtitle">Want to manually enter any key conditions or comorbidities?</p>
+
+            <div class="conditions-card">
+                <div class="conditions-grid">
+                    <label class="radio-option">
+                        <input type="radio" name="health_condition" value="pcos">
+                        PCOS
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="health_condition" value="hypothyroidism">
+                        Hypothyroidism
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="health_condition" value="insulin_resistance">
+                        Insulin resistance / Pre-diabetes
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="health_condition" value="high_cholesterol">
+                        High cholesterol
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="health_condition" value="sleep_apnea">
+                        Sleep apnea
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="health_condition" value="perimenopause_menopause">
+                        Perimenopause / Menopause
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="health_condition" value="digestive_issues">
+                        Digestive issues (IBS, leaky gut, etc.)
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="health_condition" value="other">
+                        Other
+                    </label>
+                </div>
+            </div>
+
+            <div class="info-message">
+                <i class="fas fa-info-circle"></i>
+                <span>
+                    Conditions like PCOS, thyroid issues, and insulin resistance affect how your body
+                    responds to workouts, food, and stress. We'll weave this into your personalized plan.
+                </span>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="button back-button">Back</button>
+                <button class="button continue-button">Continue</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

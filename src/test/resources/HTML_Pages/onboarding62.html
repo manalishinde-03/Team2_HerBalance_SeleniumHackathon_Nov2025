@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onboarding - Last Period Date</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9fb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 400px;
+      background-color: #fff;
+      padding: 30px;
+      margin-top: 50px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #eee;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      position: relative;
+      height: 10px;
+    }
+
+    .progress {
+      width: 60%;
+      height: 100%;
+      background-color: #6a1b9a;
+      border-radius: 5px;
+    }
+
+    .progress-text {
+      text-align: right;
+      font-size: 12px;
+      margin-top: 5px;
+      color: #666;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .date-input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    input[type="date"] {
+      padding: 8px;
+      font-size: 14px;
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .cycle-length {
+      font-size: 16px;
+      font-weight: bold;
+      color: #6a1b9a;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a148c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+    <div class="progress-text">Onboarding Progress: 6 of 10</div>
+
+    <h2>Last Period Date</h2>
+    <p>This helps us understand your current cycle phase and tailor recommendations.</p>
+
+    <label for="last-period">When did your last menstrual period start?</label>
+    <div class="date-input">
+      <input type="date" id="last-period" value="2023-09-15">
+      <div class="cycle-length">28</div>
+    </div>
+
+    <button>Continue</button>
+  </div>
+</body>
+</html>

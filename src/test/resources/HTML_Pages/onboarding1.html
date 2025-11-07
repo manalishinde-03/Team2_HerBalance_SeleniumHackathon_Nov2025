@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Blood Work - HerBalance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f8f8fa;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            width: 800px;
+            padding: 30px 40px;
+            box-sizing: border-box;
+        }
+        .onboarding-progress {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #6a6e81;
+            font-size: 14px;
+        }
+        .onboarding-progress-bar {
+            flex-grow: 1;
+            height: 4px;
+            background-color: #e0e0e0;
+            border-radius: 2px;
+            margin-right: 10px;
+            position: relative;
+        }
+        .onboarding-progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%; /* Represents 3 out of 10 steps, approximately */
+            height: 100%;
+            background-color: #6a6e81; /* Placeholder color, adjust if exact brand color is known */
+            border-radius: 2px;
+        }
+        h1 {
+            font-size: 28px;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .description {
+            font-size: 15px;
+            color: #555555;
+            text-align: center;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+        .description strong {
+            color: #7b68ee; /* HerBalance brand color */
+        }
+        .upload-section {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            flex: 1;
+            max-width: 380px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card.upload {
+            border-style: dashed;
+            border-color: #d1d5db;
+        }
+        .card-icon {
+            font-size: 40px;
+            color: #7b68ee; /* HerBalance primary color */
+            margin-bottom: 15px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .card-description {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        .upload-button {
+            background-color: #7b68ee;
+            color: #ffffff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .upload-button:hover {
+            background-color: #6a5ac0;
+        }
+        .upload-button i {
+            font-size: 18px;
+        }
+        .file-info {
+            font-size: 12px;
+            color: #888888;
+            margin-top: 15px;
+        }
+        .card.skip {
+            border-style: solid;
+            border-color: #e0e0e0;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        .skip .card-icon {
+            color: #666666;
+        }
+        .skip-link {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .skip-link i {
+            font-size: 20px;
+        }
+        .skip-text {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        .continue-button {
+            background-color: #f0f0f0;
+            color: #6a6e81;
+            padding: 12px 25px;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .continue-button:hover {
+            background-color: #e5e5e5;
+        }
+        .privacy-info {
+            background-color: #f7f3ff;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 14px;
+            color: #5d4aa3;
+            line-height: 1.4;
+        }
+        .privacy-info i {
+            color: #7b68ee;
+            font-size: 20px;
+        }
+        .privacy-info strong {
+            font-weight: 600;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="onboarding-progress">
+            <div class="onboarding-progress-bar"></div>
+            1 of 10
+        </div>
+
+        <h1>Upload Your Recent Blood Work</h1>
+        <p class="description">
+            Welcome to <strong>HerBalance</strong>! To create a health plan that truly fits you, upload your recent
+            blood work so we can provide personalized weight management recommendations
+            based on your unique health profile.
+        </p>
+
+        <div class="upload-section">
+            <div class="card upload">
+                <i class="fas fa-upload card-icon"></i>
+                <div class="card-title">Upload Your Blood Work</div>
+                <div class="card-description">
+                    Drag and drop your PDF file here, or click the button<br>
+                    below for a detailed analysis and personalized weight<br>
+                    management recommendations.
+                </div>
+                <button class="upload-button">
+                    <i class="fas fa-file-upload"></i> Upload PDF
+                </button>
+                <div class="file-info">PDF files only (Max 10MB)</div>
+            </div>
+
+            <div class="card skip">
+                <div class="skip-link">
+                    <i class="fas fa-link card-icon"></i> Skip for Now
+                </div>
+                <div class="skip-text">
+                    You can continue without uploading lab<br>
+                    results and add this<br>
+                    information later for<br>
+                    more personalized<br>
+                    recommendations.
+                </div>
+                <button class="continue-button" onclick="window.location.href='onboarding3.html'">
+                    Continue Without Report
+                </button>
+            </div>
+        </div>
+
+        <div class="privacy-info">
+            <i class="fas fa-info-circle"></i>
+            <div>
+                By sharing your blood work, we can create a personalized weight management plan that
+                works with your body's unique biochemistry.<br>
+                <strong>Your data is securely processed and never shared with third parties.</strong>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
