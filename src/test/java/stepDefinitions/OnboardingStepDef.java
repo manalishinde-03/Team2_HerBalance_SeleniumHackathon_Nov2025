@@ -142,4 +142,30 @@ public class OnboardingStepDef {
 		Assert.assertEquals(onboardingPage.getDataSecurityTextStep1(), expectedText);
 	
 	}
+	
+	@When("User clicks on Continue Without Report Button")
+	public void user_clicks_on_continue_without_report_button() {
+		onboardingPage = new OnboardingPage(driver);
+		onboardingPage.clickOnContinueWithoutReportBtn();
+		
+	}
+	@Then("User should navigate to step3 Health Conditions")
+	public void user_should_navigate_to_step3_health_conditions() {
+		onboardingPage = new OnboardingPage(driver);
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep3Title(), "Health Conditions");
+		
+	}
+	
+	
+
+@When("User clicks on Upload PDF Button")
+public void user_clicks_on_upload_pdf_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User should see Windows Explorer opened")
+public void user_should_see_windows_explorer_opened() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
 }

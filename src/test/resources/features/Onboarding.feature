@@ -55,31 +55,14 @@ Feature: Onboarding Process Step1
   @TC12
   Scenario: Display data security information
     Then Note about secure processing and no sharing with third parties is displayed
-    
-    
-    #Upload Functionality
-    
-     @TC13
+
+  #Upload Functionality
+  @TC13
   Scenario: Navigation to Onboarding step3
-  
-  	And User clicks on Continue Without Report Button
+    And User clicks on Continue Without Report Button
     Then User should navigate to step3 Health Conditions
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+  @TC14
+  Scenario: Navigation to Windows Explorer from Onboarding step3
+    And User clicks on Upload PDF Button
+    Then User should see Windows Explorer opened

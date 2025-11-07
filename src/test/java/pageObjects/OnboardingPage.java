@@ -29,6 +29,8 @@ public class OnboardingPage {
 	By SkipExplanationText = By.xpath("//div[@class='skip-text']");
 	By ContinueWithoutReportBtn = By.xpath("//button[@class='continue-button']");
 	By DataSecurityText = By.xpath("//div[@class='privacy-info']//div");
+	
+	By OnboardingPageStep3Title = By.xpath("//h2[text()='Health Conditions']");
 
 	public String getPageTitle() {
 
@@ -111,6 +113,16 @@ public class OnboardingPage {
 
 		System.out.println("Actual >> " + util.getElementText(DataSecurityText));
 		return util.getElementText(DataSecurityText);
+	}
+
+	public void clickOnContinueWithoutReportBtn() {
+		util.doClick(ContinueWithoutReportBtn);
+		
+	}
+
+	public String getOnboardingPageStep3Title() {
+
+		return util.getElementText(OnboardingPageStep3Title);
 	}
 
 }
