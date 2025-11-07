@@ -2,3 +2,83 @@
 2025-11-06 07:14:48.163 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
 2025-11-06 07:15:22.847 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
 2025-11-06 07:15:24.253 INFO [TestNG-PoolService-0] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:25.137 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:30.684 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:31.369 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:31.373 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:31.649 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:33.039 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:33.687 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:33.687 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:33.967 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:35.237 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:35.879 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:35.883 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:36.187 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:37.378 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:38.019 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:38.020 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:38.260 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:39.502 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:40.161 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:40.161 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:40.387 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:41.645 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:42.291 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:42.291 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:42.479 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:43.717 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:44.319 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:44.320 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:44.548 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:45.809 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:46.460 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:46.461 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:46.751 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:48.046 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:48.680 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:48.681 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:48.965 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:50.096 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:50.743 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:50.744 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:50.933 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:52.177 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:52.819 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:52.820 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:53.046 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:54.288 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:54.944 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:54.945 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:55.196 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:56.424 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:57.055 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:57.055 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:57.296 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:25:58.465 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:25:59.121 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:25:59.121 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:25:59.419 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:26:00.609 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:26:01.250 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:26:01.252 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:26:01.491 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:26:02.696 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:26:03.355 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:26:03.356 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:26:03.599 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:26:04.796 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:26:05.446 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:26:05.447 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:26:05.775 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:26:06.978 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:26:07.648 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:26:07.649 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:26:07.882 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:26:09.091 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:26:09.735 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:26:09.735 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-06 08:27:05.218 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-06 08:27:07.995 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: https://dsportalapp.herokuapp.com/
+2025-11-06 08:27:08.670 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-06 08:27:08.672 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
