@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Her Balance - Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      background-color: #f3e5f5;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+    }
+    .register-section, .promo-section {
+      flex: 1;
+      padding: 40px;
+    }
+    .register-section {
+      background-color: #ffffff;
+    }
+    .promo-section {
+      background-color: #fff0f6;
+    }
+    h2 {
+      color: #6a1b9a;
+    }
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .checkbox-group {
+      margin: 10px 0;
+    }
+    .checkbox-group label {
+      margin-left: 5px;
+    }
+    .register-button {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .register-button:hover {
+      background-color: #4a148c;
+    }
+    .link {
+      display: block;
+      margin-top: 10px;
+      color: #6a1b9a;
+      text-decoration: none;
+    }
+    .promo-section ul {
+      padding-left: 20px;
+    }
+    .testimonial {
+      margin-top: 20px;
+      font-style: italic;
+    }
+    .top-link {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .top-link a {
+      color: #6a1b9a;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="register-section">
+      <h2>Create an Account</h2>
+      <p>Join HerBalance to start your personalized journey.</p>
+      <form>
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" placeholder="you@example.com" /><br />
+        <label for="password">Password</label><br />
+        <input type="password" id="password" name="password" /><br />
+        <label for="confirm-password">Confirm Password</label><br />
+        <input type="password" id="confirm-password" name="confirm-password" /><br />
+        <div class="checkbox-group">
+          <input type="checkbox" id="show-passwords" name="show-passwords" />
+          <label for="show-passwords">Show passwords</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" name="terms" />
+          <label for="terms">By signing up you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</label>
+        </div>
+        <button type="submit" class="register-button">Register</button>
+	<script>
+function registerUser() {
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+  const confirmPassword = document.getElementById('confirm-password').value.trim();
+  const errorDiv = document.getElementById('error');
+
+  if (!email || !password || !confirmPassword) {
+    errorDiv.textContent = "Please fill all fields.";
+  } else if (password !== confirmPassword) {
+    errorDiv.textContent = "Passwords do not match.";
+  } else {
+    errorDiv.textContent = "";
+    // ✅ Navigate to onboarding page
+    window.location.href = 'Onboarding.html';
+  }
+}
+</script>
+        <a href="#" class="link">Already have an account? Log in</a>
+      </form>
+    </div>
+    <div class="promo-section">
+      <div class="top-link">
+        <a href="#">Back to Home</a>
+      </div>
+      <h2>Transform Your Weight Loss Journey</h2>
+      <ul>
+        <li><strong>Cycle-Synced Plans:</strong> Workout and nutrition recommendations that align with your hormonal cycle phases.</li>
+        <li><strong>Blood Work Analysis:</strong> Upload your blood work for personalized insights on how your health markers impact weight loss.</li>
+        <li><strong>Personalized Dashboard:</strong> Track your progress and receive tailored recommendations based on your health data and behavior.</li>
+      </ul>
+      <div class="testimonial">
+        “After 3 months with HerBalance, I've lost 8 pounds and finally understand how my hormones affect my weight loss journey.” – Sarah, 34
+      </div>
+    </div>
+  </div>
+</body>
+</html>
