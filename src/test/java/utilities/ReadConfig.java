@@ -34,9 +34,9 @@ public class ReadConfig {
 	}
 
 	// get Login credentials
-	public String getUsername() {
-		String username = pro.getProperty("UserName");
-		return username;
+	public String getEmail() {
+		String email = pro.getProperty("Email");
+		return email;
 	}
 
 	public String getPassword() {

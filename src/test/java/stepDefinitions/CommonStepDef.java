@@ -27,9 +27,9 @@ public class CommonStepDef {
 	
 	@Given("The browser is open")
 	public void the_browser_is_open() {
-		//String browserName = readConfig.getbrowser();
+		String browserName = readConfig.getbrowser();
 		
-		String browserName ="chrome";
+		//String browserName ="chrome";
 		driver = context.getDriverFactory().initialiseBrowser(browserName);
 	}
 
