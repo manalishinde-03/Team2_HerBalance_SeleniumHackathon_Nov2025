@@ -75,6 +75,14 @@ public class CommonStepDef {
 	@Given("User clicks activity insights button after logged in")
 	public void user_clicks_activity_insights_button_after_logged_in() {
 		try {
+			context.setDriver(driver);
+			String htmlPagePath = System.getProperty("user.dir") + "/src/test/resources/HTML_Pages/signin.html";
+			String localURL = "file://" + htmlPagePath;
+
+			driver.get(localURL);
+
+			System.out.println("URL>>>"+localURL);
+			context.getDriver().get(localURL);
 		    activityPage.enterUsername();
 		    activityPage.enterPassword();
 		    activityPage.clickOnLogin();
