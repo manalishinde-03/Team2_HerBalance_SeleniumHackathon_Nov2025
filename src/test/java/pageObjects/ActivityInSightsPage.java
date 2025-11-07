@@ -18,14 +18,14 @@ public class ActivityInSightsPage {
 	private WebDriver driver;
 	private ElementUtil util;
 	private ReadConfig readConfig;
-	private By userNameElem = By.xpath("//username");
+	private By userNameElem = By.xpath("//input[@type='email']");
 
-	private By passWordElem = By.xpath("//password");
-	private By loginButton = By.xpath("//login");
-	private By activityInsights = By.xpath("activity");
-	private List<By> activitySubmenuOptions = Arrays.asList(By.xpath("//trackweight']"), By.xpath("//foodintake"),
-			By.xpath("menustrallogs"));
-	private By trackWeight = By.xpath("trackweight");
+	private By passWordElem = By.xpath("//input[@type='password']");
+	private By loginButton = By.xpath("//button[@class='login-btn']");
+	private By activityInsights = By.xpath("//div[@class='menu-item' and normalize-space(text())='Activity Insights']");
+	private List<By> activitySubmenuOptions = Arrays.asList(By.xpath("//a[text()='Track Weight']"), By.xpath("//a[text()='Food Intake']"),
+			By.xpath("//a[text()='Menstrual Phase Logs']"));
+	private By trackWeight = By.xpath("//a[text()='Track Weight']");
 
 	public ActivityInSightsPage(WebDriver driver) {
 		this.driver = driver;

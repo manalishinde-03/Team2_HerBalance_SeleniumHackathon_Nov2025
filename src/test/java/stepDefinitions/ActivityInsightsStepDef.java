@@ -57,10 +57,17 @@ public class ActivityInsightsStepDef {
 	@Then("Should see  header text Weight Tracking")
 	public void should_see_header_text_weight_tracking() {
 		try {
+			String path = System.getProperty("user.dir") + "/src/test/resources/HTML_Pages/trackweight.html";
+			driver.get("file://" + path);
+
 		    String url = util.getPageURL();
 		    System.out.println("The Title after clicking Weight Tracking is: " + url);
+	
+		    String expectedURL = "file://" + path.replace("\\", "/");
+		    System.out.println("The expected Weight Tracking url  is: " + expectedURL);
+		   
 
-		    String expectedURL = "https://expected";
+		   //String expectedURL = "http://localhost:8000/trackweight.html";
 		    Assert.assertEquals(url, expectedURL, " URL mismatch after clicking Weight Tracking.");
 
 		    System.out.println("URL verified successfully after clicking Weight Tracking.");

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Her Balance Dashboard UI - Demo</title>
+
+<style>
+    body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        background-color: #faf9ff;
+        color: #3d3d3d;
+    }
+
+    /* --- HEADER (Top Navbar) --- */
+    .header {
+        width: 100%;
+        background: white;
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        font-size: 16px;
+    }
+
+   /* menu-item must wrap the dropdown */
+    .menu-item {
+        cursor: pointer;
+        font-weight: 500;
+        color: #6c62ff;
+        position: relative;       /* REQUIRED */
+    }
+
+    /* dropdown box */
+    .dropdown {
+        position: absolute;
+        top: 28px;
+        left: 0;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+        display: none;
+        width: 180px;
+        padding: 12px 0;
+        z-index: 999;
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 10px 16px;
+        color: #4b4b4b;
+        text-decoration: none;
+    }
+
+    .dropdown a:hover {
+        background: #eee9ff;
+    }
+
+    /* --- MAIN CONTENT --- */
+    .wrapper {
+        padding: 25px 40px;
+    }
+
+    .title-plan {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .subtext {
+        color: #9c92ff;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0px 3px 8px rgba(0,0,0,0.08);
+        width: 48%;
+        margin-bottom: 18px;
+    }
+
+    .section-flex {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .card-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #3d348b;
+    }
+
+    .metric {
+        font-size: 14px;
+        padding: 4px 0;
+    }
+
+    .bmi-scale {
+        width: 100%;
+        height: 15px;
+        background: linear-gradient(to right, #6cd6ff 0%, #6dff77 40%, #ffae00 70%, #ff5b5b 100%);
+        border-radius: 10px;
+        margin: 12px 0;
+        position: relative;
+    }
+
+    .pointer {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: black;
+        position: absolute;
+        top: -4px;
+        left: 42%;
+    }
+
+    .cta-btn {
+        border: none;
+        background: #6c62ff;
+        padding: 10px 16px;
+        border-radius: 6px;
+        color: white;
+        font-size: 13px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="header-left">
+        <div class="menu-item">
+            Activity Insights
+            <div class="dropdown">
+                <a href="trackweight.html" id="track-weight-link">Track Weight</a>
+                <a href="#">Food Intake</a>
+                <a href="#">Menstrual Phase Logs</a>
+            </div>
+        </div>
+
+        <div class="menu-item">Diet Plan</div>
+        <div class="menu-item">Workout</div>
+        <div class="menu-item">Water Tracker</div>
+    </div>
+
+    <div class="header-right">
+        <span>SDET</span>
+    </div>
+</div>
+
+<!-- MAIN BODY -->
+<div class="wrapper">
+
+    <div class="title-plan">Free Plan</div>
+    <div class="subtext">Enjoy our free plan with basic features and exclusive workout planning.</div>
+
+    <div class="section-flex">
+
+        <!-- LEFT CARD -->
+        <div class="card">
+            <div class="card-title">Weight & Body Metrics</div>
+            <div class="metric">Starting: <b>70 kg</b></div>
+            <div class="metric">Height: <b>5.2 ft/in</b></div>
+            <div class="metric">BMI: <b>28.2 (Overweight)</b></div>
+            <div class="metric">Weekly Target: <b>8.2 kg/week</b></div>
+            <div class="metric">Daily Weigh-in: <b>Morning, before food</b></div>
+
+            <div class="bmi-scale">
+                <div class="pointer"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="card">
+            <div class="card-title">Menstrual Cycle Insights</div>
+            <div class="metric">Phase: <b>Luteal Phase</b></div>
+            <div class="metric">Likely Symptoms: Bloating, Food cravings</div>
+            <div class="metric">Likely Cravings: Carbs, Nuts, Sweets</div>
+            <button class="cta-btn">View Full Cycle Details</button>
+        </div>
+
+        <!-- PCOS -->
+        <div class="card">
+            <div class="card-title">Health Conditions</div>
+            <div class="metric">PCOS</div>
+        </div>
+
+        <!-- BLOOD REPORT -->
+        <div class="card">
+            <div class="card-title">Blood Report Insights</div>
+            <div class="metric">Upload to see insights</div>
+        </div>
+
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+    const menuItem = document.querySelector('.menu-item');
+    const dropdown = menuItem.querySelector('.dropdown');
+
+    // Toggle dropdown on click
+    menuItem.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        dropdown.style.display = 'none';
+    });
+
+    // Prevent dropdown from closing when clicking inside it
+    dropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+
+    // Navigate to Track Weight on click
+    const trackWeightLink = document.getElementById('track-weight-link');
+    trackWeightLink.addEventListener('click', function() {
+        window.location.href = 'trackweight.html';
+    });
+</script>
+
+</body>
+</html>
