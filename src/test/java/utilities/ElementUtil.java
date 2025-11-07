@@ -43,7 +43,7 @@ public class ElementUtil {
 
 		try {
 
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));
 			wait.until(ExpectedConditions.visibilityOf(ele));
 
 			if (ele.isDisplayed()) {
@@ -75,7 +75,7 @@ public class ElementUtil {
 
 		try {
 
-			WebElement ele = new WebDriverWait(driver, Duration.ofSeconds(120))
+			WebElement ele = new WebDriverWait(driver, Duration.ofSeconds(3000))
 					.until(ExpectedConditions.visibilityOf(getElement(locator)));
 			if(ele == null)
 			{

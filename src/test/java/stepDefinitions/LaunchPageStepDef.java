@@ -15,7 +15,7 @@ public class LaunchPageStepDef {
 	WebDriver driver;
 	ReadConfig readConfig;
 	TestContext context;
-	LaunchPage loginPage;
+	LaunchPage launchPage;
 	SoftAssert softAssert;
 	 boolean menstralDisplay = false;
 	  String actualMenstralText = "";
@@ -24,7 +24,7 @@ public class LaunchPageStepDef {
 		this.context = Context;
 		this.driver = context.getDriver();
 		this.readConfig = new ReadConfig();
-		loginPage = new LaunchPage(driver);
+		launchPage = new LaunchPage(driver);
 		softAssert = new SoftAssert();
 	
 	}
@@ -36,15 +36,18 @@ public class LaunchPageStepDef {
 
 	@When("User enters app url")
 	public void user_enters_app_url() {
+		String htmlPage = "LaunchPage.html";
+		String URL = (readConfig.getApplicationURL())+htmlPage;
+		System.out.println("URL>>>"+URL);
 		context.setDriver(driver);
-		context.getDriver().get(readConfig.getApplicationURL());
+		context.getDriver().get(URL);
 	}
 
 	@Then("Display cards for {string}, {string}, {string}, and {string}")
 	public void display_cards_for_and(String expectedMenstralText, String expectedFollicularText, String expectedOvulationText, String expectedLuteal) {
 		 try {
-		        menstralDisplay = loginPage.isMenstrualPhaseDisplayed();
-		        actualMenstralText = loginPage.getMenstrualText();
+		        menstralDisplay = launchPage.isMenstrualPhaseDisplayed();
+		        actualMenstralText = launchPage.getMenstrualText();
 		    } catch (Exception e) {
 		        System.out.println("Expected: Dummy xpath should not be found.");
 		    }
