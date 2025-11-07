@@ -10,9 +10,9 @@ import utilities.ReadConfig;
 
 @CucumberOptions(
 		
-		features = {"src/test/resources/features/Onboarding.feature"}, 
-				glue = { "stepDefinitions" },
-				tags="@TC9",
+		features = {"src/test/resources/features/"}, 
+				glue = { "hooks","stepDefinitions" },
+				//tags="@TC9",
 				//tags="@TC12",
 				monochrome = true, 
 				dryRun = false, 
@@ -24,11 +24,17 @@ import utilities.ReadConfig;
 		})
 
 public class TestRunner extends AbstractTestNGCucumberTests {
-//	private static ThreadLocal<String> browser = new ThreadLocal<>();
+	private static ThreadLocal<String> browser = new ThreadLocal<>();
 	@Override
 	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
+	@BeforeTest
+    @Parameters({"browser"})
+    public void browserFromTestNG(@Optional String browser) {
+		ReadConfig readConfig = new ReadConfig();
+		readConfig.setBrowserFromTestNG(browser);
+    }
 
 }
