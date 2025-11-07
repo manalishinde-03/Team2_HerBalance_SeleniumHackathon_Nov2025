@@ -7,6 +7,7 @@ import hooks.TestContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageObjects.LaunchPage;
+import pageObjects.ActivityInSightsPage;
 import pageObjects.SignUpPage;
 import utilities.ReadConfig;
 
@@ -18,10 +19,12 @@ public class CommonStepDef {
 	LaunchPage launchPage;
 	SignUpPage signUpPage = new SignUpPage(driver);
 	ReadConfig readConfig = new ReadConfig();
+	ActivityInSightsPage activityPage;
 	
 	public CommonStepDef(TestContext context) {
 		this.context = context;
 	      this.driver = context.getDriver();
+	      activityPage = new ActivityInSightsPage(driver);
 		
 	}
 	
@@ -62,12 +65,27 @@ public class CommonStepDef {
 		
 		signUpPage = new SignUpPage(driver);
 		
-		
 		String signUpPageTitle = signUpPage.getPageTitle();
-		
+
 		System.out.println("Page title is: " + signUpPageTitle);
 		Assert.assertEquals(signUpPageTitle, "Her Balance - Register");
 	    
+	}
+	
+	@Given("User clicks activity insights button after logged in")
+	public void user_clicks_activity_insights_button_after_logged_in() {
+		try {
+		    activityPage.enterUsername();
+		    activityPage.enterPassword();
+		    activityPage.clickOnLogin();
+		    activityPage.clickOnActivityInsights(); 
+		    System.out.println("Logged in and click on Activity Insights executed successfully.");
+		} catch (Exception e) {
+		    System.out.println("Exception during login: " + e.getMessage());
+		    e.printStackTrace();
+		    Assert.fail("Log in and click on Activity Insights failed due to exception: " + e.getMessage());
+		}
+
 	}
 
 	

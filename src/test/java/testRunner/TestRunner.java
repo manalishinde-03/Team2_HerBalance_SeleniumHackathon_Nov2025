@@ -22,7 +22,7 @@ import utilities.ReadConfig;
 public class TestRunner extends AbstractTestNGCucumberTests {
 	private static ThreadLocal<String> browser = new ThreadLocal<>();
 	@Override
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
