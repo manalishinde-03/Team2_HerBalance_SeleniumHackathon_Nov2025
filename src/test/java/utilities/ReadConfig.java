@@ -32,7 +32,11 @@ public class ReadConfig {
 		String browser = pro.getProperty("browser");
 		return browser;
 	}
-
+// get Login credentials
+	public String getUsername() {
+		String username = pro.getProperty("UserName");
+		return username;
+	}
 	// get Login credentials
 	public String getEmail() {
 		String email = pro.getProperty("Email");
