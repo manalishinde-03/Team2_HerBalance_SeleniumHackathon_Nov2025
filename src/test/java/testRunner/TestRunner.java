@@ -10,10 +10,10 @@ import utilities.ReadConfig;
 
 @CucumberOptions(
 		
-		features = {"src/test/resources/features/Onboarding_Step3_HealthCondition.feature"}, 
+		features = {"src/test/resources/features/"}, 
 				glue = { "hooks","stepDefinitions" },
 				//tags="@TC9",
-				tags="@TC25",
+				//tags="@TC25",
 				monochrome = true, 
 				dryRun = false, 
 				plugin = { "pretty","html:target/index.html","json:target/cucumber-reports/Cucumber.json",
