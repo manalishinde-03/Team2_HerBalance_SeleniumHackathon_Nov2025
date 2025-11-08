@@ -237,8 +237,13 @@
             </div>
 
             <div class="navigation-buttons">
-                <button class="button back-button">Back</button>
-                <button class="button continue-button">Continue</button>
+                <button class="button back-button" onclick="navigateBack()">Back</button>
+				<script>
+  function navigateBack() {
+    window.location.href = 'onboarding1.html';
+  }
+</script>
+                <button class="button continue-button" onclick="window.location.href='onboarding4.html'">Continue</button>
             </div>
         </div>
     </div>

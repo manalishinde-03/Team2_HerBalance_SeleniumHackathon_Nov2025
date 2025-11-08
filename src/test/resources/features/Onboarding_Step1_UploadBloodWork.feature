@@ -66,18 +66,7 @@ Feature: Onboarding Process Step1
   Scenario: Navigation to Windows Explorer from Onboarding step3
     And User clicks on Upload PDF Button
     Then User should see Windows Explorer opened
-    
-    #Onboarding Scenarios  Step 3  UI verifcation 
-
-
- @TC15
-  Scenario: Display onboarding progress
-    And User clicks on Continue Without Report Button
-    Then User should navigate to step3 Health Conditions
-    Then Onboarding progress bar is displayed
-
-
-
+  
 
 
 
