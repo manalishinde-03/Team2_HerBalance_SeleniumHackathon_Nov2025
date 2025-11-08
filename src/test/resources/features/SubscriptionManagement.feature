@@ -44,6 +44,7 @@ Feature: Subscription Management UI and Functional Verification
     Then "Go to Dashboard" button should be visible and enabled
 
 
+
   Scenario: Header text inside the Subscription History section
     Given User is on the Her Balance Dashboard with the Profile submenu expanded
     When User clicks on Subscription
@@ -69,5 +70,5 @@ Feature: Subscription Management UI and Functional Verification
     When User clicks on Subscription
     Then The following details should be visible:
       | Start Date - End Date |
-      | Cost in $             |
-      | Transaction Id
+      | Cost            |
+      | Transaction Id |

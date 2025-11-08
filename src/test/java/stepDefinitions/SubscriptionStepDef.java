@@ -120,6 +120,81 @@ public class SubscriptionStepDef {
 	    
 	}
 
+	
+	@Given("User clicks profile button labelled as [user's name] after logged in")
+	public void user_clicks_profile_button_labelled_as_user_s_name_after_logged_in() {
+	    
+		
+	}
+
+	@Given("User is on the Her Balance Dashboard with the Profile submenu expanded")
+	public void user_is_on_the_her_balance_dashboard_with_the_profile_submenu_expanded() {
+
+	
+	}
+
+	@When("User clicks on Subscription")
+	public void user_clicks_on_subscription() {
+
+	
+	}
+
+	@Then("{string} should be visible")
+	public void should_be_visible(String string) {
+
+	
+	}
+
+	@Then("Exactly {int} sections should be visible")
+	public void exactly_sections_should_be_visible(Integer int1) {
+
+	
+	
+	}
+
+	@Then("{string} and {string} section headers should be displayed")
+	public void and_section_headers_should_be_displayed(String string, String string2) {
+
+	
+	}
+
+	@Then("{string} header should be displayed")
+	public void header_should_be_displayed(String string) {
+
+	
+	}
+
+	@Then("{string} and {string} subheaders should be visible")
+	public void and_subheaders_should_be_visible(String string, String string2) {
+
+	
+	
+	}
+
+	@Then("{string}, {string}, {string}, and {string} details should be visible")
+	public void and_details_should_be_visible(String string, String string2, String string3, String string4) {
+
+	
+	
+	}
+
+	@Then("{string} button should be visible and enabled")
+	public void button_should_be_visible_and_enabled(String string) {
+
+	
+	
+	}
+
+	@Then("The following details should be visible:")
+	public void the_following_details_should_be_visible(io.cucumber.datatable.DataTable dataTable) {
+
+	
+	
+	
+	}
+
+
+
 
 
 
