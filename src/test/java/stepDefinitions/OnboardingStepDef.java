@@ -2,7 +2,12 @@ package stepDefinitions;
 
 import static org.testng.Assert.assertTrue;
 
+import java.util.List;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import hooks.TestContext;
@@ -29,6 +34,8 @@ public class OnboardingStepDef {
 	public OnboardingStepDef(TestContext context) {
 		this.context = context;
 		this.driver = context.getDriver();
+		this.readConfig = new ReadConfig();
+		util = new ElementUtil(this.driver);
 
 	}
 
@@ -75,7 +82,8 @@ public class OnboardingStepDef {
 	public void verify_onboarding_progressBar_stepas1of10_isDisplayed() {
 		onboardingPage = new OnboardingPage(driver);
 
-		assertTrue(onboardingPage.isOnboardingProgressBar1of10Displayed(), "Onboarding progress bar should show the current step as 1 of 10");
+		assertTrue(onboardingPage.isOnboardingProgressBar1of10Displayed(),
+				"Onboarding progress bar should show the current step as 1 of 10");
 
 	}
 
@@ -83,7 +91,7 @@ public class OnboardingStepDef {
 	public void verify_upload_pdf_button_is_displayed() {
 		onboardingPage = new OnboardingPage(driver);
 		assertTrue(onboardingPage.isUploadPDFButtonDisplayed(), "Upload PDF button should be displayed");
-		
+
 	}
 
 	@Then("Verify Upload PDF button is enabled")
@@ -96,7 +104,7 @@ public class OnboardingStepDef {
 	public void verify_pdf_files_only_max_10mb_is_visible() {
 		onboardingPage = new OnboardingPage(driver);
 		assertTrue(onboardingPage.isPDFFilesOnlyTextDisplayed(), "PDF Files Only Text should be displayed");
-		
+
 		String expectedText = "PDF files only (Max 10MB)";
 		Assert.assertEquals(onboardingPage.getPDFFilesOnlyTextStep1(), expectedText);
 	}
@@ -110,62 +118,175 @@ public class OnboardingStepDef {
 	@Then("Explanation text about continuing without lab results is displayed")
 	public void explanation_text_about_continuing_without_lab_results_is_displayed() {
 		onboardingPage = new OnboardingPage(driver);
-		assertTrue(onboardingPage.isExplanationTextDisplayed(), "Explanation text about continuing without lab results should be displayed");
-	
-		String expectedText = "You can continue without uploading lab\r\n"
-				+ "results and add this\r\n"
-				+ "information later for\r\n"
-				+ "more personalized\r\n"
-				+ "recommendations.";
+		assertTrue(onboardingPage.isExplanationTextDisplayed(),
+				"Explanation text about continuing without lab results should be displayed");
+
+		String expectedText = "You can continue without uploading lab\r\n" + "results and add this\r\n"
+				+ "information later for\r\n" + "more personalized\r\n" + "recommendations.";
 		Assert.assertEquals(onboardingPage.getSkipExplanationText(), expectedText);
 	}
 
 	@Then("Continue Without Report button is displayed")
 	public void continue_without_report_button_is_displayed() {
 		onboardingPage = new OnboardingPage(driver);
-		assertTrue(onboardingPage.isContinueWithoutReportBtnDisplayed(), "Continue Without Report button should be displayed");
+		assertTrue(onboardingPage.isContinueWithoutReportBtnDisplayed(),
+				"Continue Without Report button should be displayed");
 	}
 
 	@Then("Continue Without Report button is enabled")
 	public void continue_without_report_button_is_enabled() {
 		onboardingPage = new OnboardingPage(driver);
-		assertTrue(onboardingPage.isContinueWithoutReportBtnEnabled(), "Continue Without Report button should be enabled");
+		assertTrue(onboardingPage.isContinueWithoutReportBtnEnabled(),
+				"Continue Without Report button should be enabled");
 	}
 
 	@Then("Note about secure processing and no sharing with third parties is displayed")
 	public void note_about_secure_processing_and_no_sharing_with_third_parties_is_displayed() {
 		onboardingPage = new OnboardingPage(driver);
-		assertTrue(onboardingPage.isDataSecurityTextDisplayed(), "Note about secure processing and no sharing with third parties Text should be displayed");
-	
+		assertTrue(onboardingPage.isDataSecurityTextDisplayed(),
+				"Note about secure processing and no sharing with third parties Text should be displayed");
+
 		String expectedText = "By sharing your blood work, we can create a personalized weight management plan that works with your body's unique biochemistry.\r\n"
 				+ "Your data is securely processed and never shared with third parties.";
 		Assert.assertEquals(onboardingPage.getDataSecurityTextStep1(), expectedText);
-	
+
 	}
-	
+
 	@When("User clicks on Continue Without Report Button")
 	public void user_clicks_on_continue_without_report_button() {
 		onboardingPage = new OnboardingPage(driver);
 		onboardingPage.clickOnContinueWithoutReportBtn();
-		
+
 	}
+
 	@Then("User should navigate to step3 Health Conditions")
 	public void user_should_navigate_to_step3_health_conditions() {
 		onboardingPage = new OnboardingPage(driver);
 		Assert.assertEquals(onboardingPage.getOnboardingPageStep3Title(), "Health Conditions");
+
+	}
+
+	@When("User clicks on Upload PDF Button")
+	public void user_clicks_on_upload_pdf_button() {
+		onboardingPage.clickOnUploadPDFBtn();
+	}
+
+	@Then("User should see Windows Explorer opened")
+	public void file_upload_dialog_should_be_opened() throws InterruptedException {
+		WebElement fileInput = driver.findElement(By.id("bloodwork-upload"));
+
+		fileInput.sendKeys("C:\\Users\\manal_\\Documents\\test.txt");
+		// Assert.assertTrue(fileInput.isDisplayed(), "File input is not available");
+		Assert.assertTrue(onboardingPage.fileUploadDialogIsDisplayed(), "File upload dialog should be displayed ");
+	}
+	
+	@Given("User is on Upload Blood Work page")
+	public void user_is_on_upload_blood_work_page() {
+	    
+		try {
+			
+			String htmlPage = "onboarding1.html";
+			String URL = (readConfig.getApplicationURL())+htmlPage;
+			System.out.println("URL>>>"+URL);
+			context.getDriver().get(URL);
+		    //String url = util.getPageURL() +"onboarding1.html";
+		    //System.out.println("The Title after clicking Register: " + url);
+		} catch (Exception e) {
+		    System.err.println("Exception : " + e.getMessage());
+		    e.printStackTrace();
+		   
+		}
+		
+	}
+
+	@Then("Progress bar shows the current step as  3 of 10")
+	public void progress_bar_shows_the_current_step_as_of() {
+	    
+		
+		assertTrue(onboardingPage.isOnboardingProgressBar3of10Displayed(),
+				"Onboarding progress bar should show the current step as 3 of 10");
+	}
+
+	@Then("Back button is displayed")
+	public void back_button_is_displayed() {
+		
+		assertTrue(onboardingPage.isBackButtonStep3Displayed(), "Back button should be displayed");
+	}
+
+	@Then("Back button should be enabled")
+	public void back_button_should_be_enabled() {
+		assertTrue(onboardingPage.isBackButtonStep3Enabled(), "Back button should be enabled");
+	}
+
+	@Then("Continue button should be visible")
+	public void continue_button_should_be_visible() {
+		
+		assertTrue(onboardingPage.isContinueButtonStep3Displayed(), "Continue button should be displayed");
+	}
+
+	@Then("Continue button should be enabled")
+	public void continue_button_should_be_enabled() {
+		
+		assertTrue(onboardingPage.isContinueButtonStep3Enabled(), "Continue button should be enabled");
+	}
+
+	@Then("Header should be Health conditions")
+	public void header_should_be_health_conditions() {
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep3Title(), "Health Conditions");
+	}
+
+	@Then("Sub title for the header in Step3 is visible")
+	public void sub_title_for_the_header_in_step3_is_visible() {
+		
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep3SubTitle(), "Want to manually enter any key conditions or comorbidities?");
+	}
+
+	@Then("Total {int} Radio buttons should be visible")
+	public void total_radio_buttons_should_be_visible(int expectedCount) {
+	    
+		Assert.assertEquals(onboardingPage.radioButtonsSize(), expectedCount);
+	}
+
+	@Then("Health condition options should be :")
+	public void health_condition_options_should_be_visible(io.cucumber.datatable.DataTable dataTable) {
+		
+		List<String> expectedOptions = dataTable.asList();
+		 Assert.assertEquals(onboardingPage.radioButtonsOptionsText(), expectedOptions, "Radio options do not match");
+		
+		
+	}
+
+	@Then("Note text should displayed")
+	public void note_text_should_displayed() {
+		
+		String expectedText = "Conditions like PCOS, thyroid issues, and insulin resistance affect how your body\r\n"
+				+ "responds to workouts, food, and stress. We'll weave this into your personalized plan.";
+	    
+		Assert.assertEquals(onboardingPage.getNoteTextStep3(), expectedText);
 		
 	}
 	
 	
-
-@When("User clicks on Upload PDF Button")
-public void user_clicks_on_upload_pdf_button() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("User should see Windows Explorer opened")
-public void user_should_see_windows_explorer_opened() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
