@@ -10,9 +10,9 @@ import utilities.ReadConfig;
 
 @CucumberOptions(
 		
-		features = {"src/test/resources/features/Onboarding.feature"}, 
+		features = {"src/test/resources/features/EditProfile.feature"}, 
 				glue = { "stepDefinitions" },
-				tags="@TC9",
+				//tags="@TC9",
 				//tags="@TC12",
 				monochrome = true, 
 				dryRun = false, 

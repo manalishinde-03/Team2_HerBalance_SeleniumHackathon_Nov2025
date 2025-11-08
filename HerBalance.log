@@ -258,3 +258,198 @@
 2025-11-08 13:50:26.006 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
 2025-11-08 13:50:26.006 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
 2025-11-08 13:50:26.378 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:53:44.790 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:53:47.518 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:53:52.413 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:53:52.457 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:53:53.536 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:53:53.793 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:53:54.935 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:53:59.827 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:53:59.832 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:00.168 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:00.444 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:01.672 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:54:06.582 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:54:06.588 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:07.035 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:07.267 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:08.342 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:54:13.277 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:54:13.279 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:13.759 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:13.966 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:15.110 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:54:20.031 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:54:20.034 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:20.377 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:20.623 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:21.745 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:54:26.623 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:54:26.627 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:27.024 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:27.269 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:28.381 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:54:33.253 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:54:33.256 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:33.626 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:33.842 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:35.002 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:54:39.976 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:54:39.979 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:40.481 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:40.721 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:41.886 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:54:46.926 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:54:46.928 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:47.419 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:47.633 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:48.697 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:54:53.702 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:54:53.705 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:54:54.166 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:54:54.404 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:54:55.487 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:00.481 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:00.484 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:00.986 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:01.220 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:02.641 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:07.887 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:07.891 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:08.353 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:08.626 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:10.308 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:15.530 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:15.538 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:15.947 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:16.216 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:17.694 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:22.623 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:22.627 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:23.061 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:23.331 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:24.879 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:30.123 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:30.126 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:30.543 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:30.793 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:32.212 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:37.170 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:37.170 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:37.615 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:37.913 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:39.300 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:44.273 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:44.278 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:44.716 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:44.990 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:46.380 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:51.360 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:51.365 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:51.789 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:52.076 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:53.512 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:55:56.161 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:55:56.165 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:55:56.575 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:55:56.850 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:55:58.303 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:03.223 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:03.227 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:03.683 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:03.958 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:05.426 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:08.009 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:08.012 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:08.449 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:08.670 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:09.832 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:12.399 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:12.409 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:12.887 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:13.215 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:14.733 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:19.684 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:19.686 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:20.190 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:20.469 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:21.681 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:26.633 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:26.636 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:27.078 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:27.341 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:28.399 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:33.686 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:33.687 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:34.126 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:34.391 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:35.586 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:40.941 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:40.945 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:41.363 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:41.610 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:42.800 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:47.758 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:47.760 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:48.204 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:48.465 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:49.628 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:56:54.595 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:56:54.596 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:56:55.003 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:56:55.210 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:56:56.310 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:01.304 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:01.306 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:01.771 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:01.966 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:03.193 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:08.504 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:08.506 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:08.938 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:09.172 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:10.373 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:15.220 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:15.222 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:15.637 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:15.880 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:17.001 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:21.862 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:21.866 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:22.190 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:22.419 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:23.417 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:28.286 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:28.291 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:28.606 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:28.812 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:29.965 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:34.828 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:34.831 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:35.134 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:35.373 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:36.435 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:41.298 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:41.301 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:41.647 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:41.873 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:42.939 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:47.845 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:47.847 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:48.268 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:48.746 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:49.906 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:57:54.819 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:57:54.823 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:57:55.318 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:57:55.610 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:57:56.995 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:58:01.992 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:58:01.996 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:58:02.458 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:58:02.680 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:58:03.784 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:58:08.652 INFO [main] [utilities.Log.logInfo(Log.java:13)] - URL is NOT reachable, marking test as FAILED.
+2025-11-08 14:58:08.656 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:58:08.989 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver

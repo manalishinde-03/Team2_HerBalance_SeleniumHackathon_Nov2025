@@ -1,10 +1,35 @@
 package stepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.asserts.SoftAssert;
+
+import hooks.TestContext;
 import io.cucumber.java.en.*;
+import pageObjects.LaunchPage;
+import pageObjects.SubscriptionManagement;
+import pageObjects.SubscriptionPage;
+import utilities.ReadConfig;
 
 public class SubscriptionStepDef {
 	
+	WebDriver driver;
+	ReadConfig readConfig;
+	TestContext context;
+	SubscriptionPage subscriptionPage;
+	SubscriptionManagement subscriptionManagement;
+	SoftAssert softAssert;
+	 
 	
+	public SubscriptionStepDef(TestContext Context) {
+		this.context = Context;
+		this.driver = context.getDriver();
+		this.readConfig = new ReadConfig();
+		subscriptionPage = new SubscriptionPage(driver);
+		subscriptionManagement = new SubscriptionManagement(driver);
+		
+		softAssert = new SoftAssert();
+	
+	}
 	
 	@Given("User completes onboarding process until step {int}")
 	public void user_completes_onboarding_process_until_step(Integer int1) {

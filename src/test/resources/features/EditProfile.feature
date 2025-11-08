@@ -1,6 +1,6 @@
 Feature: Edit Your Profile UI
 
-  Background:
+  Background: 
     Given User clicks "Edit Profile" submenu from Dashboard Profile page
 
   # Edit Profile Main UI Verification
