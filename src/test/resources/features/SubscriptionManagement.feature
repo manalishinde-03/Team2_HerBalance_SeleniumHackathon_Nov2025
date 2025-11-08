@@ -3,7 +3,6 @@ Feature: Subscription Management UI and Functional Verification
   Background:
     Given User clicks profile button labelled as [user's name] after logged in
 
-  # Subscription Management - Page Verification
   Scenario: Title is displayed
     Given User is on the Her Balance Dashboard with the Profile submenu expanded
     When User clicks on Subscription
@@ -19,7 +18,6 @@ Feature: Subscription Management UI and Functional Verification
     When User clicks on Subscription
     Then "Current Subscription" and "Subscription History" section headers should be displayed
 
-  # Current Subscription Section UI Verification
   Scenario: Header text inside the Current Subscription section
     Given User is on the Her Balance Dashboard with the Profile submenu expanded
     When User clicks on Subscription
@@ -45,7 +43,7 @@ Feature: Subscription Management UI and Functional Verification
     When User clicks on Subscription
     Then "Go to Dashboard" button should be visible and enabled
 
-  # Subscription History Section UI Verification
+
   Scenario: Header text inside the Subscription History section
     Given User is on the Her Balance Dashboard with the Profile submenu expanded
     When User clicks on Subscription
