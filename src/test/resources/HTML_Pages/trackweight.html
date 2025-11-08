@@ -1,169 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Weight Tracking</title>
+  <meta charset="UTF-8" />
+  <title>Weight Tracking - Free Plan (7 Days)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg: #f7f5fb;
+      --card: #ffffff;
+      --text: #2d2240;
+      --muted: #6a5b88;
+      --accent: #7b4dff;   /* primary purple */
+      --accent-2: #9a7cff; /* lighter purple */
+      --border: #e6e0f2;
+      --success: #25c685;
+    }
 
-<style>
+    /* Reset and base */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f4f2ff;
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    a.back {
-        padding: 18px 25px;
-        display: inline-block;
-        text-decoration: none;
-        color: #5a43d6;
-        font-weight: bold;
+    /* Container */
+    .wrap {
+      max-width: 1040px;
+      margin: 40px auto;
+      padding: 0 24px;
     }
 
-    h1 {
-        text-align: center;
-        margin-top: -10px;
-        color: #4a33a3;
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
     }
 
-    h3 {
-        text-align: center;
-        color: #7a74b3;
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .back::before {
+      content: "←";
+      font-weight: 700;
     }
 
-    /* top 3 cards */
-    .card-row {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 25px auto;
-        width: 80%;
-        flex-wrap: wrap;
+    .title-block {
+      text-align: center;
+      margin: 0 auto;
+    }
+    .title {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* Cards grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
     }
 
     .card {
-        background: white;
-        padding: 18px;
-        width: 220px;
-        border-radius: 12px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.11);
-        text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(34, 16, 75, 0.06);
+    }
+
+    /* Info row */
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .info {
+      background: #fbfaff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: center; /* text alignment exactly centered */
     }
 
     .label {
-        font-size: 14px;
-        color: gray;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
 
     .value {
-        font-size: 22px;
-        font-weight: bold;
-        margin-top: 6px;
+      margin-top: 6px;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
     }
 
     /* Progress overview */
-    .panel {
-        background: white;
-        width: 80%;
-        margin: 25px auto;
-        padding: 22px;
-        border-radius: 12px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.11);
+    .progress {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
     }
 
-    .progress-container {
-        height: 10px;
-        background: #e8e2ff;
-        border-radius: 20px;
-        margin: 20px 0;
+    .progress .stat {
+      background: #fbfaff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: center; /* match centered alignment */
+    }
+    .progress .stat .value {
+      color: var(--accent);
     }
 
-    .progress-bar {
-        height: 10px;
-        width: 0%;
-        background: #5a43d6;
-        border-radius: 20px;
+    /* Graph card */
+    .graph-title {
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      text-align: left; /* title left aligned */
     }
 
-    .stats {
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-        margin-top: 18px;
+    .graph {
+      background: #fbfaff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
     }
 
-    .chart-box {
-        background: white;
-        width: 80%;
-        height: 260px;
-        border-radius: 12px;
-        margin: 25px auto 60px auto;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.11);
-        border: 2px dashed #c6befb;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #5a43d6;
-        font-size: 24px;
-        font-weight: bold;
+    /* Faux chart area */
+    .chart {
+      position: relative;
+      height: 260px;
+      border-left: 2px solid #cfc6e6;
+      border-bottom: 2px solid #cfc6e6;
+      margin: 20px 16px 8px 54px; /* spacing to place axes labels */
     }
 
-</style>
+    /* Y-axis labels (61.8 to 72.0) */
+    .y-labels {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 54px;
+      height: 260px;
+      display: grid;
+      grid-template-rows: repeat(6, 1fr);
+      align-items: center;
+      justify-items: end;
+      padding-right: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* X-axis labels (Day 1 to Day 7) */
+    .x-labels {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0;
+      margin: 8px 16px 0 54px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .x-labels span {
+      text-align: center;
+    }
+
+    /* Single data point at Day 1, 70.0 kg */
+    .point {
+      position: absolute;
+      left: calc(0% - 6px); /* Day 1 at start; offset for dot radius */
+      /* Map 61.8–72.0 to 0–100% height; 70.0 sits ~75% up from bottom of range */
+      bottom: calc((70 - 61.8) / (72 - 61.8) * 100%);
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(123, 77, 255, 0.18);
+    }
+
+    .point-label {
+      position: absolute;
+      left: -6px;
+      transform: translateY(-24px);
+      background: #fff;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    /* Axis headings */
+    .axis-y {
+      position: absolute;
+      left: -4px;
+      top: -24px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      transform: rotate(-90deg);
+      transform-origin: left top;
+    }
+
+    .axis-x {
+      margin-left: 54px;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Log today's weight */
+    .log-card .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .log-card .section-title {
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .log-card .section-sub {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+    .field label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .input, .textarea {
+      background: #fbfaff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+    }
+    .textarea { min-height: 80px; resize: vertical; }
+
+    .row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .bmi {
+      display: grid;
+      gap: 6px;
+    }
+    .bmi .pill {
+      background: #fbfaff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 16px rgba(123, 77, 255, 0.25);
+      cursor: pointer;
+      transition: transform 0.02s ease, box-shadow 0.2s ease;
+    }
+    .btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 10px rgba(123, 77, 255, 0.2);
+    }
+
+    /* Responsiveness */
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <!-- Header -->
+    <div class="header">
+      <a href="#" class="back">Back to Dashboard</a>
+      <div class="title-block">
+        <h1 class="title">Weight Tracking</h1>
+        <div class="subtitle">Free Plan - 7 Days Tracking</div>
+      </div>
+      <div style="width:120px;"></div> <!-- spacer to balance header alignment -->
+    </div>
 
-<a href="activityinsights.html" class="back">← Back to Dashboard</a>
-
-<h1>Weight Tracking</h1>
-<h3>Free Plan — 7 Days Tracking</h3>
-
-<!-- TOP CARDS  -->
-<div class="card-row">
-
+    <!-- Top cards: info + progress -->
     <div class="card">
-        <div class="label">Starting Weight</div>
-        <div class="value">70.0 kg</div>
-    </div>
-
-    <div class="card">
-        <div class="label">Current Weight</div>
-        <div class="value">70.0 kg</div>
-    </div>
-
-    <div class="card">
-        <div class="label">Goal Weight</div>
-        <div class="value">61.8 kg</div>
-    </div>
-
-</div>
-
-<!-- PROGRESS OVERVIEW PANEL -->
-<div class="panel">
-
-    <h2 style="margin-top:0;">Progress Overview</h2>
-
-    <div style="text-align:right; font-size:13px; color:#5a43d6;">0.0% Complete</div>
-
-    <div class="progress-container">
-        <div class="progress-bar"></div>
-    </div>
-
-    <div class="stats">
-        <div>
-            Weight Lost<br><span class="value">0.0 kg</span>
+      <div class="info-row">
+        <div class="info">
+          <div class="label">Starting weight</div>
+          <div class="value">70.0 kg</div>
         </div>
-        <div>
-            Remaining<br><span class="value" style="color:#ff6a00;">8.2 kg</span>
+        <div class="info">
+          <div class="label">Current weight</div>
+          <div class="value">70.0 kg</div>
         </div>
+        <div class="info">
+          <div class="label">Goal weight</div>
+          <div class="value">61.8 kg</div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="stat">
+          <div class="label">Weight loss progress</div>
+          <div class="value">0.0% Complete</div>
+        </div>
+        <div class="stat">
+          <div class="label">Weight lost</div>
+          <div class="value">0.0 kg</div>
+        </div>
+        <div class="stat">
+          <div class="label">Remaining</div>
+          <div class="value">8.2 kg</div>
+        </div>
+      </div>
     </div>
 
-</div>
+    <div class="grid">
+      <!-- Graph -->
+      <div class="card">
+        <h3 class="graph-title">Weight Progression Over Time</h3>
+        <div class="graph">
+          <div class="y-labels">
+            <span>72.0</span>
+            <span>70.6</span>
+            <span>69.2</span>
+            <span>67.8</span>
+            <span>66.4</span>
+            <span>61.8</span>
+          </div>
 
-<!-- STATIC PLACEHOLDER CHART -->
-<div class="chart-box">
-    Chart Placeholder
-</div>
+          <div class="chart">
+            <span class="axis-y">Weight (kg)</span>
+            <!-- Point for Day 1 at 70.0 kg -->
+            <div class="point"></div>
+            <div class="point-label">Current Weight</div>
+          </div>
 
+          <div class="x-labels">
+            <span>Day 1</span>
+            <span>Day 2</span>
+            <span>Day 3</span>
+            <span>Day 4</span>
+            <span>Day 5</span>
+            <span>Day 6</span>
+            <span>Day 7</span>
+          </div>
+
+          <div class="axis-x">Day</div>
+        </div>
+      </div>
+
+      <!-- Log today's weight -->
+      <div class="card log-card">
+        <div class="section-head">
+          <div class="section-title">Log Today's Weight</div>
+          <div class="section-sub">Day 1 of 7</div>
+        </div>
+
+        <div class="form">
+          <div class="row-3">
+            <div class="field">
+              <label for="weight">Weight (kg)</label>
+              <input id="weight" type="number" class="input" placeholder="e.g., 70.0" />
+            </div>
+            <div class="field">
+              <label for="note">Note (optional)</label>
+              <input id="note" type="text" class="input" placeholder="How did today go?" />
+            </div>
+            <div class="bmi">
+              <label for="bmi">BMI (Auto-calculated)</label>
+              <div id="bmi" class="pill">—</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn">Log Weight</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional demo BMI calc (height in meters) -->
+  <script>
+    const weightInput = document.getElementById('weight');
+    const bmiPill = document.getElementById('bmi');
+    const HEIGHT_M = 1.70; // adjust if you want a specific test height
+
+    weightInput?.addEventListener('input', () => {
+      const w = parseFloat(weightInput.value);
+      if (!isNaN(w) && HEIGHT_M > 0) {
+        const bmi = w / (HEIGHT_M * HEIGHT_M);
+        bmiPill.textContent = bmi.toFixed(1);
+      } else {
+        bmiPill.textContent = '—';
+      }
+    });
+  </script>
 </body>
 </html>
