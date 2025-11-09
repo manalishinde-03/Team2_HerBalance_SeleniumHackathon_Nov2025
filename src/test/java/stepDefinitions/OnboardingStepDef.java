@@ -170,6 +170,17 @@ public class OnboardingStepDef {
 	public void user_clicks_on_upload_pdf_button() {
 		onboardingPage.clickOnUploadPDFBtn();
 	}
+	
+	@When("User clicks on Back Button on Step4")
+	public void user_clicks_on_back_button_step4() {
+		onboardingPage.clickOnBackBtnStep4();
+	}
+	
+	
+	@When("User clicks on Continue Button on Step4")
+	public void user_clicks_on_continue_button_step4() {
+		onboardingPage.clickOnContinueBtnStep4();
+	}
 
 	@Then("User should see Windows Explorer opened")
 	public void file_upload_dialog_should_be_opened() throws InterruptedException {
@@ -317,7 +328,6 @@ public class OnboardingStepDef {
 		for (String expected : expectedHelperTexts) {
 	        Assert.assertTrue(onboardingPage.getActualHelperTexts().contains(expected));
 	    }
-		
 	}
 
 	@Then("Total number of radio buttons should be {int}")
@@ -342,6 +352,73 @@ public class OnboardingStepDef {
 				"Onboarding progress bar should show the current step as 4 of 10");
 	}
 
+
+	@Then("Verify user navigates to Step5 after clicking Continue button")
+	public void verify_user_navigates_to_step5_after_clicking_continue_button() {
+	    
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep5Title(), "Menstrual Cycle Awareness");
+	}
+	
+	@Given("User is on Personal Details page")
+	public void user_is_on_personal_details_page() {
+	    
+try {
+			
+			String htmlPage = "onboarding4.html";
+			String URL = (readConfig.getApplicationURL())+htmlPage;
+			System.out.println("URL>>>"+URL);
+			context.getDriver().get(URL);
+		} catch (Exception e) {
+		    System.err.println("Exception : " + e.getMessage());
+		    e.printStackTrace();
+		}
+	}
+	
+	@When("User enters valid personal details {string},{string} and {string} and clicks on Continue Button")
+	public void user_enters_valid_personal_details_and_and_clicks_on_continue_button(String FirstName, String Age, String BPStatus) {
+		onboardingPage = new OnboardingPage(driver);
+		onboardingPage.enterPersonalDetailsStep4(FirstName, Age);
+		onboardingPage.selectBloodPressureStatus(BPStatus);
+		onboardingPage.clickOnContinueBtnStep4();
+	}
+
+	@Then("Title of the page should be Menstrual Cycle Awareness")
+	public void title_of_the_page_should_be_menstrual_cycle_awareness() {
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep5Title(), "Menstrual Cycle Awareness");
+	}
+
+	@Then("Verify description text for step5")
+	public void verify_description_text_for_step5() {
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep5SubTitle(), "Understanding your cycle helps us optimize your weight loss journey.");
+	}
+
+	@Then("User should see the question on Step5")
+	public void user_should_see_the_question_on_step5() {
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep5QuestionText(), "Do you currently track your menstrual cycle?");
+	}
+	
+	@Then("Progress bar shows the current step as  5 of 10")
+	public void progress_bar_shows_the_current_step_as_of5() {
+		assertTrue(onboardingPage.isOnboardingProgressBar5of10Displayed(),
+				"Onboarding progress bar should show the current step as 5 of 10");
+	}
+	
+	@Then("Total number of radio buttons in Step5 should be {int}")
+	public void total_number_of_radio_buttons_should_be_step5(int expectedCount) {
+		    
+			Assert.assertEquals(onboardingPage.radioButtonsStep5Size(), expectedCount);
+		}
+
+	@Then("Following Radio options for  menstrual cycle awareness should be displayed")
+	public void following_radio_options_for_menstrual_cycle_awareness_should_be_displayed(io.cucumber.datatable.DataTable dataTable) {
+		    
+			List<String> expectedRadioOptions = dataTable.asList();
+			
+			Assert.assertEquals(onboardingPage.getActualRadioOptionsMenstrualCycleAwareness(),expectedRadioOptions,"Radio options do not match");
+			
+		}
+	}
+
 	
 	
 	
@@ -358,8 +435,4 @@ public class OnboardingStepDef {
 	
 	
 	
-	
-	
-	
-	
-}
+

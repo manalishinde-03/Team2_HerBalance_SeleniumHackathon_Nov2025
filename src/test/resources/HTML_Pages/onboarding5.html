@@ -177,12 +177,13 @@
         .back-button:hover {
             background-color: #e5e5e5;
         }
-        .continue-button {
-            background-color: #e0e0e0; /* Disabled look */
-            color: #a0a0a0; /* Disabled text color */
+		
+		.continue-button {
+            background-color: #7b68ee;
+            color: #ffffff;
             border: none;
-            cursor: not-allowed; /* Indicate disabled state */
         }
+      
         .continue-button:hover {
             background-color: #e0e0e0; /* Keep same background on hover when disabled */
         }
@@ -227,8 +228,18 @@
         </div>
 
         <div class="navigation-bottom">
-            <button class="button back-button">Back</button>
-            <button class="button continue-button" disabled>Continue</button>
+            <button class="button back-button" onclick="navigateBack()">Back</button>
+			<script>
+  function navigateBack() {
+    window.location.href = 'onboarding4.html';
+  }
+</script>
+            <button class="button continue-button" onclick="navigateToStep6()">Continue</button>
+			<script>
+  function navigateToStep6() {
+    window.location.href = 'onboarding6.html';
+  }
+</script>
         </div>
     </div>
 </body>
