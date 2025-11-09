@@ -1,4 +1,4 @@
-@OnboardingScenariosStep4
+@OnboardingScenariosStep6
 Feature: Onboarding Process Step4
 
   Background: 

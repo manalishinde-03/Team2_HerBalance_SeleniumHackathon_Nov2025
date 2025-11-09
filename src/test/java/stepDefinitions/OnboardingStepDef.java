@@ -189,12 +189,9 @@ public class OnboardingStepDef {
 			String URL = (readConfig.getApplicationURL())+htmlPage;
 			System.out.println("URL>>>"+URL);
 			context.getDriver().get(URL);
-		    //String url = util.getPageURL() +"onboarding1.html";
-		    //System.out.println("The Title after clicking Register: " + url);
 		} catch (Exception e) {
 		    System.err.println("Exception : " + e.getMessage());
 		    e.printStackTrace();
-		   
 		}
 		
 	}
@@ -252,8 +249,6 @@ public class OnboardingStepDef {
 		
 		List<String> expectedOptions = dataTable.asList();
 		 Assert.assertEquals(onboardingPage.radioButtonsOptionsText(), expectedOptions, "Radio options do not match");
-		
-		
 	}
 
 	@Then("Note text should displayed")
@@ -266,9 +261,87 @@ public class OnboardingStepDef {
 		
 	}
 	
+	@Given("User is on Health Conditions page")
+	public void user_is_on_health_conditions_page() {
+	    
+		try {
+			
+			String htmlPage = "onboarding3.html";
+			String URL = (readConfig.getApplicationURL())+htmlPage;
+			System.out.println("URL>>>"+URL);
+			context.getDriver().get(URL);
+		} catch (Exception e) {
+		    System.err.println("Exception : " + e.getMessage());
+		    e.printStackTrace();
+		}
+	}
+
+	@When("User selects {string} health condition and clicks on Continue Button")
+	public void user_selects_one_health_condition_and_clicks_on_continue_button(String healthCondition) {
+		onboardingPage = new OnboardingPage(driver);
+		onboardingPage.selectHealthConditionAndClickOnContinue(healthCondition);
+	}
+
+	@Then("Title of the page should be Personal Details")
+	public void title_of_the_page_should_be_personal_details() {
+	    
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep4Title(), "Personal Details");
+	}
+
+	@Then("Verify description text for step4")
+	public void verify_description_text_for_step4() {
+		Assert.assertEquals(onboardingPage.getOnboardingPageStep4SubTitle(), "Let's get to know you better to personalize your experience.");
+	}
+
+	@Then("Verify input box count is {int} on step4")
+	public void verify_input_box_count_on_step4(int expectedCount) {
+	    
+		Assert.assertEquals(onboardingPage.inputBoxCountStep4(), expectedCount);
+	}
+
 	
-	
-	
+	@Then("User should see the following input field labels:")
+	public void user_should_see_the_following_input_field_labels(io.cucumber.datatable.DataTable dataTable) {
+	    List<String> expectedLabels = dataTable.asList();
+	    
+	    // Verify all expected labels are present
+	    for (String expected : expectedLabels) {
+	        Assert.assertTrue(onboardingPage.getActualInputFieldLabels().contains(expected));
+	    }
+	}
+
+	@Then("User should see the following helper text under the input fields:")
+	public void verify_helper_text_for_the_fields(io.cucumber.datatable.DataTable dataTable) {
+		List<String> expectedHelperTexts = dataTable.asList();
+		
+		for (String expected : expectedHelperTexts) {
+	        Assert.assertTrue(onboardingPage.getActualHelperTexts().contains(expected));
+	    }
+		
+	}
+
+	@Then("Total number of radio buttons should be {int}")
+	public void total_number_of_radio_buttons_should_be(int expectedCount) {
+		    
+			Assert.assertEquals(onboardingPage.radioButtonsStep4Size(), expectedCount);
+		}
+
+	@Then("Blood pressure description options should be :")
+	public void blood_pressure_description_options_should_be(io.cucumber.datatable.DataTable dataTable) {
+	    
+		List<String> expectedBPDescriptionOptions = dataTable.asList();
+		
+		Assert.assertEquals(onboardingPage.getActualBPDescriptionOptions(),expectedBPDescriptionOptions,"Radio options do not match");
+		
+	}
+
+
+	@Then("Progress bar shows the current step as  4 of 10")
+	public void progress_bar_shows_the_current_step_as_of1() {
+		assertTrue(onboardingPage.isOnboardingProgressBar4of10Displayed(),
+				"Onboarding progress bar should show the current step as 4 of 10");
+	}
+
 	
 	
 	

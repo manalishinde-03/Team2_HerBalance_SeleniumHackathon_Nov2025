@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,13 +29,13 @@ public class OnboardingPage {
 	By OnboardingProgressBarStep1 = By.xpath("/html/body/div/div[1]/div");
 	By progressStepText = By.xpath("//div[@class='onboarding-progress' and contains(., '1 of 10')]");
 	By progressStepTextStep3 = By.xpath("//div[@class='onboarding-header' and contains(., '3 of 10')]");
+	By progressStepTextStep4 = By.xpath("//div[@class='onboarding-header' and contains(., '4 of 10')]");
 	By UploadPDFButton = By.xpath("//label[@class='upload-button']");
 	By fileInput =By.id("bloodWorkUpload");
 	
 	By Step3SubTitleText = By.xpath("//p[@class='subtitle']");
 	By BackButtonStep3 = By.xpath("//button[text()='Back']");
 	By ContinueButtonStep3 = By.xpath("//button[text()='Continue']");
-	By SubTitleOnboardingStep3 = By.xpath("");
 	 By radioOptions = By.cssSelector(".conditions-grid .radio-option");
 	 By radioOptionsText = By.xpath("//label[@class='radio-option']");
 	 By NoteStep3Text = By.xpath("//span[contains(text(), 'Conditions like PCOS')]");
@@ -47,6 +48,14 @@ public class OnboardingPage {
 	By DataSecurityText = By.xpath("//div[@class='privacy-info']//div");
 	
 	By OnboardingPageStep3Title = By.xpath("//h2[text()='Health Conditions']");
+	By OnboardingPageStep4SubTitle = By.xpath("//p[@class='subtitle']");
+	By OnboardingPageStep4Title = By.xpath("//h2[text()='Personal Details']");
+	
+	By inputBoxes = By.xpath("//input[@type='text']");
+	By inputFieldLabelsStep4 = By.xpath("//label");
+	By helperTextsInputFieldStep4 = By.xpath("//p[@class='input-hint']");
+	By radioButtonsStep4 = By.cssSelector(".form-card .radio-option");
+	
 
 	public String getPageTitle() {
 
@@ -171,6 +180,14 @@ public class OnboardingPage {
 		return radioButtons.size();
 		
 	}
+	
+public int inputBoxCountStep4() {
+		
+		List<WebElement> inputBox = util.getElements(inputBoxes);
+		
+		return inputBox.size();
+		
+	}
 
 	public boolean isBackButtonStep3Displayed() {
 		
@@ -215,4 +232,87 @@ public boolean isContinueButtonStep3Displayed() {
 		String text = util.getElementText(NoteStep3Text);
 		return text;
 	}
+
+	public void selectHealthConditionAndClickOnContinue(String condition) {
+		 WebElement healthConditionRadioButton = driver.findElement(
+			        By.xpath("//label[contains(., '" + condition + "')]/input[@type='radio']")
+			    );
+		 util.doClick(healthConditionRadioButton);
+		 
+		 util.doClick(ContinueButtonStep3);
+		
+	}
+
+	public String getOnboardingPageStep4Title() {
+		
+		return util.getElementText(OnboardingPageStep4Title);
+	}
+	
+public String getOnboardingPageStep4SubTitle() {
+		
+		return util.getElementText(OnboardingPageStep4SubTitle);
+	}
+	
+public List<String> getActualInputFieldLabels() {
+	
+	
+List<WebElement> actualLabelElements = util.getElements(inputFieldLabelsStep4);
+    
+    List<String> actualLabels = new ArrayList<>();
+    for (WebElement label : actualLabelElements) {
+        actualLabels.add(label.getText().trim());
+    }
+    System.out.println("Input Field labels --" +actualLabels.toString());
+	return actualLabels;
+}
+
+public List<String> getActualHelperTexts() {
+	
+	
+	List<WebElement> actualHelperTextElements = util.getElements(helperTextsInputFieldStep4 );
+	 List<String> actualHelperTexts = new ArrayList<>();
+	    for (WebElement label : actualHelperTextElements) {
+	    	actualHelperTexts.add(label.getText().trim());
+	    }
+	    System.out.println("Actual helper texts --" +actualHelperTexts.toString());
+		return actualHelperTexts;
+}
+
+public int radioButtonsStep4Size() {
+	
+	List<WebElement> radioButtonsOnStep4 = util.getElements(radioButtonsStep4);
+	
+	return radioButtonsOnStep4.size();
+	
+}
+
+public Collection<String> getActualBPDescriptionOptions() {
+	
+	List<WebElement> texts = util.getElements(radioButtonsStep4);
+    List<String> actualOptions = texts.stream()
+            .map(e -> e.getText().trim())
+            .collect(Collectors.toList());
+    
+    System.out.println("Actual options -"+actualOptions.toString());
+	return actualOptions;
+    
+	
+}
+
+public boolean isOnboardingProgressBar4of10Displayed() {
+
+		return util.isElementDisplayed(progressStepTextStep4);
+
+	}
+
+
+
+
+
+
+
+
+
+
+
 }

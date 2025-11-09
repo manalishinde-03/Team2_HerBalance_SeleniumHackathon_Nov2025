@@ -25,6 +25,48 @@
             flex-direction: column;
             padding-bottom: 20px; /* Padding for the bottom navigation */
         }
+		
+		 .onboarding-header {
+            background-color: #7b68ee; /* Purple header background */
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .onboarding-progress-bar {
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            width: 70%; /* Adjust as needed */
+            position: relative;
+        }
+        .onboarding-progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(3 / 10 * 100%); /* 3 out of 10 steps */
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 4px;
+        }
+        .onboarding-step-count {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .content-area {
+            background-color: #ffffff;
+            padding: 40px 80px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Added subtle shadow for depth */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
         .header-content {
             padding: 40px 80px 20px 80px; /* Adjusted padding to match the image's top section */
             text-align: left;
@@ -176,6 +218,11 @@
 </head>
 <body>
     <div class="container">
+	
+	 <div class="onboarding-header">
+            <div class="onboarding-progress-bar"></div>
+            <div class="onboarding-step-count">4 of 10</div>
+        </div>
         <div class="header-content">
             <h2>Personal Details</h2>
             <p class="subtitle">Let's get to know you better to personalize your experience.</p>
@@ -219,8 +266,13 @@
         </div>
 
         <div class="navigation-bottom">
-            <button class="button back-button">Back</button>
-            <button class="button continue-button">Continue</button>
+            <button class="button back-button" onclick="navigateBack()">Back</button>
+			<script>
+  function navigateBack() {
+    window.location.href = 'onboarding3.html';
+  }
+</script>
+            <button class="button continue-button" onclick="window.location.href='onboarding5.html'">Continue</button>
         </div>
     </div>
 </body>
