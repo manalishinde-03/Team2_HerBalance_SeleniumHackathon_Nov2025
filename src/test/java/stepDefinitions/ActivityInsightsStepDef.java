@@ -14,6 +14,7 @@ import utilities.ReadConfig;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 
 public class ActivityInsightsStepDef {
 	private WebDriver driver;
@@ -192,6 +193,223 @@ public class ActivityInsightsStepDef {
 		} catch (Exception e) {
 			System.err.println(" Exception during alignment check: " + e.getMessage());
 			Allure.addAttachment("Alignment Check Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("Weight value should be mapped from the onboarding process")
+	public void weight_value_should_be_mapped_from_the_onboarding_process() {
+		try {
+			boolean isDisplayed = activityPage.isStartingWeightValueDisplayed();
+			String value = activityPage.getStartingWeightValue();
+
+			System.out.println("Starting Weight Value Displayed: " + isDisplayed);
+			System.out.println("Starting Weight Value: " + value);
+
+			Allure.addAttachment("Starting Weight Check", "Displayed: " + isDisplayed + "\nValue: " + value);
+
+			Assert.assertTrue(isDisplayed, "Starting weight value is not displayed");
+
+			System.out.println("Starting weight value is displayed successfully.");
+
+		} catch (Exception e) {
+			System.err.println("Exception while checking Starting Weight: " + e.getMessage());
+			Allure.addAttachment("Starting Weight Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("Current Weight should be x value")
+	public void current_weight_should_be_x_value() {
+		String expectedValue = "69.0 kg";
+		try {
+			String actualValue = activityPage.getCurrentWeightValue();
+
+			System.out.println("Expected Current Weight: " + expectedValue);
+			System.out.println("Actual Current Weight: " + actualValue);
+
+			Allure.addAttachment("Current Weight Check", "Expected: " + expectedValue + "\nActual: " + actualValue);
+
+			Assert.assertEquals(actualValue, expectedValue, "Current Weight value mismatch");
+
+			System.out.println(" Current Weight value matches expected.");
+
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying Current Weight: " + e.getMessage());
+			Allure.addAttachment("Current Weight Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("Goal weight should be displayed")
+	public void goal_weight_should_be_displayed() {
+		try {
+			boolean isDisplayed = activityPage.isGoalWeightValueDisplayed();
+			String value = activityPage.goalWeightValue();
+
+			System.out.println("Goal Weight Value Displayed: " + isDisplayed);
+			System.out.println("Goal Weight Value: " + value);
+
+			Allure.addAttachment("Gaol Weight Check", "Displayed: " + isDisplayed + "\nValue: " + value);
+
+			Assert.assertTrue(isDisplayed, "Goal weight value is not displayed");
+
+			System.out.println("Goal weight value is displayed successfully.");
+
+		} catch (Exception e) {
+			System.err.println("Exception while checking Goal Weight: " + e.getMessage());
+			Allure.addAttachment("Goal Weight Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("Header should be Progress overview")
+	public void header_should_be_progress_overview() {
+		try {
+			String actualHeader = activityPage.getProgressOverviewHeaderText();
+			boolean isDisplayed = activityPage.isProgressOverviewHeaderDisplayed();
+
+			System.out.println("Header displayed: " + isDisplayed);
+			System.out.println("Header text: " + actualHeader);
+
+			Allure.addAttachment("Header Check", "Displayed: " + isDisplayed + "\nText: " + actualHeader);
+
+			Assert.assertTrue(isDisplayed, "Progress overview header is not displayed");
+			Assert.assertEquals(actualHeader, "Progress Overview", " Header text mismatch");
+
+			System.out.println("Header is displayed and matches 'Progress overview'.");
+
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying header: " + e.getMessage());
+			Allure.addAttachment("Header Verification Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("weight lost should be displayed")
+	public void weight_lost_should_be_displayed() {
+		try {
+			String actualHeader = activityPage.getWeightLossProgressBarText();
+			boolean isWeightLostDisplayed = activityPage.isWeightLossProgressBarDisplayed();
+
+			System.out.println("Header displayed: " + isWeightLostDisplayed);
+			System.out.println("Header text: " + actualHeader);
+
+			Allure.addAttachment("Header Check", "Displayed: " + isWeightLostDisplayed + "\nText: " + actualHeader);
+
+			Assert.assertTrue(isWeightLostDisplayed, "Weight loss progress header is not displayed");
+			Assert.assertEquals(actualHeader, "Weight Loss Progress", " Header text mismatch");
+
+			System.out.println("Header is displayed and matches 'Weight loss progress.");
+
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying header: " + e.getMessage());
+			Allure.addAttachment("Header Verification Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+
+	}
+
+	@Then("Remaining weight  should be displayed")
+	public void remaining_weight_should_be_displayed() {
+		try {
+			String actualHeader = activityPage.getRemainingText();
+			boolean isRemainingDisplayed = activityPage.isRemainingDisplayed();
+
+			System.out.println("Header displayed: " + isRemainingDisplayed);
+			System.out.println("Header text: " + actualHeader);
+
+			Allure.addAttachment("Header Check", "Displayed: " + isRemainingDisplayed + "\nText: " + actualHeader);
+
+			Assert.assertTrue(isRemainingDisplayed, "Remaining header is not displayed");
+			Assert.assertEquals(actualHeader, "Remaining", " Header text mismatch");
+
+			System.out.println("Header is displayed and matches 'Remaining header.");
+
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying header: " + e.getMessage());
+			Allure.addAttachment("Header Verification Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+
+	}
+
+	@Then("Graph section header should be Weight Progression over Time")
+	public void graph_section_header_should_be_weight_progression_over_time() {
+		try {
+			String actualHeader = activityPage.getWeightProgressOverTimeHeaderText();
+			boolean isRWeightProgressOverTimeDisplayed = activityPage.isWeightProgressOverTimeHeaderDisplayed();
+
+			System.out.println("Header displayed: " + isRWeightProgressOverTimeDisplayed);
+			System.out.println("Header text: " + actualHeader);
+
+			Allure.addAttachment("Header Check",
+					"Displayed: " + isRWeightProgressOverTimeDisplayed + "\nText: " + actualHeader);
+
+			Assert.assertTrue(isRWeightProgressOverTimeDisplayed, "Weight Progress Over Time header is not displayed");
+			Assert.assertEquals(actualHeader, "Weight Progression Over Time", " Header text mismatch");
+
+			System.out.println("Header is displayed and matches 'Weight Progress Over Time header.");
+
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying header: " + e.getMessage());
+			Allure.addAttachment("Header Verification Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("Graph should be visible with x-axis showing days \\(Day {string} to Day {string})")
+	public void graph_should_be_visible_with_x_axis_showing_days_day_to_day(String startDay, String endDay) {
+		try {
+			String[] labels = activityPage.getXAxisLabels();
+			boolean isGraphDisplayed = activityPage.isGraphVisible();
+
+			System.out.println("Graph visible: " + isGraphDisplayed);
+			System.out.println("Labels found: " + Arrays.toString(labels));
+
+			Allure.addAttachment("Graph Verification",
+					"Graph Visible: " + isGraphDisplayed + "\nX-axis labels: " + Arrays.toString(labels));
+
+			Assert.assertTrue(isGraphDisplayed, "Weight Progress graph is NOT visible");
+			Assert.assertEquals(labels[0], "Day 1", "X-axis start label mismatch");
+			Assert.assertEquals(labels[labels.length - 1], "Day 7", "X-axis end label mismatch");
+
+			System.out.println("Graph is visible and X-axis labels match Day 1 to Day 7");
+
+		} catch (Exception e) {
+			System.err.println("Exception while verifying graph and labels: " + e.getMessage());
+			Allure.addAttachment("Graph Validation Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("Y-axis should display weight values in kg")
+	public void y_axis_should_display_weight_values_in_kg() {
+		try {
+			boolean graphVisible = activityPage.isGraphVisible();
+			String yAxisTitle = activityPage.getYAxisTitle();
+			List<String> yAxisLabels = activityPage.getYAxisTickLabels();
+
+			System.out.println("Graph visible: " + graphVisible);
+			System.out.println("Y-axis title: " + yAxisTitle);
+			System.out.println("Y-axis labels: " + yAxisLabels);
+
+			Allure.addAttachment("Y-axis Verification", "Graph Visible: " + graphVisible + "\nY-axis Title: "
+					+ yAxisTitle + "\nY-axis Labels: " + yAxisLabels);
+
+			Assert.assertTrue(graphVisible, " Graph is not visible");
+			Assert.assertEquals(yAxisTitle, "Weight (kg)", " Y-axis title mismatch");
+
+			// check that labels are numeric values
+			for (String label : yAxisLabels) {
+				Assert.assertTrue(label.matches("\\d+(\\.\\d+)?"), " Y-axis label is not a numeric weight: " + label);
+			}
+
+			System.out.println("Y-axis displays weight values in kg correctly.");
+
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying Y-axis: " + e.getMessage());
+			Allure.addAttachment("Y-axis Validation Error", "text/plain", e.toString());
 			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
 		}
 	}
