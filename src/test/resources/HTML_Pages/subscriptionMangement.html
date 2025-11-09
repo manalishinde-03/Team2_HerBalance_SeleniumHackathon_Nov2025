@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subscription</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f6f8fa;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 2.7em;
+      font-weight: 500;
+      margin: 38px 0 18px 38px;
+      color: #222;
+      letter-spacing: 0.02em;
+    }
+    .container {
+      max-width: 950px;
+      margin: 0 auto 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 0 34px 48px 34px;
+      box-shadow: 0 4px 14px rgba(70,0,100,0.06);
+    }
+    .box-row {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .section-card {
+      background: #fbfbfd;
+      border: 1.5px solid #efe9f5;
+      border-radius: 11px;
+      padding: 22px 18px 22px 26px;
+      flex: 1;
+      min-width: 330px;
+      box-sizing: border-box;
+    }
+    .section-title {
+      font-size: 1.16em;
+      font-weight: bold;
+      color: #29292f;
+      margin-bottom: 7px;
+    }
+    .section-subtitle {
+      font-size: 1em;
+      color: #72727a;
+      margin-bottom: 22px;
+    }
+    .info-table {
+      width: 100%;
+      font-size: 1.05em;
+      border-collapse: collapse;
+      margin-bottom: 8px;
+    }
+    .info-table td {
+      padding: 5px 0;
+      color: #31323a;
+    }
+    .active {
+      display: inline-block;
+      background: #e7fae7;
+      color: #35c748;
+      font-size: 0.93em;
+      border-radius: 8px;
+      padding: 2px 10px;
+      font-weight: bold;
+    }
+    .benefits-list {
+      padding: 0 0 10px 0;
+      margin: 0 0 12px 0;
+      list-style: none;
+      font-size: 1.08em;
+      color: #3e3e44;
+    }
+    .benefits-list li {
+      margin-bottom: 8px;
+      padding-left: 1.5em;
+      position: relative;
+    }
+    .benefits-list li::before {
+      content: "✓";
+      color: #36c748;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .dashboard-btn {
+      display: inline-block;
+      border: 1.5px solid #c7b7ec;
+      border-radius: 8px;
+      font-size: 1.05em;
+      padding: 12px 27px;
+      cursor: pointer;
+      background: #f7f4fc;
+      color: #6643af;
+      margin-top: 7px;
+      font-weight: 500;
+      transition: 0.17s;
+      text-align: center;
+    }
+    .dashboard-btn:hover {
+      background: #e2dbfb;
+    }
+    /* Subscription History */
+    .history-section {
+      background: #fbfbfd;
+      border: 1.5px solid #efe9f5;
+      border-radius: 11px;
+      padding: 24px 26px 12px 26px;
+      margin-bottom: 32px;
+    }
+    .history-title {
+      font-size: 1.12em;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #25272d;
+    }
+    .history-subtitle {
+      font-size: 1em;
+      color: #72727a;
+      margin-bottom: 20px;
+    }
+    .history-box {
+      background: #fff;
+      border-radius: 9px;
+      border: 1px solid #f1eff8;
+      padding: 17px 20px 4px 18px;
+      margin-bottom: 11px;
+    }
+    .history-box-header {
+      font-size: 1.04em;
+      font-weight: 600;
+      color: #3e3e44;
+      margin-bottom: 6px;
+    }
+    .history-dates {
+      color: #41416c;
+      font-size: 0.97em;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .history-active-badge {
+      background: #e7fae7;
+      color: #35c748;
+      border-radius: 8px;
+      font-size: 0.94em;
+      padding: 2px 9px;
+      font-weight: bold;
+      margin-left: 7px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .history-payment {
+      color: #646485;
+      font-size: 0.96em;
+      margin-bottom: 4px;
+    }
+    .history-trans-id {
+      color: #5a5a7a;
+      font-size: 0.94em;
+      margin-bottom: 5px;
+    }
+    .go-dashboard-row {
+      text-align: center;
+      border-top: 1px solid #efe9f5;
+      padding-top: 12px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Subscription</h1>
+  <div class="container">
+
+    <div class="box-row">
+      <!-- Current Subscription -->
+      <div class="section-card" style="max-width: 400px;">
+        <div class="section-title">Current Subscription</div>
+        <div class="section-subtitle">Your active subscription plan details</div>
+        <div style="background: #fff; border-radius: 9px; padding: 20px 14px 14px 20px;">
+          <div class="section-title" style="font-size:1.08em; margin-bottom:9px;">Subscription Information</div>
+          <table class="info-table">
+            <tr>
+              <td>Status:</td>
+              <td><span class="active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Plan:</td>
+              <td>Free Plan</td>
+            </tr>
+            <tr>
+              <td>Start Date:</td>
+              <td>September 15, 2025</td>
+            </tr>
+            <tr>
+              <td>End Date:</td>
+              <td>September 22, 2025</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- Subscription Benefits -->
+      <div class="section-card" style="max-width: 440px;">
+        <div class="section-title">Subscription Benefits</div>
+        <ul class="benefits-list">
+          <li>Full access to premium features</li>
+          <li>Blood report analysis &amp; insights</li>
+          <li>Personalized health recommendations</li>
+        </ul>
+        <button class="dashboard-btn">Go to Dashboard &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Subscription History Section -->
+    <div class="history-section">
+      <div class="history-title">Subscription History</div>
+      <div class="history-subtitle">Your subscription payment history</div>
+      <div class="history-box">
+        <div class="history-box-header">
+          Free Plan
+          <span class="history-active-badge">active</span>
+        </div>
+        <div class="history-dates">&#128197; September 15, 2025 - September 22, 2025</div>
+        <div class="history-payment">&#36;0.00</div>
+        <div class="history-trans-id">Transaction ID: 630<br>Payment method: free</div>
+      </div>
+      <div class="go-dashboard-row">
+        <button class="dashboard-btn">Go to Dashboard &rarr;</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

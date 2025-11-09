@@ -1,13 +1,15 @@
-@OnboardingScenariosStep1
-Feature: Onboarding Process Step1
+@OnboardingScenariosStep3
+Feature: Onboarding Process Step3
 
   Background: 
-    Given The browser is open
-    And User enters the correct HerBalance URL
-    Given User clicks on sign up
-    And User is on sign up page
-    When User clicks register button after entering valid details
+    Given User is on Upload Blood Work page
+    When User clicks on Continue Without Report Button
 
+
+@TC15
+Scenario: Display onboarding progress
+    Then User should navigate to step3 Health Conditions
+    And Verify Onboarding progress bar is displayed
   @TC1
   Scenario: Title of the onboarding step1
     Then Title of the page should be Upload Your Recent Blood Work
@@ -67,15 +69,7 @@ Feature: Onboarding Process Step1
     And User clicks on Upload PDF Button
     Then User should see Windows Explorer opened
     
-    #Onboarding Scenarios  Step 3  UI verifcation 
-
-
- @TC15
-  Scenario: Display onboarding progress
-    And User clicks on Continue Without Report Button
-    Then User should navigate to step3 Health Conditions
-    Then Onboarding progress bar is displayed
-
+   
 
 
 

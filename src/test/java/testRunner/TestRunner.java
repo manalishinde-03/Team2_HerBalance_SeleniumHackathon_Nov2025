@@ -14,6 +14,7 @@ import utilities.ReadConfig;
 				glue = { "stepDefinitions" },
 				//tags="@TC9",
 				//tags="@TC12",
+
 				monochrome = true, 
 				dryRun = false, 
 				plugin = { "pretty","html:target/index.html","json:target/cucumber-reports/Cucumber.json",
@@ -24,11 +25,17 @@ import utilities.ReadConfig;
 		})
 
 public class TestRunner extends AbstractTestNGCucumberTests {
-//	private static ThreadLocal<String> browser = new ThreadLocal<>();
+	private static ThreadLocal<String> browser = new ThreadLocal<>();
 	@Override
 	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
+	@BeforeTest
+    @Parameters({"browser"})
+    public void browserFromTestNG(@Optional String browser) {
+		ReadConfig readConfig = new ReadConfig();
+		readConfig.setBrowserFromTestNG(browser);
+    }
 
 }

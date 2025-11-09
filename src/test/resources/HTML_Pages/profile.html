@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fafaff;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 2.7em;
+      margin: 38px 0 16px 38px;
+      font-weight: 500;
+      color: #1a1a22;
+    }
+    .container {
+      max-width: 830px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(120,80,140,0.07);
+      padding: 0 0 34px 0;
+    }
+    .back-link {
+      color: #8f65df;
+      font-size: 1em;
+      text-decoration: none;
+      display: inline-block;
+      margin-left: 44px;
+      margin-bottom: 5px;
+      margin-top: 30px;
+      font-weight: 500;
+    }
+    .edit-title {
+      font-size: 1.45em;
+      font-weight: bold;
+      color: #6b45c7;
+      margin-bottom: 2px;
+      margin-top: 18px;
+      margin-left: 44px;
+    }
+    .edit-subtitle {
+      font-size: 1.02em;
+      color: #72727a;
+      margin-bottom: 12px;
+      margin-left: 44px;
+    }
+    .tabs {
+      display: flex;
+      margin: 22px 38px 0 38px;
+      background: #e4d5f7;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 700px;
+    }
+    .tab {
+      flex: 1;
+      padding: 12px 0;
+      text-align: center;
+      font-size: 1.12em;
+      color: #7745b6;
+      background: #e4d5f7;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .tab.active {
+      background: #fff;
+      color: #3b274f;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(120,80,140,0.07);
+    }
+    .form-section {
+      background: #fafaff;
+      border: 1.5px solid #ece9f5;
+      border-radius: 13px;
+      padding: 32px 38px 36px 38px;
+      margin: 32px 38px 0 38px;
+      box-shadow: 0 2px 8px rgba(120,80,140,0.04);
+      max-width: 690px;
+    }
+    .form-title {
+      font-size: 1.35em;
+      font-weight: bolder;
+      color: #222330;
+      margin-bottom: 6px;
+    }
+    .form-subtitle {
+      font-size: 1.02em;
+      color: #72727a;
+      margin-bottom: 19px;
+    }
+    .profile-label {
+      display: block;
+      font-size: 1.14em;
+      font-weight: 500;
+      color: #353535;
+      margin-bottom: 8px;
+      margin-top: 16px;
+    }
+    .profile-input {
+      width: 100%;
+      font-size: 1.14em;
+      font-weight: 400;
+      padding: 10px 14px;
+      border-radius: 7px;
+      border: 1.4px solid #d7d2e9;
+      background: #fff;
+      margin-bottom: 5px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border 0.14s;
+    }
+    .profile-input:focus {
+      border-color: #8f65df;
+    }
+    .next-btn {
+      background: #8f65df;
+      color: #fff;
+      font-size: 1.07em;
+      font-weight: 500;
+      border: none;
+      border-radius: 7px;
+      padding: 12px 28px;
+      margin-top: 20px;
+      float: right;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .next-btn:hover {
+      background: #734ac4;
+    }
+    @media (max-width: 900px) {
+      .container, .form-section, .tabs { max-width: 97vw; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Profile</h1>
+  <div class="container">
+    <a class="back-link" href="#">&#8592; Back</a>
+    <div class="edit-title">Edit Your Profile</div>
+    <div class="edit-subtitle">Update your personal information and preferences</div>
+
+    <div class="tabs">
+      <button class="tab active">Basic Information</button>
+      <button class="tab">Body Metrics</button>
+      <button class="tab">Preferences & Health</button>
+    </div>
+    <div class="form-section">
+      <div class="form-title">Basic Information</div>
+      <div class="form-subtitle">Update your name and age</div>
+      <form>
+        <label class="profile-label" for="name">Name</label>
+        <input class="profile-input" type="text" id="name" name="name" value="UserTest">
+        <label class="profile-label" for="age">Age</label>
+        <input class="profile-input" type="number" id="age" name="age" value="28">
+        <button class="next-btn" type="submit">Next: Body Metrics</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

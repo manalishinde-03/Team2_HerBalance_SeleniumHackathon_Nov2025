@@ -1,7 +1,12 @@
 package pageObjects;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import utilities.ElementUtil;
 import utilities.ReadConfig;
@@ -22,13 +27,26 @@ public class OnboardingPage {
 	By SupportingTextOnboardingStep1 = By.xpath("/html/body/div/p");
 	By OnboardingProgressBarStep1 = By.xpath("/html/body/div/div[1]/div");
 	By progressStepText = By.xpath("//div[@class='onboarding-progress' and contains(., '1 of 10')]");
-	By UploadPDFButton = By.xpath("//button[@class='upload-button']");
+	By progressStepTextStep3 = By.xpath("//div[@class='onboarding-header' and contains(., '3 of 10')]");
+	By UploadPDFButton = By.xpath("//label[@class='upload-button']");
+	By fileInput =By.id("bloodWorkUpload");
+	
+	By Step3SubTitleText = By.xpath("//p[@class='subtitle']");
+	By BackButtonStep3 = By.xpath("//button[text()='Back']");
+	By ContinueButtonStep3 = By.xpath("//button[text()='Continue']");
+	By SubTitleOnboardingStep3 = By.xpath("");
+	 By radioOptions = By.cssSelector(".conditions-grid .radio-option");
+	 By radioOptionsText = By.xpath("//label[@class='radio-option']");
+	 By NoteStep3Text = By.xpath("//span[contains(text(), 'Conditions like PCOS')]");
+	
 
 	By PDFFilesOnlyText = By.xpath(".//div/div[2]/div[1]/div[3]");
 	By SkipForNowText = By.xpath("//div[@class='skip-link']");
 	By SkipExplanationText = By.xpath("//div[@class='skip-text']");
 	By ContinueWithoutReportBtn = By.xpath("//button[@class='continue-button']");
 	By DataSecurityText = By.xpath("//div[@class='privacy-info']//div");
+	
+	By OnboardingPageStep3Title = By.xpath("//h2[text()='Health Conditions']");
 
 	public String getPageTitle() {
 
@@ -38,6 +56,11 @@ public class OnboardingPage {
 	public String getOnboardingPageTitle() {
 
 		return util.getElementText(OnboardingPageTitle);
+	}
+	
+	public String getOnboardingPageStep3SubTitle() {
+
+		return util.getElementText(Step3SubTitleText);
 	}
 
 	public String getSupportingTextStep1() {
@@ -54,6 +77,12 @@ public class OnboardingPage {
 	public boolean isOnboardingProgressBar1of10Displayed() {
 
 		return util.isElementDisplayed(progressStepText);
+
+	}
+	
+	public boolean isOnboardingProgressBar3of10Displayed() {
+
+		return util.isElementDisplayed(progressStepTextStep3);
 
 	}
 
@@ -113,4 +142,77 @@ public class OnboardingPage {
 		return util.getElementText(DataSecurityText);
 	}
 
+	public void clickOnContinueWithoutReportBtn() {
+		util.doClick(ContinueWithoutReportBtn);
+		
+	}
+
+	public String getOnboardingPageStep3Title() {
+
+		return util.getElementText(OnboardingPageStep3Title);
+	}
+
+	public void clickOnUploadPDFBtn() {
+		util.doClick(UploadPDFButton);
+		
+	}
+
+	public boolean fileUploadDialogIsDisplayed() {
+		
+	
+		return util.isElementDisplayed(fileInput);
+		
+	}
+
+	public int radioButtonsSize() {
+		
+		List<WebElement> radioButtons = util.getElements(radioOptions);
+		
+		return radioButtons.size();
+		
+	}
+
+	public boolean isBackButtonStep3Displayed() {
+		
+		return util.isElementDisplayed(BackButtonStep3);
+	}
+	
+
+	public boolean isBackButtonStep3Enabled() {
+
+		return util.isElementEnabled(BackButtonStep3);
+	}
+	
+public boolean isContinueButtonStep3Displayed() {
+		
+		return util.isElementDisplayed(ContinueButtonStep3);
+	}
+	
+
+	public boolean isContinueButtonStep3Enabled() {
+
+		return util.isElementEnabled(ContinueButtonStep3);
+	}
+
+
+
+	public Collection<String> radioButtonsOptionsText() {
+		
+		List<WebElement> texts = util.getElements(radioOptions);
+	    List<String> actualOptions = texts.stream()
+	            .map(e -> e.getText().trim())
+	            .collect(Collectors.toList());
+	    
+	    System.out.println("Actual options -"+actualOptions.toString());
+		return actualOptions;
+	}
+	
+	
+	public String getNoteTextStep3() {
+
+		System.out.println("Actual >> " + util.getElementText(NoteStep3Text));
+		
+		String text = util.getElementText(NoteStep3Text);
+		return text;
+	}
 }

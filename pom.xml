@@ -178,9 +178,9 @@
 						<suiteXmlFile>src/test/resources/TestNG/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>-->
 					<systemPropertyVariables>
-					<browserProperty>
+					<!--<browserProperty>
 					${browserProperty}
-					</browserProperty>
+					</browserProperty>-->
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
