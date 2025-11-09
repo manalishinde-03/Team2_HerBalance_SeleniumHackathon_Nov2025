@@ -45,11 +45,10 @@ Feature: Onboarding Process Step4
   @TC34
   Scenario: Blood pressure description options
     Then Blood pressure description options should be :
-      | I have been diagnosed with high blood pressure and take medication for it|
-      | I have been diagnosed but don't take medication|
+      | I have been diagnosed with high blood pressure and take medication for it |
+      | I have been diagnosed but don't take medication                           |
       | I have never been diagnosed                                               |
       | I'm not sure                                                              |
-
 
   @TC35
   Scenario: Display onboarding progress
@@ -66,3 +65,15 @@ Feature: Onboarding Process Step4
   @TC38
   Scenario: State of Back button
     Then Back button should be enabled
+    
+     @TC39
+  Scenario: Navigating back to step 3
+  	When User clicks on Back Button on Step4
+    Then User should navigate to step3 Health Conditions
+
+  @TC40
+  Scenario: Navigation to Step 5
+  	When User clicks on Continue Button on Step4
+    Then Verify user navigates to Step5 after clicking Continue button
+
+  

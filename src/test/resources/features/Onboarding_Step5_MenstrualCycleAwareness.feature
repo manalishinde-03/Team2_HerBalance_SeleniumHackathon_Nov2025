@@ -2,67 +2,54 @@
 Feature: Onboarding Process Step4
 
   Background: 
-    Given User is on Health Conditions page
-    When User selects "Sleep apnea" health condition and clicks on Continue Button
+    Given User is on Personal Details page
+    When User enters valid personal details "TestUser","30" and "I'm not sure" and clicks on Continue Button
 
-  @TC26
+  @TC41
   Scenario: Continue is visible
     Then Continue button should be visible
 
-  @TC27
+  @TC42
   Scenario: State of Continue button
     Then Continue button should be enabled
 
-  @TC28
-  Scenario: Title of the onboarding step4
-    Then Title of the page should be Personal Details
+  @TC43
+  Scenario: Navigation to onboarding step5
+    Then Verify user navigates to Step5 after clicking Continue button
 
-  @TC29
-  Scenario: Description text for step4
-    Then Verify description text for step4
+  @TC44
+  Scenario: Description text for step5
+    Then Verify description text for step5
 
-  @TC30
-  Scenario: Input box count
-    Then Verify input box count is 2 on step4
+  @TC45
+  Scenario: Presence of question in step 5
+    Then User should see the question on Step5
 
-  @TC31
-  Scenario: Field lables
-    Then User should see the following input field labels:
-      | What's your first name? |
-      | What's your age?        |
+  @TC46
+  Scenario: Total number of radio buttons in Step5
+    Then Total number of radio buttons in Step5 should be 5
 
-  @TC32
-  Scenario: Helper text for the fields
-    Then User should see the following helper text under the input fields:
-      | Personalizing your experience starts with knowing your name.                                                                                      |
-      | Your age helps us tailor recommendations suitable for your life stage.                                                                            |
-      | Understanding your blood pressure status helps us tailor workouts and nutrition plans that are safe and effective for your cardiovascular health. |
+  @TC47
+  Scenario: Radio button options in Step5
+    Then Following Radio options for  menstrual cycle awareness should be displayed
+      | Yes                                      |
+      | No                                       |
+      | My cycle is irregular                    |
+      | I'm perimenopausal                       |
+      | I no longer menstruate (e.g., menopause) |
 
-  @TC33
-  Scenario: Total number of radio buttons in Step4
-    Then Total number of radio buttons should be 4
-
-  @TC34
-  Scenario: Blood pressure description options
-    Then Blood pressure description options should be :
-      | I have been diagnosed with high blood pressure and take medication for it|
-      | I have been diagnosed but don't take medication|
-      | I have never been diagnosed                                               |
-      | I'm not sure                                                              |
-
-
-  @TC35
+  @TC48
   Scenario: Display onboarding progress
     Then Verify Onboarding progress bar is displayed
 
-  @TC36
+  @TC49
   Scenario: Progress bar is visible
-    Then Progress bar shows the current step as  4 of 10
+    Then Progress bar shows the current step as  5 of 10
 
-  @TC37
+  @TC50
   Scenario: Back button is visible
     Then Back button is displayed
 
-  @TC38
+  @TC51
   Scenario: State of Back button
     Then Back button should be enabled
