@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Plan Dashboard - Her Balance</title>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      background: #f9f7ff;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+    .nav-links a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #6c52ff;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 32px;
+    }
+    h1 {
+      color: #4f3b92;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .section {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #4f3b92;
+    }
+    .metrics {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+    .metric {
+      font-size: 16px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #6c52ff;
+    }
+    .bmi-bar {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .bmi-range {
+      flex: 1;
+      height: 20px;
+      border-radius: 4px;
+    }
+    .underweight { background: #a0d8ef; }
+    .normal { background: #a8e6cf; }
+    .overweight { background: #ffd3b6; }
+    .obese { background: #ff8b94; }
+    .insights {
+      display: flex;
+      gap: 40px;
+    }
+    .card {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .footer-note {
+      font-size: 13px;
+      color: #777;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>Her Balance</strong></div>
+  <nav class="nav-links">
+    <a href="#">Activity Insights</a>
+    <a href="#">Diet Plan</a>
+    <a href="workouts.html">Workout</a> 
+    <a href="#">Water Tracker</a>
+  </nav>
+  <div>maytestbasicinfo</div>
+</header>
+
+<div class="container">
+
+  <h1>Free Plan Dashboard</h1>
+  <p class="highlight">Welcome back, maytestbasicinfo • Age: 38</p>
+  <p style="color:#6c52ff;">Free Plan • Access to Basic Features</p>
+  <p>Enjoy our free plan with basic features and exclusive workout planning.</p>
+
+  <div class="insights">
+    <div class="card">
+      <h2>Weight & Body Metrics</h2>
+      <div class="metrics">
+        <div class="metric">Starting Weight: <span class="highlight">64 kg</span></div>
+        <div class="metric">Current Weight: <span class="highlight">64 kg</span></div>
+        <div class="metric">Height: <span class="highlight">152 cm</span></div>
+        <div class="metric">BMI: <span class="highlight">27.7</span> (Overweight)</div>
+      </div>
+      <p>Monthly Goal: 57.5 kg • Loss Target: -2.6 kg/month</p>
+      <p>Weigh-in Recommendation: Morning, before food</p>
+
+      <h3>BMI Reference Guide</h3>
+      <div class="bmi-bar">
+        <div class="bmi-range underweight" title="Underweight <18.5"></div>
+        <div class="bmi-range normal" title="Normal 18.5–24.9"></div>
+        <div class="bmi-range overweight" title="Overweight 25–29.9"></div>
+        <div class="bmi-range obese" title="Obese ≥30"></div>
+      </div>
+      <p class="footer-note">Free plan includes 7 days of limited tracking.</p>
+    </div>
+
+    <div class="card">
+      <h2>Menstrual Cycle Insights</h2>
+      <p>Current Phase: <strong>Follicular Phase</strong></p>
+      <p>Day 10 of 28-day cycle • 18 days left</p>
+      <p style="color:green;">Rising estrogen improves metabolism</p>
+
+      <h3>Likely Symptoms</h3>
+      <ul>
+        <li>Increased energy</li>
+        <li>Improved mood</li>
+      </ul>
+
+      <h3>Likely Cravings</h3>
+      <ul>
+        <li>Fresh fruits</li>
+        <li>Lighter foods</li>
+      </ul>
+
+      <p class="footer-note">Track symptoms and mood changes as your period approaches.</p>
+      <button style="margin-top:10px;padding:8px 16px;background:#6c52ff;color:white;border:none;border-radius:6px;">View Full Cycle Details »</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Health Conditions</h2>
+    <p>No conditions added yet.</p>
+  </div>
+
+  <div class="section">
+    <h2>Food Allergies</h2>
+    <p>No allergies listed.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

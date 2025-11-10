@@ -102,3 +102,5 @@ Feature: Weight Tracking UI Verification
     Given User is on the Her Balance Dashboard with the activity insights submenu expanded
     When User enter valid value in weight after clicking track weight in sub menu
     Then Log Weight button should be Enabled
+    
+    

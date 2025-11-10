@@ -54,7 +54,7 @@ public class ElementUtil {
 						ele.click();
 
 					} catch (Exception e) {
-						// JavascriptExecutor(driver) =
+						
 					}
 
 				} else {
