@@ -1,0 +1,21 @@
+# Builds & logs
+target/
+*.class
+*.log
+*.log.gz
+
+# Test reports
+test-output/
+allure-results/
+allure-report/
+
+# IDE
+.project
+.classpath
+.settings/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
