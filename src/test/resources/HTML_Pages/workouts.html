@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Personalized Workouts</title>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      background: #f9f7ff;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+    .nav-links a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #6c52ff;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 32px;
+    }
+    h1 {
+      color: #4f3b92;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .section {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #4f3b92;
+    }
+    .section p {
+      font-size: 15px;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 20px;
+      background: #6c52ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #5b45d6;
+    }
+    .promo {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .promo-box {
+      flex: 1;
+      padding: 20px;
+      border-radius: 12px;
+      color: white;
+    }
+    .green-box {
+      background: #4caf50;
+    }
+    .purple-box {
+      background: #9b5cff;
+    }
+    ul.benefits {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul.benefits li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul.benefits li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #6c52ff;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>Her Balance</strong></div>
+  <nav class="nav-links">
+    <a href="#">Activity Insights</a>
+    <a href="#">Diet Plan</a>
+    <a href="#">Workout</a>
+    <a href="#">Water Tracker</a>
+  </nav>
+  <div>SDET</div>
+</header>
+
+<div class="container">
+
+  <a href="#" style="color:#6c52ff;">← Back to Dashboard</a>
+
+  <div class="section">
+    <h1>Daily Personalized Workouts</h1>
+    <h2>Daily Workout Plan</h2>
+    <p>Fresh AI-powered workout tailored to your current cycle phase.</p>
+    <p><strong>No workout plan found</strong></p>
+    <p>Generate a personalized daily workout plan tailored to your current cycle phase. A new workout is generated each day with Gemini Flash 2.0 AI.</p>
+    <button class="btn">Generate Workout Plan</button>
+  </div>
+
+  <div class="promo">
+    <div class="promo-box green-box">
+      <h3>Free Plan Special: Complete 7-Day Workout Plan</h3>
+      <p>Get a complete 7-day workout plan tailored to your current cycle phase.</p>
+      <button class="btn" style="background:white;color:#4caf50;">Generate 7-Day Plan</button>
+    </div>
+    <div class="promo-box purple-box">
+      <h3>Ready to Transform Your Health Journey?</h3>
+      <p>Upgrade to premium for personalized recommendations, leveled skill workouts, and more.</p>
+      <button class="btn" style="background:white;color:#9b5cff;">See Premium Plans</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Your Luteal Phase Workouts</h2>
+    <p>You are currently in the luteal phase of your menstrual cycle. These workouts help maintain your hormone balance while working on strength and endurance.</p>
+  </div>
+
+  <div class="section">
+    <h2>Benefits of Cycle-Synced Workouts</h2>
+    <ul class="benefits">
+      <li>Cycle Tracking</li>
+      <li>Hormone Syncing</li>
+      <li>Mood Enhancement</li>
+      <li>Hormonal Balance</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

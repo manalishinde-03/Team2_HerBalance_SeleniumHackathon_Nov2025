@@ -3,6 +3,7 @@ package pageObjects;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -50,6 +51,8 @@ public class ActivityInSightsPage {
 	private By logButton = By.id("logButton");
 	private By weightInput = By.xpath("//input[@id='weightInput']");
 	private By bmiOutput = By.id("bmiOutput");
+	private By weightHistoryHeader = By.xpath("//h3[normalize-space()='Weight History']");
+	private By weightHistoryEntries = By.xpath("//h3[normalize-space()='Weight History']/following-sibling::div");
 
 	public ActivityInSightsPage(WebDriver driver) {
 		this.driver = driver;
@@ -267,11 +270,37 @@ public class ActivityInSightsPage {
 	}
 
 	public void enterWeightInput(String keys) {
-
-		util.doSendKeys(weightInput, keys);
+		util.doSendkeysUsingJS(weightInput, keys);
 	}
 
 	public String getBmiValue() {
 		return util.getAttributeVal(bmiOutput, "value");
 	}
+
+	public void enterWeight(String weight) {
+
+		util.doSendKeys(weightInput, weight);
+	}
+
+	public void clickLogWeight() {
+	
+		util.doClick(logButton);
+	}
+
+	public boolean isBmiCalculated() {
+		String bmi = getBmiValue();
+		return bmi != null && bmi.matches("\\d+(\\.\\d+)?");
+	}
+
+	public List<String> getWeightHistoryTexts() {
+
+		List<WebElement> entries = util.getElements(weightHistoryEntries);
+		;
+		return entries.stream().map(WebElement::getText).collect(Collectors.toList());
+	}
+
+	public boolean isWeightInHistory(String weight) {
+		return getWeightHistoryTexts().stream().anyMatch(text -> text.contains(weight));
+	}
+
 }

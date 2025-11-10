@@ -95,6 +95,31 @@ public class CommonStepDef {
 		}
 
 	}
+	
+	@Given("User clicks track weight in activity insight after reaching dashobard")
+	public void user_clicks_track_weight_in_activity_insight_after_reaching_dashobard() {
+		try {
+			context.setDriver(driver);
+			String htmlPagePath = System.getProperty("user.dir") + "/src/test/resources/HTML_Pages/signin.html";
+			String localURL = "file://" + htmlPagePath;
+
+			driver.get(localURL);
+
+			System.out.println("URL>>>"+localURL);
+			context.getDriver().get(localURL);
+		    activityPage.enterUsername();
+		    activityPage.enterPassword();
+		    activityPage.clickOnLogin();
+		    activityPage.clickOnActivityInsights(); 
+		    activityPage.clickOnTrackWeight();
+		    System.out.println("Logged in and click on Activity Insights executed successfully.");
+		} catch (Exception e) {
+		    System.out.println("Exception during login: " + e.getMessage());
+		    e.printStackTrace();
+		    Assert.fail("Log in and click on Activity Insights failed due to exception: " + e.getMessage());
+		}
+
+	}
 
 	
 	

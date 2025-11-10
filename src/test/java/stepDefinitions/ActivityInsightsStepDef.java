@@ -551,4 +551,48 @@ public class ActivityInsightsStepDef {
 		}
 	}
 
+	@Given("User is on the Weight tracker")
+	public void user_is_on_the_weight_tracker() {
+		String weightTrackerUrl = util.getPageURL();
+		System.out.println("the url for weight tracker is " + weightTrackerUrl.contains("trackweight.html"));
+	}
+
+	@When("User clicks Log Weight button after entering valid value in weight")
+	public void user_clicks_log_weight_button_after_entering_valid_value_in_weight() {
+		try {
+
+			activityPage.enterWeight("65");
+			String bmi = activityPage.getBmiValue();
+			System.out.println(bmi);
+			activityPage.clickLogWeight();
+
+			System.out.println(" Log Weight successful. BMI: " + bmi);
+
+		} catch (Exception e) {
+			System.err.println(" Error during Log Weight interaction: " + e.getMessage());
+			Allure.addAttachment("Log Weight Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception.");
+		}
+	}
+
+	@Then("Entered weight should be added to the tracking record")
+	public void entered_weight_should_be_added_to_the_tracking_record() {
+		try {
+
+			boolean found = activityPage.isWeightInHistory("65");
+			List<String> historyText = activityPage.getWeightHistoryTexts();
+			System.out.println("The history of weight entered are : " + historyText);
+			Allure.addAttachment("Weight History Entries", String.join("\n", activityPage.getWeightHistoryTexts()));
+
+			Assert.assertTrue(found, "Weight not found in weight history");
+
+			System.out.println("Weight successfully added to history.");
+
+		} catch (Exception e) {
+			System.err.println("Error verifying weight history: " + e.getMessage());
+			Allure.addAttachment("Weight History Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception.");
+		}
+	}
+
 }

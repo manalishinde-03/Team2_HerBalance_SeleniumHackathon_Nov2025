@@ -50,7 +50,7 @@ public class DriverFactory {
 	
 	   public void closeDriver() {
 	        if (driver != null) {
-	           driver.quit();
+	          driver.quit();
 	        }
 	    }
 }
