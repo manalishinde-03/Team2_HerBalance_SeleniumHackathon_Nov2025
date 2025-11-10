@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,6 +42,14 @@ public class ActivityInSightsPage {
 	private By weightProgressOverTimeHeader = By.xpath("//h3[text()='Weight Progression Over Time']");
 	private By remainingBar = By.xpath("//p[normalize-space()='Remaining']");
 	private By chartCanvas = By.id("weightChart");
+	private By logTodayWeight = By.xpath("//div[@class='section log-section']//h3[1]");
+	private By weightKg = By.xpath("//label[normalize-space()='Weight (kg)']");
+	private By bmi = By.xpath("//label[normalize-space()='BMI (Auto-calculated)']");
+	private By noteOptional = By.xpath("//label[normalize-space()='Note (Optional)']");
+	private By logDayCount = By.xpath("//h3[normalize-space()='Day 4 of 7']");
+	private By logButton = By.id("logButton");
+	private By weightInput = By.xpath("//input[@id='weightInput']");
+	private By bmiOutput = By.id("bmiOutput");
 
 	public ActivityInSightsPage(WebDriver driver) {
 		this.driver = driver;
@@ -217,5 +226,52 @@ public class ActivityInSightsPage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Object ticksObj = js.executeScript("return weightChart.scales.y.ticks.map(t => t.label);");
 		return (List<String>) ticksObj;
+	}
+
+	public boolean isLogTodayWeightDisplayed() {
+
+		return util.isElementAvailable(logTodayWeight);
+	}
+
+	public boolean isWeightKgtDisplayed() {
+
+		return util.isElementAvailable(weightKg);
+	}
+
+	public boolean isBMIDisplayed() {
+
+		return util.isElementAvailable(bmi);
+	}
+
+	public boolean isNoteOptionalDisplayed() {
+
+		return util.isElementAvailable(noteOptional);
+	}
+
+	public boolean islogDayCountDisplayed() {
+
+		return util.isElementAvailable(logDayCount);
+
+	}
+
+	public boolean isLogButtonDisabled() {
+
+		return !util.isElementAvailable(logButton);
+
+	}
+
+	public boolean isLogButtonEnabled() {
+
+		return util.isElementAvailable(logButton);
+
+	}
+
+	public void enterWeightInput(String keys) {
+
+		util.doSendKeys(weightInput, keys);
+	}
+
+	public String getBmiValue() {
+		return util.getAttributeVal(bmiOutput, "value");
 	}
 }
