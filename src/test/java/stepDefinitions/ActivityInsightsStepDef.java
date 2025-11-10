@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -410,6 +411,142 @@ public class ActivityInsightsStepDef {
 		} catch (Exception e) {
 			System.err.println(" Exception while verifying Y-axis: " + e.getMessage());
 			Allure.addAttachment("Y-axis Validation Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("{string} should be visible")
+	public void should_be_visible(String actualLogTodayweight) {
+		try {
+
+			boolean isLogTodayWeightDisplayed = activityPage.isLogTodayWeightDisplayed();
+
+			System.out.println("Log Today's Weight displayed: " + isLogTodayWeightDisplayed);
+			System.out.println(" Log Today's Weight  actual value: " + actualLogTodayweight);
+
+			Allure.addAttachment("Log Today's Weight Check",
+					"Displayed: " + isLogTodayWeightDisplayed + "\nText: " + actualLogTodayweight);
+
+			Assert.assertTrue(isLogTodayWeightDisplayed, "Log Weight Check  is not displayed");
+
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying Log Weight visibility: " + e.getMessage());
+			Allure.addAttachment(" Log Weight visibility Verification Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+
+	}
+
+	@Then("{string} {string} {string} should be displayed")
+	public void should_be_displayed(String expectedWeight, String expectedBMI, String expectedNote) {
+		try {
+			boolean weightVisible = activityPage.isWeightKgtDisplayed();
+			boolean bmiVisible = activityPage.isBMIDisplayed();
+			boolean noteVisible = activityPage.isNoteOptionalDisplayed();
+
+			System.out.println("Weight label visible: " + weightVisible);
+			System.out.println("BMI label visible: " + bmiVisible);
+			System.out.println("Note label visible: " + noteVisible);
+
+			Allure.addAttachment("Form Label Visibility",
+					"Weight: " + weightVisible + "\nBMI: " + bmiVisible + "\nNote: " + noteVisible);
+
+			Assert.assertTrue(weightVisible, " Weight (kg) label not visible");
+			Assert.assertTrue(bmiVisible, "BMI (Auto-calculated) label not visible");
+			Assert.assertTrue(noteVisible, " Note (Optional) label not visible");
+
+			System.out.println("All labels displayed correctly.");
+
+		} catch (NoSuchElementException e) {
+			System.err.println(" One or more labels not found: " + e.getMessage());
+			Allure.addAttachment("Label Lookup Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to missing label element(s).");
+		} catch (Exception e) {
+			System.err.println(" Unexpected exception: " + e.getMessage());
+			Allure.addAttachment("Unexpected Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception.");
+		}
+	}
+
+	@Then("Section should indicate the current tracking day {string}")
+	public void section_should_indicate_the_current_tracking_day(String expectedDayCount) {
+		try {
+			boolean logDayCountVisible = activityPage.islogDayCountDisplayed();
+
+			System.out.println("LogDay Count visible: " + logDayCountVisible);
+
+			Allure.addAttachment("Form Label Visibility", "Log Day Count: " + logDayCountVisible);
+
+			Assert.assertTrue(logDayCountVisible, " Log Day Count  label not visible");
+
+		} catch (NoSuchElementException e) {
+			System.err.println("Count labels not found: " + e.getMessage());
+			Allure.addAttachment("Count Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to missing Log Day Count label element.");
+		} catch (Exception e) {
+			System.err.println(" Unexpected exception: " + e.getMessage());
+			Allure.addAttachment("Unexpected Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception.");
+		}
+	}
+
+	@Then("Log weight button should be disabled")
+	public void log_weight_button_should_be_disabled() {
+		try {
+
+			boolean disabled = activityPage.isLogButtonDisabled();
+
+			System.out.println("Log Weight button disabled: " + disabled);
+			Allure.addAttachment("Log Weight Button State", "Disabled: " + disabled);
+
+			Assert.assertTrue(disabled, "Log Weight button is not disabled as expected");
+
+			System.out.println(" Log Weight button is correctly disabled.");
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying Log Weight button: " + e.getMessage());
+			Allure.addAttachment("Log Weight Button Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@When("User enter valid value in weight after clicking track weight in sub menu")
+	public void user_enter_valid_value_in_weight_after_clicking_track_weight_in_sub_menu() {
+		activityPage.clickOnTrackWeight();
+		activityPage.enterWeightInput("79");
+	}
+
+	@Then("{string} field should auto-calculate")
+	public void field_should_auto_calculate(String string) {
+		try {
+			String bmiValue = activityPage.getBmiValue();
+			System.out.println("BMI auto-calculated: " + bmiValue);
+			Allure.addAttachment("BMI Auto-Calculation", "BMI Value: " + bmiValue);
+			// Assert BMI is not empty and numeric
+			Assert.assertNotNull(bmiValue, " BMI field is empty");
+			Assert.assertTrue(bmiValue.matches("\\d+(\\.\\d+)?"), "BMI is not numeric");
+			System.out.println("BMI field auto-calculated correctly.");
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying BMI auto-calculation: " + e.getMessage());
+			Allure.addAttachment("BMI Auto-Calculation Error", "text/plain", e.toString());
+			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
+		}
+	}
+
+	@Then("Log Weight button should be Enabled")
+	public void log_weight_button_should_be_enabled() {
+		try {
+
+			boolean enabled = activityPage.isLogButtonEnabled();
+
+			System.out.println("Log Weight button enabled: " + enabled);
+			Allure.addAttachment("Log Weight Button State", "enabled: " + enabled);
+
+			Assert.assertTrue(enabled, "Log Weight button is not enabled as expected");
+
+			System.out.println(" Log Weight button is correctly enabled.");
+		} catch (Exception e) {
+			System.err.println(" Exception while verifying Log Weight button enabled: " + e.getMessage());
+			Allure.addAttachment("Log Weight Button Error", "text/plain", e.toString());
 			Assert.fail("Test failed due to unexpected exception: " + e.getMessage());
 		}
 	}
