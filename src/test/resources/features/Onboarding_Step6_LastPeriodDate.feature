@@ -1,68 +1,71 @@
 @OnboardingScenariosStep6
-Feature: Onboarding Process Step4
+Feature: Onboarding Process
 
   Background: 
-    Given User is on Health Conditions page
-    When User selects "Sleep apnea" health condition and clicks on Continue Button
+    Given User is on Menstrual Cycle Awareness page
+    When User selects "Yes" radio option on step5 and clicks on Continue Button
 
-  @TC26
+  @TC53
+  Scenario: Title of the onboarding step6
+    Then Title of the page should be Last Period Date
+
+  @TC54
   Scenario: Continue is visible
     Then Continue button should be visible
 
-  @TC27
-  Scenario: State of Continue button
+  @TC55
+  Scenario: State of Continue button Step 6
     Then Continue button should be enabled
 
-  @TC28
-  Scenario: Title of the onboarding step4
-    Then Title of the page should be Personal Details
+  @TC56
+  Scenario: Description text for step 6
+    Then Verify description text for step6
 
-  @TC29
-  Scenario: Description text for step4
-    Then Verify description text for step4
+  @TC57
+  Scenario: Presence of question in step 6
+    Then User should see the question on Step6
 
-  @TC30
-  Scenario: Input box count
-    Then Verify input box count is 2 on step4
+  @TC58
+  Scenario: Presence of calendar icon in step 6
+    Then User should see the calendar icon in step6
 
-  @TC31
-  Scenario: Field lables
-    Then User should see the following input field labels:
-      | What's your first name? |
-      | What's your age?        |
+  @TC59
+  Scenario: Placeholder text for date field in step 6
+    Then Date input field with placeholder "mm/dd/yyyy" should be displayed
 
-  @TC32
-  Scenario: Helper text for the fields
-    Then User should see the following helper text under the input fields:
-      | Personalizing your experience starts with knowing your name.                                                                                      |
-      | Your age helps us tailor recommendations suitable for your life stage.                                                                            |
-      | Understanding your blood pressure status helps us tailor workouts and nutrition plans that are safe and effective for your cardiovascular health. |
+  @TC60
+  Scenario: Label below the date field
+    Then Label "Cycle Length (days)" should be visible
 
-  @TC33
-  Scenario: Total number of radio buttons in Step4
-    Then Total number of radio buttons should be 4
+  @TC61
+  Scenario: Slider for cycle length
+    Then Slider control for cycle length should be displayed
 
-  @TC34
-  Scenario: Blood pressure description options
-    Then Blood pressure description options should be :
-      | I have been diagnosed with high blood pressure and take medication for it|
-      | I have been diagnosed but don't take medication|
-      | I have never been diagnosed                                               |
-      | I'm not sure                                                              |
+  @TC62
+  Scenario: Default cycle length in slider
+    Then Default cycle length value "28" should be shown beside the slider
 
+  @TC63
+  Scenario: Information text for cycle length
+    Then Information text "Average cycle length is 28 days, but can vary from 21 to 45 days" should be visible
 
-  @TC35
+  @TC64
   Scenario: Display onboarding progress
     Then Verify Onboarding progress bar is displayed
 
-  @TC36
+  @TC65
   Scenario: Progress bar is visible
-    Then Progress bar shows the current step as  4 of 10
+    Then Progress bar shows the current step as  6 of 10
 
-  @TC37
+  @TC66
   Scenario: Back button is visible
     Then Back button is displayed
 
-  @TC38
+  @TC67
   Scenario: State of Back button
     Then Back button should be enabled
+
+  @TC68
+  Scenario: Navigating back to step 5
+    When User clicks on Back Button on Step6
+    Then User should navigate to step5 Menstrual Cycle Awareness
