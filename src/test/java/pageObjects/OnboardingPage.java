@@ -31,6 +31,7 @@ public class OnboardingPage {
 	By progressStepTextStep3 = By.xpath("//div[@class='onboarding-header' and contains(., '3 of 10')]");
 	By progressStepTextStep4 = By.xpath("//div[@class='onboarding-header' and contains(., '4 of 10')]");
 	By progressStepTextStep5 = By.xpath("//div[@class='onboarding-header' and contains(., '5 of 10')]");
+	By progressStepTextStep6 = By.xpath("//div[@class='onboarding-header' and contains(., '6 of 10')]");
 	By UploadPDFButton = By.xpath("//label[@class='upload-button']");
 	By fileInput = By.id("bloodWorkUpload");
 
@@ -51,6 +52,7 @@ public class OnboardingPage {
 	By OnboardingPageStep4SubTitle = By.xpath("//p[@class='subtitle']");
 	By OnboardingPageStep4Title = By.xpath("//h2[text()='Personal Details']");
 	By OnboardingPageStep5Title = By.xpath("//h2[text()='Menstrual Cycle Awareness']");
+	By OnboardingPageStep6Title = By.xpath("//h2[text()='Last Period Date']");
 
 	By inputBoxes = By.xpath("//input[@type='text']");
 	By inputFieldLabelsStep4 = By.xpath("//label");
@@ -64,6 +66,15 @@ public class OnboardingPage {
 	By Step5QuestionText = By.xpath("//div/div[2]/div/label");
 
 	By radioButtonsStep5 = By.cssSelector(".options-grid .radio-option");
+	By cycleInfoOptions = By.cssSelector("label.radio-option span");
+	By OnboardingPageStep6SubTitle = By.xpath("//p[@class='subtitle']");
+	By Step6QuestionText = By.xpath("//label[@for='last_period_date']");
+	By Step6CalendarIcon = By.xpath("//i[@class='fas fa-calendar-alt icon']");
+	By Step6Calendar_dateField = By.id("last_period_date");
+	By Step6LabelDateField = By.xpath("//div/div[2]/div/div[2]/div[1]/span[1]");
+	By Step6CycleLengthSlider = By.xpath("//input[@id='cycle_length']");
+	By Step6DefaultCycleLengthSlider = By.id("cycle_length_display");
+	By Step6InformationText = By.xpath("//p[@class='slider-hint']");
 
 	public String getPageTitle() {
 
@@ -364,6 +375,70 @@ public class OnboardingPage {
 	public String getOnboardingPageStep5QuestionText() {
 
 		return util.getElementText(Step5QuestionText);
+	}
+
+	public void selectCycleInfoOption(String cycleInfo) {
+
+		List<WebElement> cycleInfoRadioButtons = util.getElements(cycleInfoOptions);
+		for (WebElement option : cycleInfoRadioButtons) {
+			if (option.getText().trim().equalsIgnoreCase(cycleInfo)) {
+				option.click();
+				break;
+			}
+		}
+	}
+
+	public String getOnboardingPageStep6Title() {
+
+		return util.getElementText(OnboardingPageStep6Title);
+	}
+
+	public String getOnboardingPageStep6SubTitle() {
+
+		return util.getElementText(OnboardingPageStep6SubTitle);
+	}
+
+	public String getOnboardingPageStep6QuestionText() {
+
+		return util.getElementText(Step6QuestionText);
+	}
+
+	public boolean isCalendarIconStep6Displayed() {
+
+		return util.isElementDisplayed(Step6CalendarIcon);
+	}
+
+	public String getDateFieldPlaceholderText() {
+
+		String actualPlaceholderText = util.getAttributeVal(Step6Calendar_dateField, "placeholder");
+
+		return actualPlaceholderText;
+	}
+
+	public String getDefaultCycleLength() {
+
+		return util.getElementText(Step6DefaultCycleLengthSlider);
+	}
+
+	public boolean isCycleLengthLabelDisplayed() {
+
+		return util.isElementDisplayed(Step6LabelDateField);
+	}
+
+	public boolean isCycleLengthSliderDisplayed() {
+
+		return util.isElementDisplayed(Step6CycleLengthSlider);
+	}
+
+	public String getInfoTextStep6() {
+
+		return util.getElementText(Step6InformationText);
+	}
+
+	public boolean isOnboardingProgressBar6of10Displayed() {
+
+		return util.isElementDisplayed(progressStepTextStep6);
+
 	}
 
 }
