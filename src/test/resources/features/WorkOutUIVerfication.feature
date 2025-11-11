@@ -22,3 +22,13 @@ Feature: Workout Page UI verification
     Given User is on the dashboard page
     When user clicks workout button on navigation bar
     Then User should see the description as "Fresh AI-powered workout tailored to your current cycle phase.".
+
+  Scenario: Verify the message under daily workout plan section
+    Given User is on the dashboard page
+    When user clicks workout button on navigation bar
+    Then User should see the message as "No workout plan found"
+
+  Scenario: Verify the alignment of message under daily workout plan section
+    Given User is on the dashboard page
+    When user clicks workout button on navigation bar
+    Then User should see the message as "No workout plan found Generate a personalized daily workout based on your current cycle phase (luteal) A new workout is generated each day with Gemini Flash 2.0 AI" aligned centre

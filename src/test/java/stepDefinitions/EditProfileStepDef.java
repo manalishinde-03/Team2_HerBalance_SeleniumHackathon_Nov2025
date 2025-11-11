@@ -83,7 +83,7 @@ public class EditProfileStepDef {
 
 		try {
 	        editPage.clickElement(elementName);
-	        System.out.println("✅ Successfully clicked on element: " + elementName);
+	        System.out.println(" Successfully clicked on element: " + elementName);
 	    } catch (NoSuchElementException e) {
 	        System.err.println("Element not found: " + elementName + " → " + e.getMessage());
 	        Allure.addAttachment("Click Element Error", "text/plain", e.toString());
