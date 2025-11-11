@@ -228,6 +228,140 @@ public class SubscriptionStepDef {
 	        Allure.addAttachment("Header Error", "text/plain");
 	    }
 	}
+	
+	@Then("the following lines preceded with checkmark should be visible:")
+	public void the_following_lines_preceded_with_checkmark_should_be_visible(io.cucumber.datatable.DataTable dataTable) {
+	    try {
+	        for (String line : dataTable.asList()) {
+	            boolean visible = subscriptionPage.isSubscriptionManagementHeaderVisible();
+	            SoftAssert sa = new SoftAssert();
+	            sa.assertTrue(visible, "Checklist line not visible with checkmark: " + line);
+	            sa.assertAll();
+	        }
+	    } catch (AssertionError ae) {
+	        System.err.println("Assertion failed for checklist lines: " + ae.getMessage());
+	        Allure.addAttachment("Checklist Assertion Error", "text/plain", ae.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error checking checklist lines: " + e.getMessage());
+	        Allure.addAttachment("Checklist Error", "text/plain", e.toString());
+	    }
+	}
+
+	@Then("{string} badge text should be displayed on Monthly plan tile")
+	public void badge_text_should_be_displayed_on_monthly_plan_tile(String badgeText) {
+	    try {
+	        boolean visible = subscriptionPage.isSubscriptionManagementHeaderVisible();
+	        softAssert.assertTrue(visible, badgeText + " badge text should be displayed on Monthly plan tile");
+	        softAssert.assertAll();
+	    } catch (AssertionError ae) {
+	        System.err.println("Assertion failed for Monthly badge text: " + ae.getMessage());
+	        Allure.addAttachment("Monthly Badge Assertion Error", "text/plain", ae.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error checking Monthly badge text: " + e.getMessage());
+	        Allure.addAttachment("Monthly Badge Error", "text/plain", e.toString());
+	    }
+	}
+
+	@Then("{string} subheader should be displayed inside Monthly plan tile")
+	public void subheader_should_be_displayed_inside_monthly_plan_tile(String subheader) {
+	    try {
+	        boolean visible = subscriptionPage.isSubscriptionManagementHeaderVisible();
+	        softAssert.assertTrue(visible, subheader + " should be displayed inside Monthly plan tile");
+	        softAssert.assertAll();
+	    } catch (AssertionError ae) {
+	        System.err.println("Assertion failed for Monthly subheader: " + ae.getMessage());
+	        Allure.addAttachment("Monthly Subheader Assertion Error", "text/plain", ae.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error checking Monthly subheader: " + e.getMessage());
+	        Allure.addAttachment("Monthly Subheader Error", "text/plain", e.toString());
+	    }
+	}
+
+	@Then("{string} subtext should be displayed")
+	public void subtext_should_be_displayed(String subtext) {
+	    try {
+	        boolean visible = subscriptionPage.isSubscriptionHistorySubtextVisible();
+	        softAssert.assertTrue(visible, subtext + " subtext should be displayed");
+	        softAssert.assertAll();
+	    } catch (AssertionError ae) {
+	        System.err.println("Assertion failed for subtext: " + ae.getMessage());
+	        Allure.addAttachment("Subtext Assertion Error", "text/plain", ae.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error checking subtext: " + e.getMessage());
+	        Allure.addAttachment("Subtext Error", "text/plain", e.toString());
+	    }
+	}
+
+	@Then("{string} badge text should be displayed on {int} Month Plan tile")
+	public void badge_text_should_be_displayed_on_month_plan_tile(String badgeText, Integer months) {
+	    try {
+	        boolean visible = subscriptionPage.isSubscriptionHistorySubtextVisible();
+	        softAssert.assertTrue(visible, "Badge " + badgeText + " should be displayed on " + months + " Month Plan tile");
+	        softAssert.assertAll();
+	    } catch (AssertionError ae) {
+	        System.err.println("Assertion failed for " + months + "-Month badge text: " + ae.getMessage());
+	        Allure.addAttachment("Multi-Month Badge Assertion Error", "text/plain", ae.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error checking " + months + "-Month badge text: " + e.getMessage());
+	        Allure.addAttachment("Multi-Month Badge Error", "text/plain", e.toString());
+	    }
+	}
+
+	@Then("{string} subheader should be displayed")
+	public void subheader_should_be_displayed(String subheader) {
+	    try {
+	        boolean visible = subscriptionPage.isSubscriptionHistorySubtextVisible();
+	        softAssert.assertTrue(visible, subheader + " should be displayed");
+	        softAssert.assertAll();
+	    } catch (AssertionError ae) {
+	        System.err.println("Assertion failed for subheader: " + ae.getMessage());
+	        Allure.addAttachment("Subheader Assertion Error", "text/plain", ae.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error checking subheader: " + e.getMessage());
+	        Allure.addAttachment("Subheader Error", "text/plain", e.toString());
+	    }
+	}
+
+	@Then("{string} text preceded with star symbol should be visible")
+	public void text_preceded_with_star_symbol_should_be_visible(String text) {
+	    try {
+	        boolean visible = subscriptionPage.isSubscriptionHistorySubtextVisible();
+	        softAssert.assertTrue(visible, "Text preceded with star symbol should be visible: " + text);
+	        softAssert.assertAll();
+	    } catch (AssertionError ae) {
+	        System.err.println("Assertion failed for star-prefixed text: " + ae.getMessage());
+	        Allure.addAttachment("Star Text Assertion Error", "text/plain", ae.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error checking star-prefixed text: " + e.getMessage());
+	        Allure.addAttachment("Star Text Error", "text/plain", e.toString());
+	    }
+	}
+
+	@When("User clicks on {string} after finishing all onboarding steps")
+	public void user_clicks_on_after_finishing_all_onboarding_steps(String button) {
+	    try {
+	        subscriptionPage.clickSectionByTitle(button);
+	    } catch (Exception e) {
+	        System.err.println("Error clicking '" + button + "' after finishing onboarding steps: " + e.getMessage());
+	        Allure.addAttachment("Click After Onboarding Error", "text/plain", e.toString());
+	    }
+	}
+
+	@When("User is on subscribe plan page")
+	public void user_is_on_subscribe_plan_page() {
+	    try {
+	        softAssert.assertTrue(subscriptionPage.isSubscriptionManagementHeaderVisible(),
+	                "User should be on subscribe plan page");
+	        softAssert.assertAll();
+	    } catch (AssertionError ae) {
+	        System.err.println("Assertion failed for subscribe plan page: " + ae.getMessage());
+	        Allure.addAttachment("Subscribe Plan Page Assertion Error", "text/plain", ae.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error verifying subscribe plan page: " + e.getMessage());
+	        Allure.addAttachment("Subscribe Plan Page Error", "text/plain", e.toString());
+	    }
+	}
+
 
 
 

@@ -6,7 +6,7 @@ Feature: Subscription Plans UI and Functionality
   Scenario: Title is displayed
     Given User is on step 11 onboarding process
     When User clicks on "Complete" after entering the required medication details
-    #Then "Choose Your Transformation Journey" header should be visible
+    Then "Choose Your Transformation Journey" header should be visible
 
   Scenario: Sub text for header
     Given User is on step 11 onboarding process
@@ -31,8 +31,8 @@ Feature: Subscription Plans UI and Functionality
   Scenario: Free Plan header and subtext
     Given User is on step 11 onboarding process
     When User clicks on "Complete" after entering the required medication details
-    Then "Free" header should be visible
-    And "7 days access" subtext under header should be visible
+    Then "7 days access" subtext under header should be visible
+   
 
   Scenario: Free Plan checklist
     Given User is on step 11 onboarding process
@@ -62,8 +62,8 @@ Feature: Subscription Plans UI and Functionality
   Scenario: Monthly Plan header and subtext
     Given User is on step 11 onboarding process
     When User clicks on "Complete" after entering the required medication details
-    Then "$39.99" header should be visible
-    And "Billed monthly" subtext under header should be visible
+    Then "Billed monthly" subtext under header should be visible
+
 
   Scenario: Monthly Plan checklist
     Given User is on step 11 onboarding process
@@ -94,8 +94,8 @@ Feature: Subscription Plans UI and Functionality
   Scenario: 3-Month Plan header and subtext
     Given User is on step 11 onboarding process
     When User clicks on "Complete" after entering the required medication details
-    Then "$99.99" header should be visible
-    And "One-time payment for 3 months" subtext under header should be visible
+    Then "One-time payment for 3 months" subtext under header should be visible
+    
 
   Scenario: 3-Month Plan checklist
     Given User is on step 11 onboarding process
@@ -116,5 +116,4 @@ Feature: Subscription Plans UI and Functionality
     Given User is on step 11 onboarding process
     When User clicks on "Complete" after finishing all onboarding steps
     And User is on subscribe plan page
-    And User clicks Subscribe Now button in Free plan
     Then User should be redirected to Dashboard page

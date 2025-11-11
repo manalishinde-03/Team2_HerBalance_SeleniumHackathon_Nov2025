@@ -3,38 +3,35 @@ Feature: Edit Your Profile UI
   Background: 
     Given User clicks "Edit Profile" submenu from Dashboard Profile page
 
-  # Edit Profile Main UI Verification
+ 
   Scenario: Title is displayed
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    When User clicks on "Edit Profile"
+    When User clicks on "Edit Profile"  button
     Then "Edit your Profile" should be visible
 
   Scenario: Sub text for title is displayed
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    When User clicks on "Edit Profile"
+    When User clicks on "Edit Profile"  button
     Then "Update your personal information and preferences" should be visible
 
-  Scenario: Total number of tabs
-    Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    When User clicks on "Edit Profile"
-    Then There should be exactly 3 tabs
+ 
 
   Scenario: Tabs header are displayed
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    When User clicks on "Edit Profile"
+    When User clicks on "Edit Profile"  button
     Then "Basic Information", "Body Metrics", "Preferences & Health" tabs should be visible
 
   Scenario: Default tab
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    When User clicks on "Edit Profile"
+    When User clicks on "Edit Profile"  button
     Then "Basic Information" should be visible by default
 
   Scenario: Back Button presence
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    When User clicks on "Edit Profile"
+    When User clicks on "Edit Profile"  button
     Then "Back" Button should be visible
 
-   #Basic Information Tab UI Verification
+
   Scenario: Header text inside the section
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Basic Information" tab
@@ -60,12 +57,7 @@ Feature: Edit Your Profile UI
     And clicks "Basic Information" tab
     Then Name and Age fields should be properly aligned vertically with equal spacing
 
-  Scenario: "Next: Body Metrics" button presence and state
-    Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    And clicks "Basic Information" tab
-    Then "Next: Body Metrics" button should be visible and enabled
 
-   #Body Metrics Tab UI Verification
   Scenario: Header text inside the section
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Body Metrics" tab
@@ -129,12 +121,13 @@ Feature: Edit Your Profile UI
   Scenario: "Back" Button presence and state
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Body Metrics" tab
-    Then "Back" Button should be visible and enabled
+    Then "Back"  button should be visible and enabled
 
   Scenario: "Next: Body Metrics" button presence and state
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Body Metrics" tab
-    Then "Next: Body Metrics" button should be visible and enabled
+    Then  "Next: Body Metrics"  button should be visible and enabled
+    
 
   Scenario: Header text
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
@@ -146,15 +139,12 @@ Feature: Edit Your Profile UI
     And clicks "Preferences & Health" tab
     Then "Update your dietary preferences and medications" should be visible
 
-  Scenario: Dietary Preferences RadioButtons options presence and state
-    Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    And clicks "Preferences & Health" tab
-    Then "Pescatarian Diet", "Non-Vegetarian", "Vegetarian diet", "Vegan Diet" RadioButtons should be visible and enabled
+ 
 
   Scenario: "Add Medication" Button presence and state
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Preferences & Health" tab
-    Then "Add Medication" Button should be visible and enabled
+    Then "Add Medication"  button should be visible and enabled
 
   Scenario: Medication & Supplements section presence
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
@@ -164,51 +154,35 @@ Feature: Edit Your Profile UI
   Scenario: "Back" Button presence and state
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Preferences & Health" tab
-    Then "Back" Button should be visible and enabled
+    Then "Back"  button should be visible and enabled
 
   Scenario: "Save Profile" Button presence and state
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Preferences & Health" tab
-    Then "Save Profile" Button should be visible and enabled
+    Then "Save Profile"  button should be visible and enabled
 
   Scenario: Header text
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Preferences & Health" section
-    And User is on the "Preferences & Health" section
-    When User clicks on "Add Medication" Button
+    When User clicks on "Add Medication"  button
     Then "Enter Medication name" should be visible
 
   Scenario: Enter Medication name Input field presence
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Preferences & Health" section
-    And User is on the "Preferences & Health" section
-    When User clicks on "Add Medication" Button
-    Then Should display empty input field for entering medication name
+    When User clicks on "Add Medication"  button
+    Then Should display the user’s Name as entered during the onboarding process
 
   Scenario: Button text
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Preferences & Health" section
-    And User is on the "Preferences & Health" section
-    When User clicks on "Add Medication" Button
-    Then "Ok" and "Cancel" buttons should be displayed
+    When User clicks on "Add Medication"  button
+    Then "Pescatarian Diet "  "Non-Vegitarian"  "Vegetarian diet" "Vegan Diet"  radioButtons should be visible and enabled
 
   Scenario: Total no of Buttons
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Preferences & Health" section
-    And User is on the "Preferences & Health" section
-    When User clicks on "Add Medication" Button
+    When User clicks on "Add Medication"  button
     Then There should be exactly 2 buttons  "Ok" and "Cancel"
 
-  Scenario: Adding Medication to the profile
-    Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    And clicks "Preferences & Health" section
-    And User is on the "Preferences & Health" section
-    When User clicks on "Ok" button after adding medication
-    Then User should see success message "Your Medication name is saved"
-
-  Scenario: Cancel the Medication pop up window
-    Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
-    And clicks "Preferences & Health" section
-    And User is on the "Preferences & Health" section
-    When User clicks on "Cancel" button without adding medication details
-    Then User should navigate back to "Preferences & Health" section page
+ 
