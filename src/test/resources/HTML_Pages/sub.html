@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subscription Details - Gherkin for Free User</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f6f2fb;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(70,0,100,0.08);
+      padding: 30px;
+    }
+    h2 {
+      color: #6c4bbf;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 32px;
+    }
+
+    .plans {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+    }
+    .plan {
+      flex: 1;
+      background: #f8f2ff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(80, 64, 123, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 220px;
+    }
+    .plan.free {
+      border: 2px solid #88e292;
+    }
+    .plan h3 {
+      color: #6c4bbf;
+      margin-bottom: 8px;
+    }
+    .plan .price {
+      font-size: 1.7em;
+      color: #6c4bbf;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+    .features {
+      text-align: left;
+      margin: 12px 0 18px 0;
+      padding-left: 0;
+      font-size: 1em;
+    }
+    .features li {
+      margin-bottom: 8px;
+      list-style: none;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    .features li::before {
+      content: "✓";
+      color: #6c4bbf;
+      position: absolute;
+      left: 0;
+    }
+    .action-btn {
+      padding: 10px 26px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      margin-top: auto;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .active-plan {
+      background: #36c848;
+      color: #fff;
+    }
+    .subscribe-plan {
+      background: #8d6fcf;
+      color: #fff;
+    }
+    .get-started {
+      background: #8d6fcf;
+      color: #fff;
+    }
+    .label {
+      margin-bottom: 4px;
+      font-size: 0.85em;
+      color: #5c3da4;
+      padding: 2px 8px;
+      border-radius: 16px;
+      background: #ede4ff;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .money-back {
+      color: #3c812f;
+      font-size: 0.95em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Choose Your Transformation Journey</h2>
+    <div class="subtitle">
+      All plans include personalization based on your menstrual cycle phases for optimal results.
+    </div>
+    <div class="plans">
+      <!-- Free Plan -->
+      <div class="plan free">
+        <h3>Free Plan – 7 Days Trial</h3>
+        <div class="price">Free</div>
+        <ul class="features">
+          <li>Cycle-based diet plan (adjusted to your current phase)</li>
+          <li>Daily workouts & yoga</li>
+          <li>AI tips for stress relief</li>
+          <li>Blood report analysis + expert recommendations</li>
+        </ul>
+        <button class="action-btn active-plan">Active Plan</button>
+      </div>
+      <!-- Monthly Plan -->
+      <div class="plan">
+        <span class="label">Most Popular</span>
+        <h3>Monthly Plan – 30 Days</h3>
+        <div class="price">$39.99</div>
+        <div style="color:#888; font-size:0.95em; margin-bottom:10px;">Billed monthly</div>
+        <ul class="features">
+          <li>30-day AI diet plan synced with your cycle</li>
+          <li>Daily workout + yoga matching hormonal phases</li>
+          <li>Community access & motivation</li>
+          <li>Health tracking & progress dashboard</li>
+          <li>Blood report analysis + expert recommendations</li>
+        </ul>
+        <button class="action-btn subscribe-plan">Subscribe Now</button>
+      </div>
+      <!-- 3-Month Plan -->
+      <div class="plan">
+        <span class="label">Best Value</span>
+        <h3>3-Month Plan – Full Transformation</h3>
+        <div class="price">$99.99</div>
+        <div style="color:#888; font-size:0.95em; margin-bottom:10px;">One-time payment for 3 months</div>
+        <ul class="features">
+          <li>All meal & workout plans synced with each menstrual phase</li>
+          <li>Full access to community, yoga, and stress relief</li>
+          <li>Blood report analysis + expert recommendations</li>
+          <li>Milestone tracking & habit building</li>
+        </ul>
+        <div class="money-back">Money-back if 10% weight not reduced</div>
+        <button class="action-btn get-started">Get Started</button>
+      </div>
+    </
