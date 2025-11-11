@@ -75,5 +75,23 @@ Feature: Onboarding Process Step4
   Scenario: Navigation to Step 5
   	When User clicks on Continue Button on Step4
     Then Verify user navigates to Step5 after clicking Continue button
+    
+     @TC400
+  Scenario Outline: Navigation to onboarding step5
+    When User enters valid personal details for "<testcase>" and clicks on Continue Button
+    Then Verify user navigates to Step5 after clicking Continue button
+
+    Examples: 
+      | testcase       |
+      | validInputData |
+      
+      @TC401
+  Scenario Outline: Error Message for invalid personal details onboarding step4
+    When User enters valid personal details for "<testcase>" and clicks on Continue Button
+    Then Verify user gets error message on Step4
+
+    Examples: 
+      | testcase       |
+      | invalidInputData |
 
   

@@ -1,8 +1,12 @@
 package pageObjects;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
@@ -10,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import utilities.ElementUtil;
+import utilities.ExcelReader;
 import utilities.ReadConfig;
 
 public class OnboardingPage {
@@ -23,6 +28,12 @@ public class OnboardingPage {
 		util = new ElementUtil(this.driver);
 		readConfig = new ReadConfig();
 	}
+	
+	private String sheetName = "Onboarding";
+
+	//List<Map<String, String>> personalDetailsData;
+	//String personalDetailsData;
+	Map<String, String> personalDetailsData;
 
 	By OnboardingPageTitle = By.xpath("//*[contains(text(),'Upload Your Recent Blood Work')]");
 	By SupportingTextOnboardingStep1 = By.xpath("/html/body/div/p");
@@ -75,6 +86,8 @@ public class OnboardingPage {
 	By Step6CycleLengthSlider = By.xpath("//input[@id='cycle_length']");
 	By Step6DefaultCycleLengthSlider = By.id("cycle_length_display");
 	By Step6InformationText = By.xpath("//p[@class='slider-hint']");
+	By Step6DescTextCurrentPhase = By.xpath("//p[@class='phase-name']");
+	By Step6ErrorMsg = By.xpath("");;
 
 	public String getPageTitle() {
 
@@ -439,6 +452,93 @@ public class OnboardingPage {
 
 		return util.isElementDisplayed(progressStepTextStep6);
 
+	}
+
+	public String getErrorMsgStep6() {
+		
+
+		return util.getElementText(Step6ErrorMsg);
+	}
+
+	public void enterPersonalDetailsStep4(String testCase) {
+
+		personalDetailsData = ExcelReader.getTestData(sheetName, testCase);
+
+	System.out.println("Test data from excel --" + personalDetailsData);
+
+		String firstName = personalDetailsData.get("FirstName");
+		String age = personalDetailsData.get("Age");
+		String BPStatus = personalDetailsData.get("BPStatus");
+
+		System.out.println("First Name Input :" + firstName);
+
+		if (firstName != null && !firstName.isEmpty()) {
+			util.doSendKeys(firstNameField, firstName);
+		} else {
+			System.out.println("First Name is missing or empty");
+		}
+
+		if (age != null && !age.isEmpty()) {
+			util.doSendKeys(ageField, age);
+
+		} else {
+			System.out.println("Age is missing or empty");
+		}
+
+			
+		List<WebElement> bpStatusRadioButtons = util.getElements(bpStatusOptions);
+		for (WebElement option : bpStatusRadioButtons) {
+			if (option.getText().trim().equalsIgnoreCase(BPStatus)) {
+				option.click();
+				break;
+			}
+		}
+
+		util.doClick(ContinueButtonStep3);
+	}
+
+	public void selectLastPeriodDate(String testcase) {
+		
+		
+		
+		Map<String, String> testData = ExcelReader.getTestData(sheetName, testcase);
+	    String dateFromExcel = testData.get("LastPeriodDate");
+	    
+	    
+	    DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("dd-MMM-yyyy", Locale.ENGLISH);
+	    DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+	    String formattedDate = LocalDate.parse(dateFromExcel, inputFormat).format(outputFormat);
+
+	    System.out.println("Converted date: " + formattedDate);
+	    
+	    System.out.println("Date from Excel: " + dateFromExcel);
+	    
+	 // Split date parts
+	    String[] dateParts = formattedDate.split("/");
+	    String month = dateParts[0];
+	    String day = dateParts[1];
+	    String year = dateParts[2];
+
+	    util.doClick(Step6Calendar_dateField);  // opens the calendar
+	    selectDateFromCalendar(month, day, year);
+		
+	}
+
+	private void selectDateFromCalendar(String month, String day, String year) {
+		util.doClick(By.xpath("//span[@id='calendar_year']"));
+	   // util.doClick(By.xpath("//option[text()='" + year + "']"));
+
+	  //  util.doClick(By.xpath("//select[@class='ui-datepicker-month']"));
+	   // util.doClick(By.xpath("//option[" + (Integer.parseInt(month)) + "]"));
+
+	    util.doClick(By.xpath("//div[@class='calendar-day' and text()='" + Integer.parseInt(day) + "']"));
+		
+	}
+
+	public String getDescTextCurrentPhaseStep6() {
+		
+		System.out.println(">>>>>>>>>>>>>"+util.getElementText(Step6DescTextCurrentPhase));
+		return util.getElementText(Step6DescTextCurrentPhase);
 	}
 
 }
