@@ -228,5 +228,146 @@ public class WorkOutStepDef {
 			Allure.addAttachment("Message Error", "text/plain", e.toString());
 		}
 	}
+	
+	@Then("User should see {string} button displayed")
+	public void user_should_see_button_displayed(String expectedText) {
+	    try {
+	        WorkOutPage workOutPage = new WorkOutPage(driver);
+
+	        boolean isDisplayed = workOutPage.isGenerateWorkoutButtonDisplayed();
+	        String actualText = workOutPage.getGenerateWorkoutButtonText();
+
+	        System.out.println("Button displayed: " + isDisplayed);
+	        System.out.println("Button text: " + actualText);
+
+	        Allure.addAttachment("Generate Workout Button Text", actualText);
+
+	        if (!isDisplayed) {
+	            System.err.println(" Generate Workout Plan button is not displayed.");
+	        } else if (!actualText.equals(expectedText)) {
+	            System.err.println(" Button text does not match expected. Expected: " 
+	                               + expectedText + " but got: " + actualText);
+	        } else {
+	            System.out.println(" Generate Workout Plan button is displayed with correct text.");
+	        }
+
+	    } catch (Exception e) {
+	        System.err.println(" Error verifying Generate Workout Plan button: " + e.getMessage());
+	        Allure.addAttachment("Button Error", "text/plain", e.toString());
+	    }
+	}
+	
+	@Then("User should see {string} section")
+	public void user_should_see_section(String expectedText) {
+	    try {
+	        WorkOutPage workOutPage = new WorkOutPage(driver);
+
+	        boolean isDisplayed = workOutPage.isLutealPhaseSectionDisplayed();
+	        String actualText = workOutPage.getLutealPhaseSectionText();
+
+	        System.out.println("Section displayed: " + isDisplayed);
+	        System.out.println("Section text: " + actualText);
+
+	        Allure.addAttachment("Section Text", actualText);
+
+	        if (!isDisplayed) {
+	            System.err.println("Section is not displayed.");
+	        } else if (!actualText.equals(expectedText)) {
+	            System.err.println(" Section text does not match expected. Expected: " 
+	                               + expectedText + " but got: " + actualText);
+	        } else {
+	            System.out.println("Section is displayed with correct text.");
+	        }
+
+	    } catch (Exception e) {
+	        System.err.println(" Error verifying section: " + e.getMessage());
+	        Allure.addAttachment("Section Error", "text/plain", e.toString());
+	    }
+	}
+	
+	@Then("User should see description as {string}")
+	public void user_should_see_description_as(String expectedDescription) {
+	    try {
+	        WorkOutPage workOutPage = new WorkOutPage(driver);
+
+	        boolean isDisplayed = workOutPage.isLutealPhaseDescriptionDisplayed();
+	        String actualText = workOutPage.getLutealPhaseDescriptionText();
+
+	        System.out.println("Description displayed: " + isDisplayed);
+	        System.out.println("Description text: " + actualText);
+
+	        Allure.addAttachment("Luteal Phase Description", actualText);
+
+	        if (!isDisplayed) {
+	            System.err.println(" Luteal phase description is not displayed.");
+	        } else if (!actualText.equals(expectedDescription)) {
+	            System.err.println("Description text does not match expected. Expected: " 
+	                               + expectedDescription + " but got: " + actualText);
+	        } else {
+	            System.out.println(" Luteal phase description is displayed with correct text.");
+	        }
+
+	    } catch (Exception e) {
+	        System.err.println(" Error verifying luteal phase description: " + e.getMessage());
+	        Allure.addAttachment("Description Error", "text/plain", e.toString());
+	    }
+	}
+	@Then("User should see a {string} section")
+	public void user_should_see_a_section(String expectedText) {
+	    try {
+	        WorkOutPage workOutPage = new WorkOutPage(driver);
+
+	        boolean isDisplayed = workOutPage.isBenefitsSectionDisplayed();
+	        String actualText = workOutPage.getBenefitsSectionText();
+
+	        System.out.println("Section displayed: " + isDisplayed);
+	        System.out.println("Section text: " + actualText);
+
+	        Allure.addAttachment("Section Text", actualText);
+
+	        if (!isDisplayed) {
+	            System.err.println(" Section is not displayed.");
+	        } else if (!actualText.equals(expectedText)) {
+	            System.err.println("Section text does not match expected. Expected: " 
+	                               + expectedText + " but got: " + actualText);
+	        } else {
+	            System.out.println("Section is displayed with correct text.");
+	        }
+
+	    } catch (Exception e) {
+	        System.err.println(" Error verifying section: " + e.getMessage());
+	        Allure.addAttachment("Section Error", "text/plain", e.toString());
+	    }
+	}
+	@Then("User should see the description  under benefits of cycle synced workout section as {string}")
+	public void user_should_see_the_description_under_benefits_of_cycle_synced_workout_section_as(String expectedDescription) {
+	    try {
+	        WorkOutPage workOutPage = new WorkOutPage(driver);
+
+	        boolean isDisplayed = workOutPage.isSevenDayPlanDescriptionDisplayed();
+	        String actualText = workOutPage.getSevenDayPlanDescriptionText();
+
+	        System.out.println("Description displayed: " + isDisplayed);
+	        System.out.println("Description text: " + actualText);
+
+	        Allure.addAttachment("7-Day Plan Description", actualText);
+
+	        if (!isDisplayed) {
+	            System.err.println("7-Day workout plan description is not displayed.");
+	        } else if (!actualText.equals(expectedDescription)) {
+	            System.err.println(" Description text does not match expected. Expected: " 
+	                               + expectedDescription + " but got: " + actualText);
+	        } else {
+	            System.out.println(" 7-Day workout plan description is displayed with correct text.");
+	        }
+
+	    } catch (Exception e) {
+	        System.err.println(" Error verifying 7-Day workout plan description: " + e.getMessage());
+	        Allure.addAttachment("Description Error", "text/plain", e.toString());
+	    }
+	}
+
+
+
 
 }
