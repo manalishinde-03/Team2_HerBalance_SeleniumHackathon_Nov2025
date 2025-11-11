@@ -40,7 +40,7 @@ Scenario: Display onboarding progress
     Then  Sub title for the header in Step3 is visible
 
   @TC23
-  Scenario: Total number of radio buttons
+  Scenario: Total number of radio buttons in Step3
     Then Total 8 Radio buttons should be visible 
 
   @TC24

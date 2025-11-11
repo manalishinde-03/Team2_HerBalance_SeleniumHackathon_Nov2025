@@ -10,11 +10,10 @@ import utilities.ReadConfig;
 
 @CucumberOptions(
 		
-		features = {"src/test/resources/features/EditProfile.feature"}, 
-				glue = { "stepDefinitions" },
+		features = {"src/test/resources/features/"}, 
+				glue = { "hooks","stepDefinitions" },
 				//tags="@TC9",
-				//tags="@TC12",
-
+				//tags="@TC49",
 				monochrome = true, 
 				dryRun = false, 
 				plugin = { "pretty","html:target/index.html","json:target/cucumber-reports/Cucumber.json",

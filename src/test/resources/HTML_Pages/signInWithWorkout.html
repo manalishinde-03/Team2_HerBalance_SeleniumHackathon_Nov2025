@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login - HerBalance UI Demo</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, sans-serif;
+        background: linear-gradient(#efecff, #ffffff);
+    }
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+    .login-card {
+        width: 420px;
+        background: white;
+        border-radius: 14px;
+        padding: 32px 40px;
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+    }
+    .tabs {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .tab {
+        width: 50%;
+        padding: 10px 0;
+        border-radius: 20px;
+        text-align: center;
+        font-weight: 500;
+        cursor: pointer;
+        background: #d3c0e9;
+        color: #5a4a8f;
+    }
+    .tab.active {
+        background: #ffffff;
+        border: 2px solid #b98ae3;
+        color: #4d3d8f;
+    }
+    .title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #4f3b92;
+        margin-bottom: 10px;
+    }
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+        color: #4b4b4b;
+    }
+    .label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: #4e4e4e;
+        font-weight: 500;
+    }
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid #cfcfcf;
+        font-size: 15px;
+        margin-bottom: 18px;
+    }
+    .checkbox-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        background: #6c52ff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .login-btn:hover {
+        background: #5b45d6;
+    }
+    .signup-row {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .signup-row a {
+        text-decoration: none;
+        color: #673cff;
+        font-weight: 600;
+    }
+    /* Workouts link styling */
+    .workouts-link {
+        display: block;
+        margin-top: 25px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #6c52ff;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .workouts-link:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <!-- Left login form -->
+    <div class="login-card">
+
+        <div class="tabs">
+            <div class="tab active">Login</div>
+            <div class="tab">Sign Up</div>
+        </div>
+
+        <div class="title">Welcome Back</div>
+        <div class="subtitle">Enter your credentials to access your account</div>
+
+        <label class="label">Email ID</label>
+        <input type="email" placeholder="you@example.com" id="email-input">
+
+        <label class="label">Password</label>
+        <input type="password" placeholder="********" id="pwd-input">
+
+        <div class="checkbox-row">
+            <label><input type="checkbox"> Show password</label>
+            <a href="#" style="color:#6c52ff;text-decoration:none;">Forgot password?</a>
+        </div>
+
+        <button class="login-btn" id="login-btn" onclick="window.location.href='mainDashboard.html'">
+            Log In
+        </button>
+
+        <div class="signup-row">
+            Don’t have an account? <a href="#">Sign up</a>
+        </div>
+
+        <!-- ✅ Workouts link -->
+        <a href="workouts.html" class="workouts-link" id="workouts-link">Workouts</a>
+
+    </div>
+
+    <!-- Right marketing content -->
+    <div class="side-info">
+        <h2>Transform Your Wellness Journey</h2>
+        <div class="feature-list">
+            <div class="feature"><span>Track</span> your progress</div>
+            <div class="feature"><span>Plan</span> your meals</div>
+            <div class="feature"><span>Stay</span> motivated</div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -583,4 +583,495 @@
 2025-11-08 01:47:48.054 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
 2025-11-08 01:47:48.992 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
 2025-11-08 01:47:49.380 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+<<<<<<< HEAD
 >>>>>>> 82efaac49b24d0294d7ed48acbb33db63112dd31
+=======
+2025-11-08 14:52:34.538 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:37.733 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:37.849 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:37.852 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:38.065 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:39.273 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:39.335 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:39.336 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:39.521 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:41.343 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:41.469 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:41.469 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:41.807 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:44.487 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:44.559 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:44.559 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:44.759 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:46.054 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:46.113 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:46.113 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:46.356 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:47.586 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:47.643 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:47.644 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:47.829 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:49.876 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:49.939 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:49.939 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:50.124 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:51.293 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:51.379 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:51.380 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:51.701 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:53.023 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:53.092 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:53.093 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:53.284 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:54.474 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:54.532 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:54.533 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:54.720 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:56.605 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:56.658 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:56.658 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:56.807 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:52:58.592 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:52:58.712 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:52:58.712 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:52:58.974 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:53:00.038 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:53:00.103 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:53:00.104 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 14:53:00.273 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 14:53:01.483 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 14:53:01.555 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 14:53:01.555 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 15:31:14.844 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 15:31:18.034 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 15:31:18.557 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 15:31:18.836 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 15:33:32.739 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 15:33:34.284 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 15:33:34.918 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 15:33:35.324 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 15:35:35.791 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 15:35:37.426 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 15:35:41.159 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 15:35:41.162 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 15:36:00.823 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 15:36:03.091 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 15:36:07.173 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 15:36:07.176 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 22:23:51.312 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 22:23:55.116 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 22:23:58.999 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 22:23:59.000 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 22:23:59.229 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 22:24:00.787 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 22:24:01.456 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 22:24:01.456 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 22:24:01.686 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 22:24:03.755 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 22:24:04.390 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 22:24:04.390 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 22:24:04.572 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 22:24:05.767 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 22:24:06.516 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 22:24:06.517 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 22:24:06.710 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 22:24:08.583 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 22:24:09.224 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 22:24:09.224 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 22:24:09.422 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 22:24:10.664 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 22:24:11.437 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 22:24:11.437 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:02:44.508 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:02:47.155 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:02:51.159 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:02:51.160 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:02:51.403 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:02:52.743 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:02:53.472 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:02:53.472 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:02:53.736 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:02:55.023 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:02:55.705 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:02:55.706 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:02:55.903 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:02:57.160 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:02:58.316 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:02:58.316 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:02:58.645 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:00.590 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:01.327 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:01.327 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:03:01.525 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:02.727 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:03.622 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:03.622 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:03:03.868 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:05.111 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:06.435 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:06.435 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:03:06.668 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:07.959 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:09.022 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:09.681 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:03:09.871 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:11.206 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:11.960 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:12.183 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:03:12.357 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:13.543 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:17.274 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:17.274 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:03:17.551 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:18.867 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:22.616 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:22.616 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:03:22.845 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:24.120 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:27.813 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:27.813 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:03:28.460 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:03:29.808 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:03:30.600 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:03:30.600 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:26.137 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:28.232 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:31.957 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:31.958 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:32.243 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:33.563 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:34.302 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:34.303 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:34.483 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:35.742 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:36.489 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:36.490 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:36.684 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:37.946 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:38.632 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:38.632 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:38.829 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:40.070 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:40.824 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:40.824 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:41.192 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:42.891 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:44.208 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:44.209 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:44.860 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:46.420 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:47.283 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:47.284 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:47.498 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:48.686 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:49.417 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:49.645 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:49.846 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:51.281 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:52.376 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:52.571 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:52.739 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:53.899 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:05:57.566 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:05:57.567 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:05:57.773 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:05:58.996 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:06:02.638 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:06:02.639 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:06:02.893 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:06:04.192 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:06:07.943 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:06:07.943 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:06:08.180 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:06:09.496 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:06:10.177 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:06:10.177 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:12:02.529 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:12:04.627 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:12:05.432 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:12:05.432 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:12:19.915 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:12:21.574 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:12:22.333 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:12:22.608 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:14:05.460 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:14:06.988 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:14:08.664 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:14:09.033 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:20:30.535 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:20:32.516 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:20:33.384 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:20:33.630 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:23:55.415 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:23:57.293 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:23:58.232 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:23:58.492 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:25:32.930 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:25:34.511 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:25:35.292 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:25:35.293 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:28:21.451 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:28:23.166 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:28:54.768 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:28:55.044 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:33:10.971 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:33:12.519 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:33:43.666 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:33:43.913 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:34:44.095 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:34:45.832 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:34:46.771 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:34:47.117 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:37:45.345 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:37:46.974 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:37:47.871 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:37:48.106 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:06.372 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:08.116 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:12.003 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:12.004 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:12.284 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:13.550 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:14.182 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:14.183 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:14.412 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:15.788 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:16.501 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:16.503 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:16.739 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:18.456 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:19.202 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:19.202 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:19.444 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:20.693 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:21.372 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:21.372 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:21.569 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:22.739 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:24.186 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:24.187 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:24.391 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:25.647 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:26.621 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:26.622 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:26.825 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:28.006 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:28.717 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:28.717 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:28.915 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:30.218 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:31.106 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:31.106 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:31.306 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:32.561 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:36.273 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:36.273 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:36.494 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:37.732 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:41.493 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:41.493 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:41.768 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:42.962 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:46.855 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:46.855 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:41:47.074 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:41:48.277 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:41:49.011 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:41:49.011 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-08 23:43:09.434 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-08 23:43:12.373 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-08 23:43:13.165 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-08 23:43:13.167 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:18.027 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:21.421 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:25.365 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:25.366 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:25.655 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:27.006 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:27.681 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:27.681 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:27.877 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:29.147 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:29.800 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:29.801 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:30.106 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:31.909 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:32.550 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:32.551 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:32.738 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:34.032 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:34.819 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:34.820 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:35.035 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:36.495 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:37.426 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:37.426 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:37.613 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:38.910 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:39.622 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:39.622 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:39.803 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:41.160 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:41.760 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:41.760 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:41.980 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:43.187 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:43.820 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:43.820 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:44.030 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:46.123 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:49.756 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:49.756 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:49.984 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:51.228 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:06:55.005 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:06:55.005 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:06:55.258 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:06:56.564 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:00.227 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:00.227 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:00.472 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:01.736 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:02.444 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:02.445 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:02.687 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:04.331 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:04.872 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:04.872 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:05.052 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:06.167 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:06.758 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:06.758 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:41.160 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:42.703 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:42.770 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:42.772 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:42.974 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:44.249 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:44.313 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:44.313 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:44.507 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:45.685 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:45.745 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:45.745 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:45.908 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:47.234 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:47.290 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:47.291 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:47.574 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:49.478 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:49.531 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:49.531 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:49.713 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:50.895 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:51.005 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:51.005 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:51.350 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:53.101 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:53.164 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:53.164 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:53.439 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:54.734 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:54.788 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:54.788 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:54.966 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:56.317 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:56.376 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:56.376 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:56.584 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:57.716 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:57.761 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:57.762 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:07:58.040 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:07:59.822 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:07:59.875 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:07:59.876 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:16:10.719 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:16:12.588 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:16:14.076 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:16:14.078 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:18:29.652 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:18:31.649 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:18:32.469 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:18:32.471 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:19:37.519 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:19:39.136 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:19:39.991 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:19:39.992 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 11:24:40.186 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 11:24:41.758 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 11:24:42.657 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 11:24:42.658 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 12:32:56.809 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 12:32:59.648 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 12:33:00.198 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 12:33:00.808 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 12:33:01.034 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 12:33:02.270 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 12:33:02.993 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 12:33:03.261 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:04:27.521 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:04:30.832 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:04:31.218 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:04:31.221 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:10:35.725 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:10:37.339 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:10:41.453 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:10:41.455 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:10:41.912 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:10:43.549 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:10:44.519 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:10:44.519 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:10:44.710 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:10:45.995 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:10:47.441 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:10:47.441 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:05.801 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:08.169 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:12.193 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:12.194 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:12.453 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:13.798 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:14.710 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:14.710 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:14.895 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:16.177 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:17.039 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:17.040 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:17.430 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:18.730 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:19.978 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:19.978 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:20.193 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:21.483 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:22.354 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:22.354 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:22.551 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:23.722 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:24.512 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:24.512 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:24.696 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:25.920 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:27.700 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:27.702 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:27.886 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:29.120 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:33.076 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:33.076 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:33.344 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:34.579 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:48.522 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:48.755 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:48.978 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:50.300 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:54.215 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:54.216 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:41:54.488 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:41:55.615 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:41:56.572 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:41:56.572 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+2025-11-09 13:48:05.182 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Initializing WebDriver
+2025-11-09 13:48:06.701 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Navigating to: http://localhost:8000/
+2025-11-09 13:48:10.575 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Screenshots for failed
+2025-11-09 13:48:10.576 INFO [main] [utilities.Log.logInfo(Log.java:13)] - Closing WebDriver
+>>>>>>> 7de717a2402e790a3df17906d3f568bd8057c6f5

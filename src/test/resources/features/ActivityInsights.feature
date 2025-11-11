@@ -27,3 +27,80 @@ Feature: Weight Tracking UI Verification
     Given User is on the Her Balance Dashboard with the activity insights submenu expanded
     When User clicks on track weight
     Then Label and weight values should be center-aligned
+
+  Scenario: Starting weight value is displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Weight value should be mapped from the onboarding process
+
+  Scenario: Current weight value is displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Current Weight should be x value
+
+  Scenario: Goal weight value is displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Goal weight should be displayed
+
+  Scenario: Progress section is visible
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Header should be Progress overview
+
+  Scenario: Weight lost is displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then weight lost should be displayed
+
+  Scenario: Remaining weight is displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Remaining weight  should be displayed
+
+  Scenario: Graph section header is displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Graph section header should be Weight Progression over Time
+
+  Scenario: X-axis labels are displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Graph should be visible with x-axis showing days (Day "1" to Day "7")
+
+  Scenario: Y-axis labels are displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Y-axis should display weight values in kg
+
+  Scenario: Log section header
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then "Log Today's Weight" should be visible
+
+  Scenario: Fields in log section
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then "Weight(kg)" "BMI(Auto-calculated)" " Note(Optional)" should be displayed
+
+  Scenario: Tracking details should be displayed
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Section should indicate the current tracking day "Day 1 of 7"
+
+  Scenario: Log Weight button appears in default state
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User clicks on track weight
+    Then Log weight button should be disabled
+
+  Scenario: BMI auto-calculation after entering weight
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User enter valid value in weight after clicking track weight in sub menu
+    Then "BMI" field should auto-calculate
+
+  Scenario: Log Weight button enables after valid input
+    Given User is on the Her Balance Dashboard with the activity insights submenu expanded
+    When User enter valid value in weight after clicking track weight in sub menu
+    Then Log Weight button should be Enabled
+    
+    

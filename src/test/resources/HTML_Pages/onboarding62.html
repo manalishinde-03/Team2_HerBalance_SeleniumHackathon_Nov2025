@@ -1,123 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Onboarding - Last Period Date</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9fb;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Period Date - Onboarding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f8f8fa;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            width: 900px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        .onboarding-header {
+            background-color: #7b68ee;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .onboarding-progress-bar {
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            width: 70%;
+            position: relative;
+        }
+        .onboarding-progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(6 / 10 * 100%); /* 6 out of 10 steps */
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 4px;
+        }
+        .onboarding-step-count {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .content-area {
+            background-color: #ffffff;
+            padding: 40px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            color: #7b68ee;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 40px;
+        }
 
-    .container {
-      width: 400px;
-      background-color: #fff;
-      padding: 30px;
-      margin-top: 50px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
-    }
+        .form-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 35px 50px;
+            width: 100%;
+            max-width: 550px;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+            text-align: left;
+            position: relative; /* Needed for positioning the calendar */
+        }
+        .form-group {
+            margin-bottom: 30px;
+        }
+        .form-group:last-of-type {
+            margin-bottom: 0;
+        }
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #333333;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .date-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .date-input-wrapper input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            padding-right: 40px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333333;
+            box-sizing: border-box;
+            cursor: pointer; /* Indicate it's clickable for the date picker */
+        }
+        .date-input-wrapper input[type="text"]:focus {
+            outline: none;
+            border-color: #7b68ee;
+            box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.2);
+        }
+        .date-input-wrapper .icon {
+            position: absolute;
+            right: 15px;
+            color: #888888;
+            cursor: pointer; /* Make icon clickable to open calendar */
+        }
 
-    .progress-bar {
-      width: 100%;
-      background-color: #eee;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      position: relative;
-      height: 10px;
-    }
+        .calendar-popup {
+            position: absolute;
+            top: 100%; /* Position below the input field */
+            left: 0;
+            margin-top: 10px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 280px; /* Fixed width for calendar */
+            font-size: 14px;
+            visibility: hidden; /* Hidden by default */
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease;
+        }
+        .calendar-popup.show {
+            visibility: visible;
+            opacity: 1;
+        }
 
-    .progress {
-      width: 60%;
-      height: 100%;
-      background-color: #6a1b9a;
-      border-radius: 5px;
-    }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .calendar-header button {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #666666;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .calendar-header .month-year {
+            font-weight: 600;
+            color: #333333;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .calendar-header .month-year span {
+            color: #7b68ee;
+            font-weight: 700;
+        }
 
-    .progress-text {
-      text-align: right;
-      font-size: 12px;
-      margin-top: 5px;
-      color: #666;
-    }
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            padding: 10px 15px 5px 15px;
+            color: #999999;
+            font-weight: 500;
+            text-align: center;
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            padding: 5px 15px 15px 15px;
+        }
+        .calendar-day {
+            padding: 8px 5px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .calendar-day.inactive {
+            color: #cccccc;
+            cursor: not-allowed;
+        }
+        .calendar-day:not(.inactive):hover {
+            background-color: #f0f0f0;
+        }
+        .calendar-day.selected {
+            background-color: #7b68ee;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .calendar-day.current-day {
+            border: 1px solid #7b68ee;
+        }
 
-    h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #333;
-    }
+        .calendar-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .calendar-footer button {
+            background: none;
+            border: none;
+            color: #7b68ee;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .calendar-footer button:hover {
+            background-color: #f7f3ff;
+        }
 
-    p {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 20px;
-    }
+        .slider-group {
+            margin-top: 30px;
+        }
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            color: #333333;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .slider-label span:last-child {
+            font-weight: 600;
+            color: #7b68ee;
+        }
+        .slider-wrapper {
+            position: relative;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .slider-fill {
+            position: absolute;
+            height: 100%;
+            background-color: #7b68ee;
+            border-radius: 4px;
+            width: 50%;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: transparent;
+            outline: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            cursor: grab;
+        }
 
-    label {
-      font-size: 14px;
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-    }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #7b68ee;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: grab;
+            margin-top: -6px;
+            box-shadow: 0 0 0 2px rgba(123, 104, 238, 0.2);
+        }
 
-    .date-input {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #7b68ee;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: grab;
+            box-shadow: 0 0 0 2px rgba(123, 104, 238, 0.2);
+        }
 
-    input[type="date"] {
-      padding: 8px;
-      font-size: 14px;
-      width: 70%;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: transparent;
+            border-radius: 4px;
+        }
 
-    .cycle-length {
-      font-size: 16px;
-      font-weight: bold;
-      color: #6a1b9a;
-    }
+        input[type="range"]::-moz-range-track {
+            height: 8px;
+            background: transparent;
+            border-radius: 4px;
+        }
 
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #6a1b9a;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+        .slider-hint {
+            font-size: 13px;
+            color: #888888;
+            margin-top: 15px;
+        }
 
-    button:hover {
-      background-color: #4a148c;
-    }
-  </style>
+        .navigation-bottom {
+            background-color: #ffffff;
+            border-top: 1px solid #e0e0e0;
+            padding: 20px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        .button {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+        .back-button {
+            background-color: #f0f0f0;
+            color: #6a6e81;
+            border: 1px solid #dcdcdc;
+        }
+        .back-button:hover {
+            background-color: #e5e5e5;
+        }
+        .continue-button {
+            background-color: #7b68ee;
+            color: #ffffff;
+            border: none;
+        }
+        .continue-button:hover {
+            background-color: #6a5ac0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <div class="progress-bar">
-      <div class="progress"></div>
+    <div class="container">
+        <div class="onboarding-header">
+            <div class="onboarding-progress-bar"></div>
+            <div class="onboarding-step-count">6 of 10</div>
+        </div>
+
+        <div class="content-area">
+            <h2>Last Period Date</h2>
+            <p class="subtitle">This helps us understand your current cycle phase and tailor recommendations.</p>
+
+            <div class="form-card">
+                <div class="form-group">
+                    <label for="last_period_date">When did your last menstrual period start?</label>
+                    <div class="date-input-wrapper">
+                        <input type="text" id="last_period_date" name="last_period_date" placeholder="mm/dd/yyyy" readonly>
+                        <i class="fas fa-calendar-alt icon" id="calendar_icon"></i>
+                        <div class="calendar-popup" id="calendar_popup">
+                            <div class="calendar-header">
+                                <button class="prev-month"><i class="fas fa-chevron-left"></i></button>
+                                <div class="month-year">
+                                    <span id="calendar_month">September</span> <span id="calendar_year">2025</span>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                                <button class="next-month"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-weekdays">
+                                <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+                            </div>
+                            <div class="calendar-days" id="calendar_days_grid">
+                                </div>
+                            <div class="calendar-footer">
+                                <button class="clear-button">Clear</button>
+                                <button class="today-button">Today</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group slider-group">
+                    <div class="slider-label">
+                        <span>Cycle Length (days)</span>
+                        <span id="cycle_length_display">28</span>
+                    </div>
+                    <div class="slider-wrapper">
+                        <div class="slider-fill" style="width: calc((28 - 21) / (45 - 21) * 100%);"></div>
+                        <input type="range" id="cycle_length" name="cycle_length" min="21" max="45" value="28">
+                    </div>
+                    <p class="slider-hint">Average cycle length is 28 days, but can vary from 21 to 45 days</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-bottom">
+            <button class="button back-button">Back</button>
+            <button class="button continue-button">Continue</button>
+        </div>
     </div>
-    <div class="progress-text">Onboarding Progress: 6 of 10</div>
 
-    <h2>Last Period Date</h2>
-    <p>This helps us understand your current cycle phase and tailor recommendations.</p>
+    <script>
+        const cycleLengthSlider = document.getElementById('cycle_length');
+        const cycleLengthDisplay = document.getElementById('cycle_length_display');
+        const sliderFill = document.querySelector('.slider-fill');
 
-    <label for="last-period">When did your last menstrual period start?</label>
-    <div class="date-input">
-      <input type="date" id="last-period" value="2023-09-15">
-      <div class="cycle-length">28</div>
-    </div>
+        function updateSliderFill() {
+            const min = parseInt(cycleLengthSlider.min);
+            const max = parseInt(cycleLengthSlider.max);
+            const value = parseInt(cycleLengthSlider.value);
+            const percentage = ((value - min) / (max - min)) * 100;
+            sliderFill.style.width = percentage + '%';
+        }
 
-    <button>Continue</button>
-  </div>
+        cycleLengthSlider.addEventListener('input', (event) => {
+            cycleLengthDisplay.textContent = event.target.value;
+            updateSliderFill();
+        });
+
+        // Initialize the slider fill on page load
+        updateSliderFill();
+
+
+        // --- Calendar Functionality ---
+        const dateInput = document.getElementById('last_period_date');
+        const calendarIcon = document.getElementById('calendar_icon');
+        const calendarPopup = document.getElementById('calendar_popup');
+        const calendarMonth = document.getElementById('calendar_month');
+        const calendarYear = document.getElementById('calendar_year');
+        const prevMonthBtn = document.querySelector('.prev-month');
+        const nextMonthBtn = document.querySelector('.next-month');
+        const calendarDaysGrid = document.getElementById('calendar_days_grid');
+        const clearButton = document.querySelector('.calendar-footer .clear-button');
+        const todayButton = document.querySelector('.calendar-footer .today-button');
+
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let selectedDate = null;
+
+        function renderCalendar() {
+            calendarDaysGrid.innerHTML = '';
+            const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const startDayOfWeek = firstDayOfMonth.getDay(); // 0 for Sunday, 1 for Monday, etc.
+
+            calendarMonth.textContent = firstDayOfMonth.toLocaleString('en-US', { month: 'long' });
+            calendarYear.textContent = currentYear;
+
+            // Add empty divs for preceding days of the week
+            for (let i = 0; i < startDayOfWeek; i++) {
+                const prevMonthDays = new Date(currentYear, currentMonth, 0).getDate();
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('calendar-day', 'inactive');
+                dayDiv.textContent = prevMonthDays - (startDayOfWeek - 1 - i);
+                calendarDaysGrid.appendChild(dayDiv);
+            }
+
+            // Add days of the current month
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('calendar-day');
+                dayDiv.textContent = i;
+                dayDiv.dataset.day = i;
+                dayDiv.dataset.month = currentMonth;
+                dayDiv.dataset.year = currentYear;
+
+                const today = new Date();
+                if (i === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
+                    dayDiv.classList.add('current-day');
+                }
+
+                if (selectedDate &&
+                    i === selectedDate.getDate() &&
+                    currentMonth === selectedDate.getMonth() &&
+                    currentYear === selectedDate.getFullYear()) {
+                    dayDiv.classList.add('selected');
+                }
+
+                dayDiv.addEventListener('click', () => {
+                    const previouslySelected = calendarDaysGrid.querySelector('.calendar-day.selected');
+                    if (previouslySelected) {
+                        previouslySelected.classList.remove('selected');
+                    }
+                    dayDiv.classList.add('selected');
+                    selectedDate = new Date(currentYear, currentMonth, i);
+                    dateInput.value = formatDate(selectedDate);
+                    calendarPopup.classList.remove('show');
+                });
+                calendarDaysGrid.appendChild(dayDiv);
+            }
+
+            // Add empty divs for succeeding days of the week
+            const totalDaysRendered = startDayOfWeek + daysInMonth;
+            const remainingCells = 42 - totalDaysRendered; // Ensure 6 weeks always
+            for (let i = 1; i <= remainingCells; i++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('calendar-day', 'inactive');
+                dayDiv.textContent = i;
+                calendarDaysGrid.appendChild(dayDiv);
+            }
+        }
+
+        function formatDate(date) {
+            const d = String(date.getDate()).padStart(2, '0');
+            const m = String(date.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
+            const y = date.getFullYear();
+            return `${m}/${d}/${y}`;
+        }
+
+        function parseDate(dateString) {
+            const parts = dateString.split('/');
+            if (parts.length === 3) {
+                const month = parseInt(parts[0], 10) - 1; // Month is 0-indexed
+                const day = parseInt(parts[1], 10);
+                const year = parseInt(parts[2], 10);
+                if (!isNaN(month) && !isNaN(day) && !isNaN(year)) {
+                    return new Date(year, month, day);
+                }
+            }
+            return null;
+        }
+
+        calendarIcon.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from propagating to document
+            calendarPopup.classList.toggle('show');
+            if (dateInput.value) {
+                const parsed = parseDate(dateInput.value);
+                if (parsed) {
+                    currentMonth = parsed.getMonth();
+                    currentYear = parsed.getFullYear();
+                    selectedDate = parsed;
+                }
+            } else {
+                selectedDate = null;
+                const today = new Date();
+                currentMonth = today.getMonth();
+                currentYear = today.getFullYear();
+            }
+            renderCalendar();
+        });
+
+        dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            calendarPopup.classList.toggle('show');
+            if (dateInput.value) {
+                const parsed = parseDate(dateInput.value);
+                if (parsed) {
+                    currentMonth = parsed.getMonth();
+                    currentYear = parsed.getFullYear();
+                    selectedDate = parsed;
+                }
+            } else {
+                selectedDate = null;
+                const today = new Date();
+                currentMonth = today.getMonth();
+                currentYear = today.getFullYear();
+            }
+            renderCalendar();
+        });
+
+        prevMonthBtn.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            renderCalendar();
+        });
+
+        nextMonthBtn.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            renderCalendar();
+        });
+
+        clearButton.addEventListener('click', () => {
+            dateInput.value = '';
+            selectedDate = null;
+            calendarPopup.classList.remove('show');
+        });
+
+        todayButton.addEventListener('click', () => {
+            const today = new Date();
+            dateInput.value = formatDate(today);
+            selectedDate = today;
+            currentMonth = today.getMonth();
+            currentYear = today.getFullYear();
+            calendarPopup.classList.remove('show');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!calendarPopup.contains(event.target) && event.target !== dateInput && event.target !== calendarIcon) {
+                calendarPopup.classList.remove('show');
+            }
+        });
+
+        // Initial render for the example image
+        currentMonth = 8; // September (0-indexed)
+        currentYear = 2025;
+        selectedDate = new Date(2025, 8, 16); // September 16, 2025
+        dateInput.value = formatDate(selectedDate);
+        renderCalendar(); // Render to match the image initial state
+    </script>
 </body>
 </html>
