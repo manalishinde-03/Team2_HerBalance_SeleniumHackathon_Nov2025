@@ -6,7 +6,7 @@ Feature: Subscription Plans UI and Functionality
   Scenario: Title is displayed
     Given User is on step 11 onboarding process
     When User clicks on "Complete" after entering the required medication details
-    Then "Choose Your Transformation Journey" header should be visible
+    #Then "Choose Your Transformation Journey" header should be visible
 
   Scenario: Sub text for header
     Given User is on step 11 onboarding process

@@ -53,6 +53,7 @@ public class ActivityInSightsPage {
 	private By bmiOutput = By.id("bmiOutput");
 	private By weightHistoryHeader = By.xpath("//h3[normalize-space()='Weight History']");
 	private By weightHistoryEntries = By.xpath("//h3[normalize-space()='Weight History']/following-sibling::div");
+	private By menstrualPhaseLogs  = By.xpath("//a[normalize-space()='Menstrual Phase Logs']");     // NEW
 
 	public ActivityInSightsPage(WebDriver driver) {
 		this.driver = driver;
@@ -82,7 +83,7 @@ public class ActivityInSightsPage {
 	}
 
 	public boolean isActivityInsightsExpanded() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		try {
 			for (By option : activitySubmenuOptions) {
 				WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(option));
@@ -302,5 +303,17 @@ public class ActivityInSightsPage {
 	public boolean isWeightInHistory(String weight) {
 		return getWeightHistoryTexts().stream().anyMatch(text -> text.contains(weight));
 	}
-
+	
+	public void openMenstrualPhaseLogs() {
+	    WebElement link = driver.findElement(menstrualPhaseLogs);
+	    String href = link.getAttribute("href");
+	    if (href != null && !href.trim().equals("#")) {
+	        util.doClick(menstrualPhaseLogs); // normal apps
+	    } else {
+	        // static site fallback: swap activityinsights -> cycle-tracker
+	        String curr = driver.getCurrentUrl();
+	        String target = curr.replace("activityinsights.html", "cycle-tracker.html");
+	        driver.navigate().to(target);
+	    }
+	}
 }

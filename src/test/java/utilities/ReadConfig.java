@@ -52,7 +52,10 @@ public class ReadConfig {
 		String HomepageURL = pro.getProperty("DashBoardURL");
 		return HomepageURL;
 	}
-
+	
+	public String getPageURL(String pageName) {
+	    return pro.getProperty(pageName);
+	}
 	// read excelpath
 	public String getExcelPath() {
 		String path = pro.getProperty("excelPath");
