@@ -2,7 +2,6 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import utilities.ElementUtil;
 import utilities.ReadConfig;
 
@@ -11,66 +10,95 @@ public class WorkOutPage {
 	private WebDriver driver;
 	private ElementUtil util;
 	private ReadConfig readConfig;
+
 	public WorkOutPage(WebDriver driver) {
 		this.driver = driver;
 		util = new ElementUtil(this.driver);
 		readConfig = new ReadConfig();
-
 	}
-	
+
+	// Locators
 	private By mainDashBoard = By.xpath("//h1[text()='Free Plan Dashboard']");
-	
 	private By workOut = By.xpath("//a[text()='Workout']");
-	
-	
-	private By dailyPersonalisedWorkOut= By.xpath("//h1[text()='Daily Personalized Workouts']");
-	
-	private By backToDashBoard= By.xpath("//a[text()='← Back to Dashboard']");
-	private By dailyWorkOutPlan= By.xpath("//h2[text()='Daily Workout Plan']");
-	
-	private By freshAI= By.xpath("//p[text()='Fresh AI-powered workout tailored to your current cycle phase.']");
-	
+	private By dailyPersonalisedWorkOut = By.xpath("//h1[text()='Daily Personalized Workouts']");
+	private By backToDashBoard = By.xpath("//a[text()='← Back to Dashboard']");
+	private By dailyWorkOutPlan = By.xpath("//h2[text()='Daily Workout Plan']");
+	private By freshAI = By.xpath("//p[text()='Fresh AI-powered workout tailored to your current cycle phase.']");
+	private By noWorkOutPlan = By.xpath("//strong[text()='No workout plan found']");
+	private By noWorkoutMessageStrong = By.xpath("//p/strong[text()='No workout plan found']");
+	private By noWorkoutMessageDetail = By.xpath("//p[contains(text(),'Generate a personalized daily workout plan')]");
+
+	private boolean isDisplayed(By locator) {
+		return util.isElementDisplayed(locator);
+	}
+
+	private String getText(By locator) {
+		return util.getElementText(locator);
+	}
+
 	public String getMainDashBoardUrl() {
 		return util.getPageURL();
 	}
+
 	public boolean isMainDashBoardDisplayed() {
-		return util.isElementDisplayed(mainDashBoard);
+		return isDisplayed(mainDashBoard);
 	}
-	
+
 	public void clickOnWorkOut() {
 		util.doClick(workOut);
 	}
-	
+
 	public boolean isDailyPersonalisedDisplayed() {
-		return util.isElementDisplayed(dailyPersonalisedWorkOut);
+		return isDisplayed(dailyPersonalisedWorkOut);
 	}
-	
-	public String DailyPersonalisedGetText() {
-		return util.getElementText(dailyPersonalisedWorkOut);
+
+	public String getDailyPersonalisedText() {
+		return getText(dailyPersonalisedWorkOut);
 	}
+
 	public boolean isBacktoDashBoardDisplayed() {
-		return util.isElementDisplayed(backToDashBoard);
+		return isDisplayed(backToDashBoard);
 	}
-	
+
 	public String getBacktoDashBoardText() {
-		return util.getElementText(backToDashBoard);
+		return getText(backToDashBoard);
 	}
-	
-	
-	
-	public boolean isdailyWorkOutPlanDisplayed() {
-		return util.isElementDisplayed(dailyWorkOutPlan);
+
+	public boolean isDailyWorkOutPlanDisplayed() {
+		return isDisplayed(dailyWorkOutPlan);
 	}
-	
-	public String getdailyWorkOutPlanText() {
-		return util.getElementText(dailyWorkOutPlan);
+
+	public String getDailyWorkOutPlanText() {
+		return getText(dailyWorkOutPlan);
 	}
-	
-	public boolean isfreshAIDisplayed() {
-		return util.isElementDisplayed(freshAI);
+
+	public boolean isFreshAIDisplayed() {
+		return isDisplayed(freshAI);
 	}
-	
-	public String getfreshAIText() {
-		return util.getElementText(freshAI);
+
+	public String getFreshAIText() {
+		return getText(freshAI);
+	}
+
+	public boolean isNoWorkOutPlanDisplayed() {
+		return isDisplayed(noWorkOutPlan);
+	}
+
+	public String getNoWorkOutPlanText() {
+		return getText(noWorkOutPlan);
+	}
+
+	public boolean isNoWorkoutMessageDisplayed() {
+		return util.isElementDisplayed(noWorkoutMessageStrong) && util.isElementDisplayed(noWorkoutMessageDetail);
+	}
+
+	public String getNoWorkoutMessageText() {
+		String strongText = util.getElementText(noWorkoutMessageStrong);
+		String detailText = util.getElementText(noWorkoutMessageDetail);
+		return strongText + " " + detailText;
+	}
+
+	public String getNoWorkoutMessageAlignment() {
+		return util.getCssValue(noWorkoutMessageDetail, "text-align");
 	}
 }

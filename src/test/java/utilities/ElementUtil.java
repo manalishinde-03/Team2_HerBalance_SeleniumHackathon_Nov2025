@@ -600,6 +600,31 @@ public class ElementUtil {
 			        return false; // element not found within timeout
 			    }
 			}
+			public String getCssValue(By locator, String propertyName) {
+			    String value = null;
+			    try {
+			        WebElement ele = driver.findElement(locator);
+
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			        wait.until(ExpectedConditions.visibilityOf(ele));
+
+			        if (ele.isDisplayed()) {
+			            try {
+			                value = ele.getCssValue(propertyName);
+			            } catch (Exception e) {
+			                System.err.println("Error fetching CSS value for property: " + propertyName);
+			                e.printStackTrace();
+			            }
+			        } else {
+			            throw new Exception("Element is not displayed");
+			        }
+
+			    } catch (Exception e) {
+			        System.err.println(" Exception in getCssValue: " + e.getMessage());
+			        e.printStackTrace();
+			    }
+			    return value;
+			}
 
 }
 
