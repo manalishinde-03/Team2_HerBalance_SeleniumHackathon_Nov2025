@@ -27,6 +27,11 @@ public class WorkOutPage {
 	private By noWorkOutPlan = By.xpath("//strong[text()='No workout plan found']");
 	private By noWorkoutMessageStrong = By.xpath("//p/strong[text()='No workout plan found']");
 	private By noWorkoutMessageDetail = By.xpath("//p[contains(text(),'Generate a personalized daily workout plan')]");
+	private By generateWorkoutBtn = By.xpath("//button[text()='Generate Workout Plan']");
+	private By lutealPhaseSection = By.xpath("//h2[text()='Your Luteal Phase Workouts']");
+	private By lutealPhaseDescription = By.xpath("//div[@class='section']/p[contains(text(),'luteal phase')]");
+	private By benefitsSection = By.xpath("//h2[text()='Benefits of Cycle-Synced Workouts']");
+	private By sevenDayPlanDescription = By.xpath("//div[contains(@class,'green-box')]/p");
 
 	private boolean isDisplayed(By locator) {
 		return util.isElementDisplayed(locator);
@@ -100,5 +105,42 @@ public class WorkOutPage {
 
 	public String getNoWorkoutMessageAlignment() {
 		return util.getCssValue(noWorkoutMessageDetail, "text-align");
+	}
+	
+	public boolean isGenerateWorkoutButtonDisplayed() {
+	    return util.isElementDisplayed(generateWorkoutBtn);
+	}
+
+	public String getGenerateWorkoutButtonText() {
+	    return util.getElementText(generateWorkoutBtn);
+	}
+	public boolean isLutealPhaseSectionDisplayed() {
+	    return util.isElementDisplayed(lutealPhaseSection);
+	}
+
+	public String getLutealPhaseSectionText() {
+	    return util.getElementText(lutealPhaseSection);
+	}
+	
+	public boolean isLutealPhaseDescriptionDisplayed() {
+	    return util.isElementDisplayed(lutealPhaseDescription);
+	}
+
+	public String getLutealPhaseDescriptionText() {
+	    return util.getElementText(lutealPhaseDescription);
+	}
+	public boolean isBenefitsSectionDisplayed() {
+	    return util.isElementDisplayed(benefitsSection);
+	}
+
+	public String getBenefitsSectionText() {
+	    return util.getElementText(benefitsSection);
+	}
+	public boolean isSevenDayPlanDescriptionDisplayed() {
+	    return util.isElementDisplayed(sevenDayPlanDescription);
+	}
+
+	public String getSevenDayPlanDescriptionText() {
+	    return util.getElementText(sevenDayPlanDescription);
 	}
 }
