@@ -120,6 +120,31 @@ public class CommonStepDef {
 		}
 
 	}
+	
+	@Given("User logged into the application")
+	public void user_logged_into_the_application() {
+		try {
+			context.setDriver(driver);
+			String htmlPagePath = System.getProperty("user.dir") + "/src/test/resources/HTML_Pages/signInWithWorkout.html";
+			String localURL = "file://" + htmlPagePath;
+
+			driver.get(localURL);
+
+			System.out.println("URL>>>"+localURL);
+			context.getDriver().get(localURL);
+		    activityPage.enterUsername();
+		    activityPage.enterPassword();
+		    activityPage.clickOnLogin();
+//		    activityPage.clickOnActivityInsights(); 
+//		    activityPage.clickOnTrackWeight();
+		    System.out.println("Logged in and click on Activity Insights executed successfully.");
+		} catch (Exception e) {
+		    System.out.println("Exception during login: " + e.getMessage());
+		    e.printStackTrace();
+		    Assert.fail("Log in and click on Activity Insights failed due to exception: " + e.getMessage());
+		}
+
+	}
 
 	
 	
