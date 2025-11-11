@@ -34,7 +34,7 @@ Feature: Edit Your Profile UI
     When User clicks on "Edit Profile"
     Then "Back" Button should be visible
 
-  # Basic Information Tab UI Verification
+   Basic Information Tab UI Verification
   Scenario: Header text inside the section
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Basic Information" tab
@@ -65,7 +65,7 @@ Feature: Edit Your Profile UI
     And clicks "Basic Information" tab
     Then "Next: Body Metrics" button should be visible and enabled
 
-  # Body Metrics Tab UI Verification
+   Body Metrics Tab UI Verification
   Scenario: Header text inside the section
     Given User is on the Her Balance Dashboard with the Edit Profile submenu expanded
     And clicks "Body Metrics" tab
