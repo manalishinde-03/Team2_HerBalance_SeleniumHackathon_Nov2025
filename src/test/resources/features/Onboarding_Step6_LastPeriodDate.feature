@@ -69,3 +69,24 @@ Feature: Onboarding Process
   Scenario: Navigating back to step 5
     When User clicks on Back Button on Step6
     Then User should navigate to step5 Menstrual Cycle Awareness
+    
+    @TC69
+  Scenario: Error message for without selecting last menstrual date
+    When User clicks continue button without selecting last menstrual date
+    Then Error message "Please select your last period start date" should be displayed
+    
+      @TC70
+  Scenario: Error message for invalid value in date
+    When User clicks continue button after entering invalid value in date
+    Then Error message "Please select your last period start date" should be displayed
+    
+      @TC71
+   Scenario Outline: Description for current phase Step6_2
+    When  User selects last menstrual date in Step 6 for "<testcase>"
+    Then Description text about the current phase "Based on your last period starting on <date>, you're currently in the [CurrentPhase]." should be visible
+    
+     Examples: 
+      | testcase       |
+      | validInputData |
+    
+  

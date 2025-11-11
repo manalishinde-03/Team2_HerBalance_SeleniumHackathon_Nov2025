@@ -53,8 +53,8 @@ Feature: Onboarding Process
   @TC51
   Scenario: State of Back button
     Then Back button should be enabled
-    
-     @TC52
+
+  @TC52
   Scenario: Navigating back to step 4
-  	When User clicks on Back Button on Step5
+    When User clicks on Back Button on Step5
     Then User should navigate to step4 Personal Details

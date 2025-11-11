@@ -10,10 +10,10 @@ import utilities.ReadConfig;
 
 @CucumberOptions(
 		
-		features = {"src/test/resources/features/"}, 
+		features = {"src/test/resources/features"}, 
 				glue = { "hooks","stepDefinitions" },
 				//tags="@TC9",
-				//tags="@TC49",
+				//tags="@TC71",
 				monochrome = true, 
 				dryRun = false, 
 				plugin = { "pretty","html:target/index.html","json:target/cucumber-reports/Cucumber.json",

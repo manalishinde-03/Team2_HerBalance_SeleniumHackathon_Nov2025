@@ -5,7 +5,6 @@ import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import utilities.Log;
 import utilities.ReadConfig;
-import utilities.RunTimeData;
 
 import java.io.ByteArrayInputStream;
 
@@ -97,7 +96,7 @@ public class BaseClass {
 		try {
 			
 			//empty dataMap
-			RunTimeData.emptyDataMap();
+			//RunTimeData.emptyDataMap();
 			
 			// Close the Excel file
 			ExcelReader.closeExcel();

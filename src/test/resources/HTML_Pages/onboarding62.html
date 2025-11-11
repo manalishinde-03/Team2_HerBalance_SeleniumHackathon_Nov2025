@@ -414,8 +414,18 @@
         </div>
 
         <div class="navigation-bottom">
-            <button class="button back-button">Back</button>
-            <button class="button continue-button">Continue</button>
+            <button class="button back-button" onclick="navigateBack()">Back</button>
+			<script>
+  function navigateBack() {
+    window.location.href = 'onboarding5.html';
+  }
+</script>
+            <button class="button continue-button" onclick="navigateToStep63()">Continue</button>
+			<script>
+  function navigateToStep63() {
+    window.location.href = 'onboarding63.html';
+  }
+</script>
         </div>
     </div>
 

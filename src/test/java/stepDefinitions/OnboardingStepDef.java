@@ -525,4 +525,62 @@ public class OnboardingStepDef {
 
 	}
 
+	@When("User clicks continue button without selecting last menstrual date")
+	public void user_clicks_continue_button_without_selecting_last_menstrual_date() {
+		onboardingPage.clickOnContinueBtnStep4();
+	}
+
+	@When("User clicks continue button after entering invalid value in date")
+	public void user_clicks_continue_button_after_entering_invalid_value_in_date() {
+
+		// onboardingPage.enterDateInStep6();
+		onboardingPage.clickOnContinueBtnStep4();
+	}
+
+	@Then("Error message {string} should be displayed")
+	public void error_message_should_be_displayed(String expectedError) {
+
+		Assert.assertEquals(onboardingPage.getErrorMsgStep6(), "Please select your last period start date");
+	}
+
+	@Then("Verify user gets error message on Step4")
+	public void verify_user_gets_error_message_on_step4() {
+		Assert.assertEquals(onboardingPage.getErrorMsgStep6(), "Please select your last period start date");
+	}
+
+	@When("User enters valid personal details for {string} and clicks on Continue Button")
+	public void user_enters_valid_personal_details_excel_and_and_clicks_on_continue_button(String testCase) {
+
+		onboardingPage.enterPersonalDetailsStep4(testCase.trim());
+
+	}
+
+	@When("User selects last menstrual date in Step 6 for {string}")
+	public void user_selects_last_menstrual_date_in_step(String testCase) {
+		
+		try {
+
+			String htmlPage = "onboarding62.html";
+			String URL = (readConfig.getApplicationURL()) + htmlPage;
+			System.out.println("URL>>>" + URL);
+			context.getDriver().get(URL);
+		} catch (Exception e) {
+			System.err.println("Exception : " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		onboardingPage.selectLastPeriodDate(testCase.trim());
+		onboardingPage.clickOnContinueBtnStep4();
+	}
+
+	
+	
+	@Then("Description text about the current phase {string} should be visible")
+	public void description_text_about_the_current_phase_should_be_visible(String expected) {
+		
+		String actualText = onboardingPage.getDescTextCurrentPhaseStep6();
+		Assert.assertTrue(actualText.contains("Based on your last period starting on"));
+		Assert.assertTrue(actualText.contains("you're currently in"));
+	}
+
 }
