@@ -54,6 +54,9 @@ public class ActivityInSightsPage {
 	private By weightHistoryHeader = By.xpath("//h3[normalize-space()='Weight History']");
 	private By weightHistoryEntries = By.xpath("//h3[normalize-space()='Weight History']/following-sibling::div");
 	private By menstrualPhaseLogs  = By.xpath("//a[normalize-space()='Menstrual Phase Logs']");     // NEW
+	private By graphDots   = By.cssSelector("g.dummy-class circle");
+	private By weightLostValue = By.xpath("//p[text()='Weight Lost']/preceding-sibling::h3");
+	 private By successMsg  = By.id("successMessage");
 
 	public ActivityInSightsPage(WebDriver driver) {
 		this.driver = driver;
@@ -316,4 +319,32 @@ public class ActivityInSightsPage {
 	        driver.navigate().to(target);
 	    }
 	}
+	public String getAlertText() {
+		  String alertText = util.getAlertMsg();
+	      
+	        return alertText;
+	    }
+	  public void acceptAlert() {
+	        driver.switchTo().alert().accept();
+	    }
+	  
+	  public List<WebElement> getGraphDots() {
+		 
+	        return  util.getElements(graphDots);
+	    }
+
+	    public List<String> getGraphDotCoordinates() {
+	    	//get the circle x axis and circle y axis coordinates
+	        return getGraphDots().stream()
+	            .map(dot -> "cx=" + dot.getAttribute("cx") + ", cy=" + dot.getAttribute("cy"))
+	            .collect(Collectors.toList());
+	    }
+	    public String getWeightLostText() {
+	    	return util.getElementText(weightLostValue).trim();
+	       
+	    }
+	    public String getSuccessMessage() {
+	        return util.getElementText(successMsg);
+	    }
+
 }

@@ -33,10 +33,10 @@ public class ReadConfig {
 		return browser;
 	}
 // get Login credentials
-	public String getUsername() {
-		String username = pro.getProperty("UserName");
-		return username;
-	}
+//	public String getUsername() {
+//		String username = pro.getProperty("UserName");
+//		return username;
+//	}
 	// get Login credentials
 	public String getEmail() {
 		String email = pro.getProperty("Email");
@@ -72,5 +72,11 @@ public class ReadConfig {
 	public void setBrowserFromTestNG(String browser) {
 		browserFromTestNG = browser;
 	}
+	public String getUsername() {
+		String username = pro.getProperty("UserName");
+		return username;
+	}
+	
+	
 
 }
