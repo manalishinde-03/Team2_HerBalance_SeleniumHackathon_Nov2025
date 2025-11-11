@@ -1,6 +1,9 @@
 package stepDefinitions;
 
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import hooks.TestContext;
 import pageObjects.WorkOutPage;
@@ -9,6 +12,7 @@ import utilities.ReadConfig;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Allure;
 
 public class WorkOutStepDef {
 	
@@ -49,15 +53,129 @@ public class WorkOutStepDef {
 
 	@When("user clicks workout button on navigation bar")
 	public void user_clicks_workout_button_on_navigation_bar() {
-		workOutPage.clickOnWorkOut();
+		try {
+	        workOutPage.clickOnWorkOut();
+	        System.out.println("Workout button clicked successfully.");
+	    } catch (NoSuchElementException e) {
+	        System.err.println(" Workout button not found: " + e.getMessage());
+	        Allure.addAttachment("Workout Button Error", "text/plain", e.toString());
+	    } catch (TimeoutException e) {
+	        System.err.println(" Timeout while waiting for workout button: " + e.getMessage());
+	        Allure.addAttachment("Workout Button Timeout", "text/plain", e.toString());
+	    } catch (Exception e) {
+	        System.err.println(" Unexpected error clicking workout button: " + e.getMessage());
+	        Allure.addAttachment("Workout Button Unexpected Error", "text/plain", e.toString());
+	    }
 	}
 
 	@Then("User should see page title as {string}")
 	public void user_should_see_page_title_as(String expectedTitle) {
-		boolean isDailyPersonalised = workOutPage.isDailyPersonalisedDisplayed();
-		
-		System.out.println("The Daily Personalised Page is displayed  "+isDailyPersonalised);
-		System.out.println("The text of Daily personalised element is :");
+		try {
+	        boolean isDailyPersonalised = workOutPage.isDailyPersonalisedDisplayed();
+	        String elementText = workOutPage.DailyPersonalisedGetText(); 
+
+	        System.out.println("The Daily Personalised Page is displayed: " + isDailyPersonalised);
+	        System.out.println("The text of Daily personalised element is: " + elementText);
+
+	        // Attach to Allure
+	        Allure.addAttachment("Daily Personalised Element Text", elementText);
+
+	        // Assert element is displayed
+	        Assert.assertTrue(isDailyPersonalised, " Daily Personalised element is not displayed");
+
+	        // Assert text matches expected
+	        Assert.assertEquals(elementText, "Daily Personalized Workouts", " Text does not match expected");
+
+	        System.out.println("Back to dashboard link is displayed with correct text.");
+
+	    } catch (Exception e) {
+	        System.err.println("Error verifying Daily Personalised element: " + e.getMessage());
+	        Allure.addAttachment("Daily Personalised Error", "text/plain", e.toString());
+	        Assert.fail("Test failed due to unexpected exception.");
+	    }
 	}
+	
+	@Then("User should see the link Back to dashboard")
+	public void user_should_see_the_link_back_to_dashboard() {
+		 try {
+		        boolean isBackToDashBoard = workOutPage.isDailyPersonalisedDisplayed();
+		        String linkText = workOutPage.getBacktoDashBoardText(); 
+
+		        System.out.println("Back to DashBoard is displayed: " + isBackToDashBoard);
+		        System.out.println("The text of Back to DashBoard element is: " + linkText);
+
+		        // Attach to Allure
+		        Allure.addAttachment("Back to Dashboard Link Text", linkText);
+
+		        // Assert that the link is displayed
+		        Assert.assertTrue(isBackToDashBoard, " Back to dashboard link is not displayed");
+
+		        // Assert that the text matches expected
+		        Assert.assertEquals(linkText, "← Back to Dashboard", "Link text does not match expected");
+
+		        System.out.println("Back to dashboard link is displayed with correct text.");
+
+		    } catch (Exception e) {
+		        System.err.println(" Error verifying Back to dashboard link: " + e.getMessage());
+		        Allure.addAttachment("Back to Dashboard Error", "text/plain", e.toString());
+		        Assert.fail("Test failed due to unexpected exception.");
+		    }
+	}
+	
+	@Then("User should see the {string} section")
+	public void user_should_see_the_section(String expectedText) {
+		try {
+	        boolean isDailyWorkOutPlan = workOutPage.isdailyWorkOutPlanDisplayed();
+	        String linkText = workOutPage.getdailyWorkOutPlanText(); 
+
+	        System.out.println("Daily WorkOut Plan is displayed: " + isDailyWorkOutPlan);
+	        System.out.println("The text of Daily WorkOut Plan  element is: " + linkText);
+
+	        // Attach to Allure
+	        Allure.addAttachment("Daily WorkOut Plan  Text", linkText);
+
+	        // Assert that the link is displayed
+	        Assert.assertTrue(isDailyWorkOutPlan, " Daily WorkOut Plan link is not displayed");
+
+	        // Assert that the text matches expected
+	        Assert.assertEquals(linkText, expectedText, "Link text does not match expected");
+
+	        System.out.println("Back to dashboard link is displayed with correct text.");
+
+	    } catch (Exception e) {
+	        System.err.println(" Error verifying Back to dashboard link: " + e.getMessage());
+	        Allure.addAttachment("Back to Dashboard Error", "text/plain", e.toString());
+	        Assert.fail("Test failed due to unexpected exception.");
+	    }
+	}
+	
+	@Then("User should see the description as {string}.")
+	public void user_should_see_the_description_as(String expectedText) {
+		try {
+	        boolean isFreshAIPlan = workOutPage.isfreshAIDisplayed();
+	        String linkText = workOutPage.getfreshAIText(); 
+
+	        System.out.println("Fresh AI is displayed: " + isFreshAIPlan);
+	        System.out.println("The text ofFresh AI i element is: " + linkText);
+
+	        // Attach to Allure
+	        Allure.addAttachment("Fresh AI  Text", linkText);
+
+	        // Assert that the link is displayed
+	        Assert.assertTrue(isFreshAIPlan, " Fresh AI i link is not displayed");
+
+	        // Assert that the text matches expected
+	        Assert.assertEquals(linkText, expectedText, "Link text does not match expected");
+
+	        System.out.println("Fresh AI is displayed with correct text.");
+
+	    } catch (Exception e) {
+	        System.err.println(" Error verifying Back to dashboard link: " + e.getMessage());
+	        Allure.addAttachment("Back to Dashboard Error", "text/plain", e.toString());
+	        Assert.fail("Test failed due to unexpected exception.");
+	    }
+	}
+
+
 
 }
