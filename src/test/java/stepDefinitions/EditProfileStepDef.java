@@ -78,8 +78,8 @@ public class EditProfileStepDef {
 
 	}
 
-	@When("User clicks on {string}")
-	public void user_clicks_on(String elementName) {
+	@When("User clicks on {string}  button")
+	public void user_clicks_on_button(String elementName) {
 
 		try {
 	        editPage.clickElement(elementName);
@@ -101,8 +101,8 @@ public class EditProfileStepDef {
 	
 	}
 
-	@Then("There should be exactly {int} tabs")
-	public void there_should_be_exactly_tabs(Integer expectedTabs) {
+	@Then("There should be exactly {int} buttons  {string} and {string}")
+	public void there_should_be_exactly_buttons_and(Integer expectedTabs) {
 		try {
 	        int actualTabs = editPage.getTotalTabs();
 
@@ -427,7 +427,7 @@ public class EditProfileStepDef {
 	    }
 	}
 
-	@Then("{string} Button should be visible and enabled")
+	@Then("{string}  button should be visible and enabled")
 	public void button_should_be_visible_and_enabled(String buttonName) {
 	    try {
 	        softAssert.assertTrue(editPage.isButtonVisibleAndEnabled(buttonName), "Button not visible or enabled: " + buttonName);
@@ -441,7 +441,7 @@ public class EditProfileStepDef {
 	    }
 	}
 
-	@Then("{string}, {string}, {string}, {string} RadioButtons should be visible and enabled")
+	@Then("{string}  {string}  {string} {string}  radioButtons should be visible and enabled")
 	public void radio_buttons_should_be_visible_and_enabled(String rb1, String rb2, String rb3, String rb4) {
 	    try {
 	        softAssert.assertTrue(editPage.isRadioButtonVisibleAndEnabled(rb1), "RadioButton not visible or enabled: " + rb1);
