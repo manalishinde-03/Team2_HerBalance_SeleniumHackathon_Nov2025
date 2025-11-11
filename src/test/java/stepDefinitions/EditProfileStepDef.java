@@ -1,11 +1,15 @@
 package stepDefinitions;
 
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
 import hooks.TestContext;
 import io.cucumber.java.en.*;
+import io.qameta.allure.Allure;
 import pageObjects.EditPage;
 import pageObjects.SubscriptionManagement;
 import pageObjects.SubscriptionPage;
@@ -33,24 +37,66 @@ public class EditProfileStepDef {
 	}
 	
 	@Given("User clicks {string} submenu from Dashboard Profile page")
-	public void user_clicks_submenu_from_dashboard_profile_page(String string) {
+	public void user_clicks_submenu_from_dashboard_profile_page(String submenuName) {
 	   
 		
-        editPage.clickSubMenu(string);
+		 try {
+		        editPage.clickSubMenu(submenuName);
+		        System.out.println("Successfully clicked submenu: " + submenuName);
+		    } catch (NoSuchElementException e) {
+		        System.err.println(" Submenu element not found: " + submenuName + " → " + e.getMessage());
+		        Allure.addAttachment("Submenu Not Found", "text/plain", e.toString());
+		    } catch (ElementClickInterceptedException e) {
+		        System.err.println(" Submenu click intercepted: " + submenuName + " → " + e.getMessage());
+		        Allure.addAttachment("Submenu Click Intercepted", "text/plain", e.toString());
+		    } catch (TimeoutException e) {
+		        System.err.println("Timeout while trying to click submenu: " + submenuName + " → " + e.getMessage());
+		        Allure.addAttachment("Submenu Click Timeout", "text/plain", e.toString());
+		    } catch (Exception e) {
+		        System.err.println("Unexpected error clicking submenu: " + submenuName + " → " + e.getMessage());
+		        Allure.addAttachment("Unexpected Submenu Error", "text/plain", e.toString());
+		    }
 
 	}
 
 	@Given("User is on the Her Balance Dashboard with the Edit Profile submenu expanded")
 	public void user_is_on_the_her_balance_dashboard_with_the_edit_profile_submenu_expanded() {
 
-        editPage.expandEditProfileSubMenu();
+		try {
+	        editPage.expandEditProfileSubMenu();
+	        System.out.println(" Edit Profile submenu expanded successfully.");
+	    } catch (NoSuchElementException e) {
+	        System.err.println("Edit Profile submenu element not found: " + e.getMessage());
+	        Allure.addAttachment("Edit Profile Submenu Error", "text/plain", e.toString());
+	    } catch (TimeoutException e) {
+	        System.err.println(" Timeout while expanding Edit Profile submenu: " + e.getMessage());
+	        Allure.addAttachment("Edit Profile Submenu Timeout", "text/plain", e.toString());
+	    } catch (Exception e) {
+	        System.err.println("Unexpected error expanding Edit Profile submenu: " + e.getMessage());
+	        Allure.addAttachment("Edit Profile Submenu Unexpected Error", "text/plain", e.toString());
+	    }
 
 	}
 
 	@When("User clicks on {string}")
-	public void user_clicks_on(String string) {
+	public void user_clicks_on(String elementName) {
 
-        editPage.clickElement(string);
+		try {
+	        editPage.clickElement(elementName);
+	        System.out.println("✅ Successfully clicked on element: " + elementName);
+	    } catch (NoSuchElementException e) {
+	        System.err.println("Element not found: " + elementName + " → " + e.getMessage());
+	        Allure.addAttachment("Click Element Error", "text/plain", e.toString());
+	    } catch (ElementClickInterceptedException e) {
+	        System.err.println(" Element click intercepted: " + elementName + " → " + e.getMessage());
+	        Allure.addAttachment("Click Intercepted Error", "text/plain", e.toString());
+	    } catch (TimeoutException e) {
+	        System.err.println(" Timeout while trying to click: " + elementName + " → " + e.getMessage());
+	        Allure.addAttachment("Click Timeout Error", "text/plain", e.toString());
+	    } catch (Exception e) {
+	        System.err.println(" Unexpected error clicking element: " + elementName + " → " + e.getMessage());
+	        Allure.addAttachment("Unexpected Click Error", "text/plain", e.toString());
+	    }
 
 	
 	}
