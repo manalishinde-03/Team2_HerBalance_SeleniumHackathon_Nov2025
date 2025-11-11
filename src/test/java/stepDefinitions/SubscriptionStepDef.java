@@ -51,12 +51,12 @@ public class SubscriptionStepDef {
 
 	}
 
-	@Then("{string} header should be visible")
-	public void header_should_be_visible(String string) {
-		softAssert.assertTrue(subscriptionPage.isSubscriptionManagementHeaderVisible(), 
-				string + " header should be visible");
-	        softAssert.assertAll();
-	}
+//	@Then("{string} header should be visible")
+//	public void header_should_be_visible(String string) {
+//		softAssert.assertTrue(subscriptionPage.isSubscriptionManagementHeaderVisible(), 
+//				string + " header should be visible");
+//	        softAssert.assertAll();
+//	}
 
 	@Then("{string} sub-text header should be visible")
 	public void sub_text_header_should_be_visible(String subText) {
@@ -212,12 +212,12 @@ public class SubscriptionStepDef {
 
 	}
 
-	@Then("{string} should be visible")
-	public void should_be_visible(String element) {
-
-        System.out.println(element + " should be visible");
-
-	}
+//	@Then("{string} should be visible")
+//	public void should_be_visible(String element) {
+//
+//        System.out.println(element + " should be visible");
+//
+//	}
 
 	@Then("Exactly {int} sections should be visible")
 	public void exactly_sections_should_be_visible(Integer int1) {

@@ -20,6 +20,9 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import utilities.ExcelReader;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 public class BaseClass {
 
@@ -111,7 +114,30 @@ public class BaseClass {
 			return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		}
 
+		// 📘 Helper method to open any page URL defined in Config.properties
+		// It accepts a key name (like "menstrualLog") and figures out the correct full path or URL.
+		public void navigateTo(String pageKey) {
+		    // Use the same ReadConfig you already create in the constructor, or create a fresh one
+		    // (both work; using the field avoids reloading the file each time)
+		    String raw = readConfig.getPageURL(pageKey);
 
-	
+		    if (raw == null) {
+		        throw new RuntimeException("Missing key in config.properties: " + pageKey);
+		    }
+
+		    // Always take driver from context in this class
+		    WebDriver drv = context.getDriver();
+
+		    // If it's a relative path (no http/file prefix), convert to file:/// URL
+		    if (!raw.startsWith("http") && !raw.startsWith("file:")) {
+		        Path p = Paths.get(raw).toAbsolutePath().normalize();
+		        drv.get(p.toUri().toString());
+		    } else {
+		        // Already an http:// or file:/// URL
+		        drv.get(raw);
+		    }
+		}
+
+
 
 }

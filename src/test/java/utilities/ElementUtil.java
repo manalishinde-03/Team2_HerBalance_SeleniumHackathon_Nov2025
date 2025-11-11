@@ -19,6 +19,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.TimeoutException;
+
 
 public class ElementUtil {
 	
@@ -570,5 +572,34 @@ public class ElementUtil {
 
 			return result.toString().toLowerCase();
 		}
-	 
+	//Saranya Changes
+		 public void waitForVisible(By locator, int timeoutInSeconds) {
+			    try {
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+			        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+			    } catch (TimeoutException e) {
+			        System.out.println("Element not visible within timeout: " + locator);
+			        throw e;
+			    }
+			}
+
+			public boolean isDisplayed(By locator) {
+			    try {
+			        return driver.findElement(locator).isDisplayed();
+			    } catch (Exception e) {
+			        return false;
+			    }
+			}
+			
+			public boolean exists(By locator, int timeoutSecs) {
+			    try {
+			        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSecs));
+			        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			        return true; // element found
+			    } catch (org.openqa.selenium.TimeoutException e) {
+			        return false; // element not found within timeout
+			    }
+			}
+
 }
+

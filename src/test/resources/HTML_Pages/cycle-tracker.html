@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Menstrual Cycle Tracker</title>
+<style>
+  :root { --bg:#faf7fb; --card:#ffffff; --ink:#2a2342; --muted:#7a6b93; --accent:#845ec2; --accent-2:#ffb3c7; --border:#e9e2f2; }
+  * { box-sizing: border-box; font-family: Inter, system-ui, Arial, sans-serif; }
+  body { margin: 0; background: var(--bg); color: var(--ink); }
+  .shell { max-width: 1120px; margin: 24px auto 64px; padding: 0 16px; }
+  .crumbs { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+  .titlebar { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  h1 { font-size: 28px; margin: 4px 0 0; }
+  .actions { display:flex; gap:10px; }
+  .btn { padding: 10px 14px; border:1px solid var(--border); background:#fff; border-radius:10px; cursor:pointer; }
+  .btn.primary { background: var(--accent); color:#fff; border-color: transparent; }
+  .tabs { display:flex; gap:8px; margin:14px 0 18px; }
+  .tab { padding:10px 12px; border-radius:10px; background:#f4eefc; color:#4e3a7a; cursor:pointer; border:1px solid var(--border); }
+  .tab.active { background:#e9dbff; border-color:#d7c5ff; }
+  .grid { display:grid; grid-template-columns: 2fr 1.2fr; gap:16px; }
+  .card { background: var(--card); border:1px solid var(--border); border-radius:14px; padding:16px; }
+  .card h3 { margin: 0 0 8px; font-size:18px; }
+  .kpi { color: var(--muted); font-size:13px; margin-top:6px; }
+  .progress { height:10px; background:#efe9fa; border-radius:8px; overflow:hidden; margin:10px 0 12px; }
+  .bar { height:100%; width:60%; background: linear-gradient(90deg, #a78bfa, #845ec2); }
+  .list { display:flex; flex-direction:column; gap:10px; margin:10px 0 0; }
+  .pill { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 12px; border:1px dashed #e6dff4; border-radius:12px; }
+  .pill .meta { font-size:12px; color:var(--muted); }
+  .next-period { background:#fff4f7; border-color:#ffd6e2; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+  ul { margin: 8px 0 0 18px; padding:0; }
+  dialog::backdrop { background: rgba(0,0,0,.45); }
+  dialog { border:none; border-radius:14px; width:min(560px, 92vw); padding:0; }
+  .modal-head { padding:14px 16px; border-bottom:1px solid var(--border); font-weight:600; }
+  .modal-body { padding:16px; }
+  .modal-foot { display:flex; justify-content:flex-end; gap:10px; padding:12px 16px; border-top:1px solid var(--border); }
+  .field { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; }
+  label { font-size:14px; }
+  input[type="date"], input[type="number"], select, input[type="text"] { padding:10px 12px; border:1px solid var(--border); border-radius:10px; }
+  .switch-row { display:flex; align-items:center; gap:10px; }
+  .muted { color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <div class="crumbs" aria-label="breadcrumb"><span data-testid="crumb-back">← Back to Dashboard</span></div>
+
+    <div class="titlebar">
+      <div>
+        <h1 id="page-title">Menstrual Cycle Tracker</h1>
+        <div class="muted">Cycle Overview</div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="btn-update" data-testid="btn-update-cycle">Update Cycle Information</button>
+        <button class="btn primary" id="btn-add-log" data-testid="btn-add-period">Add Period Log</button>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Cycle tabs">
+      <div class="tab active" data-testid="tab-overview" role="tab" aria-selected="true">Cycle Overview</div>
+      <div class="tab" data-testid="tab-calendar" role="tab">Menstrual Calendar</div>
+      <div class="tab" data-testid="tab-history" role="tab">Period History</div>
+    </div>
+
+    <div class="grid">
+      <!-- Left column -->
+      <section class="card" aria-labelledby="current-status">
+        <h3 id="current-status">Current Cycle Status</h3>
+        <div class="muted">Day <strong id="day-in-cycle" data-testid="day-in-cycle">17</strong> of your <strong id="cycle-length" data-testid="cycle-length">28</strong>-day cycle</div>
+        <div class="progress" aria-label="phase progress"><div class="bar" style="width:60%" data-testid="phase-bar"></div></div>
+
+        <div class="two-col">
+          <div>
+            <div class="kpi"><strong>Current Phase</strong></div>
+            <div id="current-phase" data-testid="current-phase">Luteal Phase</div>
+            <div class="kpi">Last period started</div>
+            <div id="last-period-started" data-testid="last-period-started">October 7, 2025</div>
+          </div>
+          <div>
+            <div class="kpi"><strong>Next period expected</strong></div>
+            <div id="next-expected" data-testid="next-expected">November 4, 2025</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="kpi"><strong>Luteal Phase Details</strong></div>
+          <div id="phase-details" class="muted" data-testid="phase-details">
+            Your metabolism is burning extra calories; you might experience mood and hunger changes.
+            Opt for moderate workouts like Pilates or steady-state cardio to reduce stress.
+          </div>
+        </div>
+      </section>
+
+      <!-- Right column -->
+      <aside class="card" aria-labelledby="upcoming-phases">
+        <h3 id="upcoming-phases">Upcoming Phases</h3>
+        <div class="list">
+          <div class="pill">
+            <div><strong>Menstrual Phase</strong><div class="meta">Starts Nov 3</div></div>
+            <input type="checkbox" aria-label="Menstrual Phase done" data-testid="chk-menstrual">
+          </div>
+          <div class="pill">
+            <div><strong>Follicular Phase</strong><div class="meta">Starts Nov 7</div></div>
+            <input type="checkbox" aria-label="Follicular Phase done" data-testid="chk-follicular">
+          </div>
+          <div class="pill">
+            <div><strong>Ovulation Phase</strong><div class="meta">Starts Nov 17</div></div>
+            <input type="checkbox" aria-label="Ovulation Phase done" data-testid="chk-ovulation">
+          </div>
+          <div class="pill">
+            <div><strong>Luteal Phase</strong><div class="meta">Started Oct 23</div></div>
+            <input type="checkbox" aria-label="Luteal Phase done" data-testid="chk-luteal">
+          </div>
+        </div>
+
+        <div class="card next-period" style="margin-top:14px;">
+          <div class="kpi"><strong>Next Period</strong></div>
+          <div id="next-period-date" data-testid="next-period-date">November 4, 2025</div>
+          <div class="muted" id="next-period-countdown" data-testid="next-period-countdown">11 days remaining</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="two-col">
+      <section class="card" aria-labelledby="rec-acts">
+        <h3 id="rec-acts">Recommended Activities</h3>
+        <ul>
+          <li>Moderate intensity workouts like Pilates</li>
+          <li>Steady-state cardio instead of HIIT</li>
+          <li>Mind-body exercises to reduce stress</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="nutrition">
+        <h3 id="nutrition">Nutrition Tips</h3>
+        <ul>
+          <li>Higher calcium to curb increased cravings</li>
+          <li>Focus on magnesium-rich foods for mood stability</li>
+          <li>Prioritize fiber and complex carbs for satiety</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal: Update Cycle Information -->
+  <dialog id="dlg-update" data-testid="dlg-update">
+    <div class="modal-head">Update Cycle Information</div>
+    <div class="modal-body">
+      <div class="field">
+        <label for="last-start">Last Period Start Date</label>
+        <input id="last-start" data-testid="last-start" type="date" />
+      </div>
+      <div class="field">
+        <label for="cycle-len">Cycle Length (days)</label>
+        <input id="cycle-len" data-testid="cycle-len" type="number" min="20" max="40" value="28" />
+      </div>
+      <div class="switch-row">
+        <input id="predict" type="checkbox" checked data-testid="use-prediction"/>
+        <label for="predict">Use predictions to update next period</label>
+      </div>
+      <p class="muted">These settings will recalculate upcoming phases and next period.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close="update">Cancel</button>
+      <button class="btn primary" id="save-update" data-testid="save-update">Save Changes</button>
+    </div>
+  </dialog>
+
+  <!-- Modal: Add New Period Log -->
+  <dialog id="dlg-add" data-testid="dlg-add">
+    <div class="modal-head">Add New Period Log</div>
+    <div class="modal-body">
+      <div class="field">
+        <label for="period-start">Period Start Date</label>
+        <input id="period-start" data-testid="period-start" type="date" />
+      </div>
+      <div class="field">
+        <label for="flow">Flow</label>
+        <select id="flow" data-testid="flow">
+          <option>Light</option>
+          <option selected>Moderate</option>
+          <option>Heavy</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="notes">Notes</label>
+        <input id="notes" data-testid="notes" type="text" placeholder="cramps, cravings, mood…" />
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" data-close="add">Cancel</button>
+      <button class="btn primary" id="save-log" data-testid="save-log">Add Log</button>
+    </div>
+  </dialog>
+
+<script>
+  // Open/close dialogs
+  const dlgUpdate = document.getElementById('dlg-update');
+  const dlgAdd = document.getElementById('dlg-add');
+  document.getElementById('btn-update').addEventListener('click', () => dlgUpdate.showModal());
+  document.getElementById('btn-add-log').addEventListener('click', () => dlgAdd.showModal());
+  document.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', e => {
+    const which = e.currentTarget.getAttribute('data-close');
+    (which === 'update' ? dlgUpdate : dlgAdd).close();
+  }));
+
+  // Save Cycle Information -> updates cards
+  document.getElementById('save-update').addEventListener('click', () => {
+    const start = document.getElementById('last-start').value;
+    const length = Number(document.getElementById('cycle-len').value || 28);
+    if (start) document.getElementById('last-period-started').textContent = new Date(start).toLocaleDateString();
+    document.getElementById('cycle-length').textContent = length;
+
+    // naive next period calc = start + length
+    if (start) {
+      const d = new Date(start); d.setDate(d.getDate() + length);
+      document.getElementById('next-expected').textContent = d.toLocaleDateString();
+      document.getElementById('next-period-date').textContent = d.toLocaleDateString();
+
+      // countdown
+      const now = new Date();
+      const diff = Math.max(0, Math.ceil((d - now) / (24*60*60*1000)));
+      document.getElementById('next-period-countdown').textContent = `${diff} days remaining`;
+    }
+    dlgUpdate.close();
+  });
+
+  // Add Period Log -> updates last period + resets day counter
+  document.getElementById('save-log').addEventListener('click', () => {
+    const start = document.getElementById('period-start').value;
+    if (start) {
+      document.getElementById('last-period-started').textContent = new Date(start).toLocaleDateString();
+      // reset day in cycle based on today - start
+      const diff = Math.max(1, Math.ceil((Date.now() - new Date(start)) / (24*60*60*1000)));
+      document.getElementById('day-in-cycle').textContent = diff;
+    }
+    dlgAdd.close();
+  });
+</script>
+</body>
+</html>
+
